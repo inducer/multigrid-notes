@@ -139,7 +139,7 @@
 
   Application to <with|mode|math|\<b-I\>-\<Theta\>\<b-A\>>:
   <with|mode|math|\<sigma\>(I-\<Theta\>\<b-A\>)\<subset\>[1-\<Theta\>\<lambda\><rsub|max>,1-\<Theta\>\<lambda\><rsub|min>]>,
-  \ <with|mode|math|\<rho\>(I-\<Theta\>\<b-A\>)\<in\>max{\|1-\<Theta\>\<lambda\><rsub|max>\|,\|1-\<Theta\>\<lambda\><rsub|min>\|}>.
+  \ <with|mode|math|\<rho\>(\<b-I\>-\<Theta\>\<b-A\>)\<in\>max{\|1-\<Theta\>\<lambda\><rsub|max>\|,\|1-\<Theta\>\<lambda\><rsub|min>\|}>.
   The optimal choice is
 
   <\equation*>
@@ -162,7 +162,7 @@
     Consider
 
     <\eqnarray*>
-      <tformat|<table|<row|<cell|\<\|\|\>\<b-e\><rsup|k>\<\|\|\><rsup|2>>|<cell|=>|<cell|<big|sum><rsub|i,j>(\<b-e\><rsup|k>\<cdot\>\<b-w\><rsup|i,j>)<rsup|2>=<big|sum><rsub|i,j><left|[>(\<b-I\>-\<Theta\>\<b-A\>)<rsup|k>\<b-e\><rsup|0>\<cdot\>\<b-w\><rsup|i,j><right|]><rsup|2>>>|<row|<cell|>|<cell|=>|<cell|<big|sum><rsub|i,j><left|[>\<b-e\><rsup|0>\<cdot\>(\<b-I\>-\<Theta\>\<b-A\>)<rsup|k>\<b-w\><rsup|i,j><right|]><rsup|2>>>|<row|<cell|>|<cell|=>|<cell|<big|sum><rsub|(i,j)\<in\>\<cal-F\>>(1-\<Theta\>\<lambda\><rsup|i,j>)<rsup|2k><left|[>\<b-e\><rsup|0>\<cdot\>\<b-w\><rsup|i,j><right|]><rsup|2>>>|<row|<cell|>|<cell|\<leqslant\>>|<cell|<left|(>max<rsub|(i,j)\<in\>\<cal-F\>>(1-\<Theta\>\<lambda\><rsup|i,j>)<rsup|2><right|)><rsup|k>\<\|\|\>\<b-e\><rsup|0>\<\|\|\>.>>>>
+      <tformat|<table|<row|<cell|\<\|\|\>\<b-e\><rsup|k>\<\|\|\><rsup|2>>|<cell|=>|<cell|<big|sum><rsub|i,j>(\<b-e\><rsup|k>\<cdot\>\<b-w\><rsup|i,j>)<rsup|2>=<big|sum><rsub|i,j><left|[>(\<b-I\>-\<Theta\>\<b-A\>)<rsup|k>\<b-e\><rsup|0>\<cdot\>\<b-w\><rsup|i,j><right|]><rsup|2>>>|<row|<cell|>|<cell|=>|<cell|<big|sum><rsub|i,j><left|[>\<b-e\><rsup|0>\<cdot\>(\<b-I\>-\<Theta\>\<b-A\>)<rsup|k>\<b-w\><rsup|i,j><right|]><rsup|2>>>|<row|<cell|>|<cell|=>|<cell|<big|sum><rsub|(i,j)\<nin\>\<cal-F\>>(1-\<Theta\>\<lambda\><rsup|i,j>)<rsup|2k><wide*|<left|[><wide*|\<b-e\><rsup|0>\<cdot\>\<b-w\><rsup|i,j>|\<wide-underbrace\>><rsub|\<b-e\><rsup|0>\<in\>X\<perp\>\<b-w\><rsup|i,j>><right|]><rsup|2>|\<wide-underbrace\>><rsub|=0>+<big|sum><rsub|(i,j)\<in\>\<cal-F\>>(1-\<Theta\>\<lambda\><rsup|i,j>)<rsup|2k><left|[>\<b-e\><rsup|0>\<cdot\>\<b-w\><rsup|i,j><right|]><rsup|2>>>|<row|<cell|>|<cell|\<leqslant\>>|<cell|<left|(>max<rsub|(i,j)\<in\>\<cal-F\>>(1-\<Theta\>\<lambda\><rsup|i,j>)<rsup|2><right|)><rsup|k>\<\|\|\>\<b-e\><rsup|0>\<\|\|\>.>>>>
     </eqnarray*>
 
     <\eqnarray*>
