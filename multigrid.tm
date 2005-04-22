@@ -8,6 +8,8 @@
 
   Prof. Christian Wieners, SS 2005
 
+  Korrekturen und Vorschläge an <with|font-family|tt|kloeckner@math.uni-karlsruhe.de>.
+
   <\table-of-contents|toc>
     <vspace*|1fn><with|font-series|bold|math-font-series|bold|Table of
     contents> <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
@@ -176,6 +178,8 @@
       <tformat|<table|<row|<cell|\<\|\|\>\<b-e\><rsup|k>\<\|\|\><rsup|2>>|<cell|=>|<cell|<big|sum><rsub|i,j>(\<b-e\><rsup|k>\<cdot\>\<b-w\><rsup|i,j>)<rsup|2>=<big|sum><rsub|i,j><left|[>(\<b-I\>-\<theta\>\<b-A\>)<rsup|k>\<b-e\><rsup|0>\<cdot\>\<b-w\><rsup|i,j><right|]><rsup|2>>>|<row|<cell|>|<cell|=>|<cell|<big|sum><rsub|i,j><left|[>\<b-e\><rsup|0>\<cdot\>(\<b-I\>-\<theta\>\<b-A\>)<rsup|k>\<b-w\><rsup|i,j><right|]><rsup|2>>>|<row|<cell|>|<cell|=>|<cell|<big|sum><rsub|(i,j)\<nin\>\<cal-F\>>(1-\<theta\>\<lambda\><rsup|i,j>)<rsup|2k><wide*|<left|[><wide*|\<b-e\><rsup|0>\<cdot\>\<b-w\><rsup|i,j>|\<wide-underbrace\>><rsub|\<b-e\><rsup|0>\<in\>X\<perp\>\<b-w\><rsup|i,j>><right|]><rsup|2>|\<wide-underbrace\>><rsub|=0>+<big|sum><rsub|(i,j)\<in\>\<cal-F\>>(1-\<theta\>\<lambda\><rsup|i,j>)<rsup|2k><left|[>\<b-e\><rsup|0>\<cdot\>\<b-w\><rsup|i,j><right|]><rsup|2>>>|<row|<cell|>|<cell|\<leqslant\>>|<cell|<left|(>max<rsub|(i,j)\<in\>\<cal-F\>>(1-\<theta\>\<lambda\><rsup|i,j>)<rsup|2><right|)><rsup|k>\<\|\|\>\<b-e\><rsup|0>\<\|\|\>.>>>>
     </eqnarray*>
 
+    <with|color|red|Wieners-Korrektur: <with|mode|math|\<nin\>\<rightarrow\>\<in\>>?>
+
     <\eqnarray*>
       <tformat|<table|<row|<cell|{\<lambda\><rsup|i,j>:(i,j)\<in\>\<cal-F\>}>|<cell|=>|<cell|4h<rsup|-2>{sin<rsup|2>(\<pi\>i*h/2)+sin<rsup|2>(\<pi\>j*h/2):i=1,\<ldots\>,n-1,j=n/2,\<ldots\>,n-1}>>|<row|<cell|>|<cell|\<subset\>>|<cell|4h<rsup|-2><left|[>sin<rsup|2>(\<pi\>/4),2]=h<rsup|-2>[2,8]>>>>
     </eqnarray*>
@@ -224,7 +228,7 @@
     <\eqnarray*>
       <tformat|<table|<row|<cell|<ip|v|w>>|<cell|\<assign\>>|<cell|<big|int><rsub|\<Omega\>>v*w*d*v<space|1fn><with|mode|text|(inner
       product in <with|mode|math|L<rsup|2>(\<Omega\>)>)>>>|<row|<cell|a(v,w)>|<cell|\<assign\>>|<cell|<big|int><rsub|\<Omega\>>\<nabla\>v\<cdot\>\<nabla\>w*d*v<space|1fn><with|mode|text|(energy
-      ?? in <with|mode|math|L<rsup|2>(\<Omega\>)>)>>>>>
+      <with|color|red|??> in <with|mode|math|L<rsup|2>(\<Omega\>)>)>>>>>
     </eqnarray*>
 
     and <with|mode|math|\<\|\|\>v\<\|\|\>=<sqrt|<ip|v|v>>>,
@@ -400,7 +404,7 @@
 
     with <with|mode|math|v\<in\>L<rsup|2>(\<Omega\>)\<supset\>V<rsub|h>>,
     <with|mode|math|w<rsub|H>\<in\>V<rsub|H>>,
-    <with|mode|math|v\<in\>H<rsup|1>(\<Omega\>)\<supset\>V<rsub|h>>,
+    <with|mode|math|v\<in\>H<rsup|1>(\<Omega\>)\<supset\>V<rsub|h>>, for all
     <with|mode|math|w<rsub|H>\<in\>V<rsub|H>>. Then, we have for the error
     propagation of the two-level method
 
@@ -420,30 +424,28 @@
       <item>
 
       <\equation*>
-        (A<rsub|H>c<rsub|H><rsup|k>,v<rsub|H>)=a(c<rsub|H><rsup|k>,v<rsub|H>)=(v<rsub|k>,v<rsub|H>)-a(u<rsub|h><rsup|k-1/2>,v<rsub|H>)=<ip|Q<rsub|H>f<rsub|h>|v<rsub|H>>-<ip|A<rsub|h>u<rsup|k-1/2>|v<rsub|H>>=<ip|Q<rsub|H>f<rsub|h>-Q<rsub|H>A<rsub|h>u<rsup|k-1/2><rsub|h>|v<rsub|H>>
+        (A<rsub|H>c<rsub|H><rsup|k>,v<rsub|H>)=a(c<rsub|H><rsup|k>,v<rsub|H>)=a(u<rsub|h>,v<rsub|H>)-a(u<rsub|h><rsup|k-1/2>,v<rsub|H>)=<ip|Q<rsub|H>f<rsub|h>|v<rsub|H>>-<ip|A<rsub|h>u<rsup|k-1/2><rsub|h>|v<rsub|H>>=<ip|Q<rsub|H>f<rsub|h>-Q<rsub|H>A<rsub|h>u<rsup|k-1/2><rsub|h>|v<rsub|H>>
       </equation*>
 
       Then
 
       <\equation*>
-        A<rsub|H>c<rsub|H><rsup|k>=Q<rsub|H>(<wide*|f<rsub|h>|\<wide-underbrace\>><rsub|=A<rsub|h>u<rsub|h>>-A<rsub|h>u<rsup|k-1/2>u<rsub|h>)=-Q<rsub|H>A<rsub|h>e<rsup|k-1/2><rsub|h>,
+        A<rsub|H>c<rsub|H><rsup|k>=Q<rsub|H>(<wide*|f<rsub|h>|\<wide-underbrace\>><rsub|=A<rsub|h>u<rsub|h>>-A<rsub|h>u<rsup|k-1/2><rsub|h>)=-Q<rsub|H>A<rsub|h>e<rsup|k-1/2><rsub|h>,
       </equation*>
 
       so
 
       <\equation*>
-        e<rsup|k><rsub|h>=u<rsup|k><rsub|h>-u<rsub|h>=u<rsup|k-1/2><rsub|h>-u<rsub|h>+c<rsub|H>=e<rsup|k-1/2><rsub|h>+A<rsub|H><rsup|-1>(-Q<rsub|H>A<rsub|h>e<rsup|k-1/2><rsub|h>)
+        e<rsup|k><rsub|h>=u<rsup|k><rsub|h>-u<rsub|h>=u<rsup|k-1/2><rsub|h>-u<rsub|h>+c<rsub|H>=e<rsup|k-1/2><rsub|h>+A<rsub|H><rsup|-1>(-Q<rsub|H>A<rsub|h>e<rsup|k-1/2><rsub|h>).
       </equation*>
 
-      for <with|mode|math|w<rsub|H>\<in\>V<rsub|H>>.
-
-      <item>
+      <item>For <with|mode|math|w<rsub|H>\<in\>V<rsub|H>>,
 
       <\equation*>
-        <ip|A<rsub|H>P<rsub|H>v<rsub|h>|w<rsub|H>>=a(P<rsub|H>v<rsub|h>,w<rsub|H>)=a(v<rsub|h>,w<rsub|H>)=<ip|A<rsub|h>v<rsub|h>|w<rsub|h>>=<ip|Q<rsub|H>A<rsub|h>v<rsub|h>|w<rsub|H>>,
+        <ip|A<rsub|H>P<rsub|H>v<rsub|h>|w<rsub|H>>=a(P<rsub|H>v<rsub|h>,w<rsub|H>)=a(v<rsub|h>,w<rsub|H>)=<ip|A<rsub|h>v<rsub|h>|w<rsub|H<with|color|red|??>>>=<ip|Q<rsub|H>A<rsub|h>v<rsub|h>|w<rsub|H>>,
       </equation*>
 
-      then
+      so
 
       <\equation*>
         A<rsub|H>P<rsub|H>=Q<rsub|H>A<rsub|h>\<Rightarrow\>P<rsub|H>=A<rsup|-1><rsub|H>Q<rsub|H>A<rsub|h>.
