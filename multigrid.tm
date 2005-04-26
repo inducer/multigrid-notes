@@ -132,7 +132,9 @@
 
   <subsection|The Multigrid Idea>
 
-  We consider the model problem. Define <with|mode|math|w<rsub|k><rsup|i>=<sqrt|h/2>*sin(h*k*i\<pi\>)>
+  The basic assumption is that the fine-grid iteration has a hard time
+  eliminating low-frequency errors. We consider the model problem. Define
+  <with|mode|math|w<rsub|k><rsup|i>=<sqrt|h/2>*sin(h*k*i\<pi\>)>
   (<with|mode|math|i,k=1,\<ldots\>,n-1>, <with|mode|math|h=1/n>). Next,
   define <with|mode|math|\<b-w\><rsup|i,j>\<in\>\<bbb-R\><rsup|N>> by
   <with|mode|math|\<b-w\><rsup|i,j>[k(n-1)+l]=w<rsup|i><rsub|k>w<rsup|j><rsub|l>>.
@@ -175,10 +177,9 @@
     Consider
 
     <\eqnarray*>
-      <tformat|<table|<row|<cell|\<\|\|\>\<b-e\><rsup|k>\<\|\|\><rsup|2>>|<cell|=>|<cell|<big|sum><rsub|i,j>(\<b-e\><rsup|k>\<cdot\>\<b-w\><rsup|i,j>)<rsup|2>=<big|sum><rsub|i,j><left|[>(\<b-I\>-\<theta\>\<b-A\>)<rsup|k>\<b-e\><rsup|0>\<cdot\>\<b-w\><rsup|i,j><right|]><rsup|2>>>|<row|<cell|>|<cell|=>|<cell|<big|sum><rsub|i,j><left|[>\<b-e\><rsup|0>\<cdot\>(\<b-I\>-\<theta\>\<b-A\>)<rsup|k>\<b-w\><rsup|i,j><right|]><rsup|2>>>|<row|<cell|>|<cell|=>|<cell|<big|sum><rsub|(i,j)\<nin\>\<cal-F\>>(1-\<theta\>\<lambda\><rsup|i,j>)<rsup|2k><wide*|<left|[><wide*|\<b-e\><rsup|0>\<cdot\>\<b-w\><rsup|i,j>|\<wide-underbrace\>><rsub|\<b-e\><rsup|0>\<in\>X\<perp\>\<b-w\><rsup|i,j>><right|]><rsup|2>|\<wide-underbrace\>><rsub|=0>+<big|sum><rsub|(i,j)\<in\>\<cal-F\>>(1-\<theta\>\<lambda\><rsup|i,j>)<rsup|2k><left|[>\<b-e\><rsup|0>\<cdot\>\<b-w\><rsup|i,j><right|]><rsup|2>>>|<row|<cell|>|<cell|\<leqslant\>>|<cell|<left|(>max<rsub|(i,j)\<in\>\<cal-F\>>(1-\<theta\>\<lambda\><rsup|i,j>)<rsup|2><right|)><rsup|k>\<\|\|\>\<b-e\><rsup|0>\<\|\|\>.>>>>
+      <tformat|<table|<row|<cell|\<\|\|\>\<b-e\><rsup|k>\<\|\|\><rsup|2>>|<cell|=>|<cell|<big|sum><rsub|i,j>(\<b-e\><rsup|k>\<cdot\>\<b-w\><rsup|i,j>)<rsup|2>=<big|sum><rsub|i,j><left|[>(\<b-I\>-\<theta\>\<b-A\>)<rsup|k>\<b-e\><rsup|0>\<cdot\>\<b-w\><rsup|i,j><right|]><rsup|2>>>|<row|<cell|>|<cell|=>|<cell|<big|sum><rsub|i,j><left|[>\<b-e\><rsup|0>\<cdot\>(\<b-I\>-\<theta\>\<b-A\>)<rsup|k>\<b-w\><rsup|i,j><right|]><rsup|2>>>|<row|<cell|>|<cell|=>|<cell|<big|sum><rsub|(i,j)\<nin\>\<cal-F\>>(1-\<theta\>\<lambda\><rsup|i,j>)<rsup|2k><wide*|<left|[><wide*|\<b-e\><rsup|0>\<cdot\>\<b-w\><rsup|i,j>|\<wide-underbrace\>><rsub|\<b-e\><rsup|0>\<in\>X\<perp\>{\<b-w\><rsup|i,j>:i,j\<nin\>\<cal-F\>}
+      ><right|]><rsup|2>|\<wide-underbrace\>><rsub|=0>+<big|sum><rsub|(i,j)\<in\>\<cal-F\>>(1-\<theta\>\<lambda\><rsup|i,j>)<rsup|2k><left|[>\<b-e\><rsup|0>\<cdot\>\<b-w\><rsup|i,j><right|]><rsup|2>>>|<row|<cell|>|<cell|\<leqslant\>>|<cell|<left|(>max<rsub|(i,j)\<in\>\<cal-F\>>(1-\<theta\>\<lambda\><rsup|i,j>)<rsup|2><right|)><rsup|k>\<\|\|\>\<b-e\><rsup|0>\<\|\|\>.>>>>
     </eqnarray*>
-
-    <with|color|red|Wieners-Korrektur: <with|mode|math|\<nin\>\<rightarrow\>\<in\>>?>
 
     <\eqnarray*>
       <tformat|<table|<row|<cell|{\<lambda\><rsup|i,j>:(i,j)\<in\>\<cal-F\>}>|<cell|=>|<cell|4h<rsup|-2>{sin<rsup|2>(\<pi\>i*h/2)+sin<rsup|2>(\<pi\>j*h/2):i=1,\<ldots\>,n-1,j=n/2,\<ldots\>,n-1}>>|<row|<cell|>|<cell|\<subset\>>|<cell|4h<rsup|-2><left|[>sin<rsup|2>(\<pi\>/4),2]=h<rsup|-2>[2,8]>>>>
@@ -228,7 +229,7 @@
     <\eqnarray*>
       <tformat|<table|<row|<cell|<ip|v|w>>|<cell|\<assign\>>|<cell|<big|int><rsub|\<Omega\>>v*w*d*v<space|1fn><with|mode|text|(inner
       product in <with|mode|math|L<rsup|2>(\<Omega\>)>)>>>|<row|<cell|a(v,w)>|<cell|\<assign\>>|<cell|<big|int><rsub|\<Omega\>>\<nabla\>v\<cdot\>\<nabla\>w*d*v<space|1fn><with|mode|text|(energy
-      <with|color|red|??> in <with|mode|math|L<rsup|2>(\<Omega\>)>)>>>>>
+      inner product in <with|mode|math|L<rsup|2>(\<Omega\>)>)>>>>>
     </eqnarray*>
 
     and <with|mode|math|\<\|\|\>v\<\|\|\>=<sqrt|<ip|v|v>>>,
@@ -242,9 +243,8 @@
   <\theorem>
     <with|mode|math|H<rsup|1>(\<Omega\>)> is a Hilbert space with
     <with|mode|math|\<\|\|\>u\<\|\|\><rsub|<rsub|1>>=<sqrt|\<\|\|\>u\<\|\|\><rsup|2>+\<interleave\>u\<interleave\><rsup|2>>>.
-    <with|mode|math|H<rsup|1><rsub|0>(\<Omega\>)\<assign\>clos(C<rsub|0><rsup|\<infty\>>(\<Omega\>),<l2norm|\<cdot\>>)>
+    <with|mode|math|H<rsup|1><rsub|0>(\<Omega\>)\<assign\>clos(C<rsub|0><rsup|\<infty\>>(\<Omega\>),<l2norm|\<cdot\>><rsub|1>)>
     is a Hilbert space with <with|mode|math|<enorm|\<cdot\>>>.
-    (<with|color|red|Normen?>)
   </theorem>
 
   <\definition>
@@ -252,7 +252,10 @@
     domain, <with|mode|math|h\<gtr\>0> the mesh size parameter. A uniform,
     consistent triangulation <with|mode|math|\<cal-C\><rsub|h>> is a
     decomposition on <with|mode|math|<wide|\<Omega\>|\<bar\>>=<big|cup><rsub|C\<in\>\<cal-C\><rsub|h>><wide|\<Omega\>|\<bar\>><rsub|C>>
-    such that (<with|color|red|Bild1>)
+    such that
+
+    <big-figure|<postscript|tri-transform.fig|*5/8|*5/8||||>|The triangle
+    transformation >
 
     <\enumerate-alpha>
       <item><with|mode|math|<wide|\<Omega\>|\<bar\>><rsub|C>=T<rsub|C>(<wide|\<Omega\>|^>)>
@@ -269,13 +272,13 @@
         <tformat|<table|<row|<cell|\|J<rsub|C>\|>|<cell|\<leqslant\>>|<cell|C<rsub|\<Omega\>>h,>>|<row|<cell|\|J<rsub|C><rsup|-1>\|>|<cell|\<leqslant\>>|<cell|C<rsub|\<Omega\>>h<rsup|-1>,>>>>
       </eqnarray*>
 
-      with <with|mode|math|\|J\|=sup<rsub|\|<wide|z|^>\|=1>\|J*z\|>(<with|color|red|Hut
-      hier?>), <with|mode|math|\|<wide|z|^>\|=<sqrt|<wide|z|^><rsub|1><rsup|2>+<wide|z<rsub|2>|^><rsup|2>>>,
-      <with|mode|math|z<rsub|i>=T<rsub|C>z<rsub|i>> (<with|color|red|Hut
-      hier?>) (mesh uniformess <with|color|red|?>),
+      with <with|mode|math|\|J\|=sup<rsub|\|<wide|z|^>\|=1>\|J*<wide|z|^>\|>,
+      <with|mode|math|\|<wide|z|^>\|=<sqrt|<wide|z|^><rsub|1><rsup|2>+<wide|z<rsub|2>|^><rsup|2>>>,
+      <with|mode|math|z<rsub|i>=T<rsub|C><wide|z|^><rsub|i>> (mesh
+      uniformness),
 
       <item><with|mode|math|<wide|\<Omega\>|\<bar\>><rsub|C>\<cap\><wide|\<Omega\>|\<bar\>><rsub|C<rprime|'>>=conv({z<rsub|0>,z<rsub|1>,z<rsub|2>}\<cap\>{z<rsub|0><rprime|'>,z<rsub|1><rprime|'>,z<rsub|2><rprime|'>}>
-      (mesh consistency).
+      (mesh admissibility).
     </enumerate-alpha>
   </definition>
 
@@ -286,10 +289,10 @@
 
       <item><with|mode|math|v<rsub|h>\<in\>X<rsub|h>> is uniquely defined by
       the nodal values <with|mode|math|v<rsub|h>(z)> at
-      <with|mode|math|z\<in\>\<cal-N\><rsub|h>\<assign\><big|cup><rsub|C\<in\>\<cal-C\><rsub|h>><big|cup><rsub|i>T<rsub|C>(<wide|z|^><rsub|i>)>.
+      <with|mode|math|z\<in\><wide|\<cal-N\>|\<bar\>><rsub|h>\<assign\><big|cup><rsub|C\<in\>\<cal-C\><rsub|h>><big|cup><rsub|i>T<rsub|C>(<wide|z|^><rsub|i>)>.
 
-      <item><with|mode|math|V<rsub|h>\<assign\>X<rsub|h>\<cap\>H<rsup|1><rsub|0>(\<Omega\>)=span{\<varphi\><rsub|z>\<in\>X<rsub|h>:z\<in\>\<cal-N\><rsub|h>=<wide|\<cal-N\>|\<bar\>><rsub|h>\<setminus\>\<partial\>\<Omega\>}>
-      (<with|color|red|Warum bar?>) with
+      <item><with|mode|math|V<rsub|h>\<assign\>X<rsub|h>\<cap\>H<rsup|1><rsub|0>(\<Omega\>)=span{\<varphi\><rsub|z>\<in\>X<rsub|h>:z\<in\>\<cal-N\><rsub|h>\<assign\><wide|\<cal-N\>|\<bar\>><rsub|h>\<setminus\>\<partial\>\<Omega\>}>
+      with
 
       <\equation*>
         \<varphi\><rsub|z>(y)=<choice|<tformat|<cwith|1|1|1|1|cell-valign|b>|<table|<row|<cell|1>|<cell|y=z>>|<row|<cell|0>|<cell|<with|mode|text|elsewhere>>>>>><space|1fn>(y\<in\>\<cal-N\><rsub|h>).
@@ -307,6 +310,7 @@
     <with|mode|math|\<b-f\>=((f,y<rsub|z>))<rsub|z\<in\>\<cal-N\><rsub|h>>>.
     <with|mode|math|\<b-u\>=\<b-A\><rsup|-1>\<b-f\>>, where
     <with|mode|math|u<rsub|h>=<big|sum><rsub|z\<in\>\<cal-N\><rsub|h>>\<b-u\>[z]\<varphi\><rsub|z>>.
+    Lax-Milgram ensures the existence of <with|mode|math|A<rsup|-1>>.
   </proof>
 
   <\example>
@@ -317,8 +321,8 @@
     We obtain <with|mode|math|\|J<rsub|C>\|=h>,
     <with|mode|math|\|J<rsub|C><rsup|-1>\|=h<rsup|-1>><with|mode|math|\<Rightarrow\>><with|mode|math|C<rsub|\<Omega\>>=1>.
 
-    <big-figure|<postscript|uniform-grid-unit-square.fig|*5/8|*5/8||||>|A
-    uniform grid on <with|mode|math|(0,1)<rsup|2>>.>
+    <big-figure|<postscript|uniform-grid-unit-square.fig|4cm|||||>|A uniform
+    grid on <with|mode|math|(0,1)<rsup|2>>.>
   </example>
 
   We define <with|mode|math|A<rsub|h>:V<rsub|h>\<rightarrow\>V<rsub|h>> to be
@@ -409,7 +413,7 @@
     propagation of the two-level method
 
     <\equation*>
-      e<rsup|k><rsub|h>=<wide*|u<rsup|k><rsub|h>|\<wide-underbrace\>><rsub|<with|color|red|=\<ldots\>?>>-u<rsub|h>=(id-P<rsub|H>)(id-\<theta\><rsub|h>A<rsub|h>)e<rsup|k-1><rsub|h>.
+      e<rsup|k><rsub|h>=<wide*|u<rsup|k><rsub|h>|\<wide-underbrace\>><rsub|=A<rsup|-1><rsub|h>f<rsub|h>>-u<rsub|h>=(id-P<rsub|H>)(id-\<theta\><rsub|h>A<rsub|h>)e<rsup|k-1><rsub|h>.
     </equation*>
   </lemma>
 
@@ -442,7 +446,7 @@
       <item>For <with|mode|math|w<rsub|H>\<in\>V<rsub|H>>,
 
       <\equation*>
-        <ip|A<rsub|H>P<rsub|H>v<rsub|h>|w<rsub|H>>=a(P<rsub|H>v<rsub|h>,w<rsub|H>)=a(v<rsub|h>,w<rsub|H>)=<ip|A<rsub|h>v<rsub|h>|w<rsub|H<with|color|red|??>>>=<ip|Q<rsub|H>A<rsub|h>v<rsub|h>|w<rsub|H>>,
+        <ip|A<rsub|H>P<rsub|H>v<rsub|h>|w<rsub|H>>=a(P<rsub|H>v<rsub|h>,w<rsub|H>)=a(v<rsub|h>,w<rsub|H>)=<ip|A<rsub|h>v<rsub|h>|w<rsub|H<with|color|red|>>>=<ip|Q<rsub|H>A<rsub|h>v<rsub|h>|w<rsub|H>>,
       </equation*>
 
       so
@@ -485,6 +489,7 @@
 
     Then, we have <with|mode|math|<enorm|(id-P<rsub|H>)(id-\<theta\><rsub|h>A<rsub|h>)><rsup|2>\<leqslant\>1-1/c\<less\>1>,
     i.e. <with|mode|math|<enorm|u<rsup|k><rsub|h>-u<rsub|h>>\<leqslant\>(1-1/c)<rsup|k/2><enorm|u<rsub|h><rsup|0>-u<rsub|h>>>.
+    (<with|color|red|<with|mode|math|c> oder <with|mode|math|C>?>)
   </theorem>
 </body>
 
@@ -497,13 +502,14 @@
 <\references>
   <\collection>
     <associate|auto-1|<tuple|<uninit>|2>>
+    <associate|auto-10|<tuple|2.3|5>>
     <associate|auto-2|<tuple|1|2>>
     <associate|auto-3|<tuple|1.1|2>>
     <associate|auto-4|<tuple|1.2|3>>
     <associate|auto-5|<tuple|1.3|3>>
     <associate|auto-6|<tuple|2|4>>
     <associate|auto-7|<tuple|2.1|4>>
-    <associate|auto-8|<tuple|2.1|5>>
+    <associate|auto-8|<tuple|2.1|4>>
     <associate|auto-9|<tuple|2.2|5>>
     <associate|subsec:fd-model-probelm|<tuple|1.1|?>>
     <associate|subsec:fd-model-problem|<tuple|1.1|2>>
@@ -513,9 +519,11 @@
 <\auxiliary>
   <\collection>
     <\associate|figure>
-      <tuple|normal|A uniform grid on <with|mode|<quote|math>|(0,1)<rsup|2>>.|<pageref|auto-8>>
+      <tuple|normal|The triangle transformation |<pageref|auto-8>>
 
-      <tuple|normal|Red refinement|<pageref|auto-9>>
+      <tuple|normal|A uniform grid on <with|mode|<quote|math>|(0,1)<rsup|2>>.|<pageref|auto-9>>
+
+      <tuple|normal|Red refinement|<pageref|auto-10>>
     </associate>
     <\associate|toc>
       <vspace*|1fn><with|font-series|<quote|bold>|math-font-series|<quote|bold>|Table
