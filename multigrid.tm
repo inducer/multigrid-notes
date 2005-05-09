@@ -660,6 +660,226 @@
 
     \;
   </proof>
+
+  <subsection|Implementation of the two-level method>
+
+  <\eqnarray*>
+    <tformat|<table|<row|<cell|A<rsub|H>>|<cell|:>|<cell|V<rsub|H>\<rightarrow\>V<rsub|H>>>|<row|<cell|>|<cell|>|<cell|(A<rsub|H>v<rsub|H>,w<rsub|H>)=a(v<rsub|H>,w<rsub|H>)>>|<row|<cell|\<b-A\><rsub|H>>|<cell|\<assign\>>|<cell|(a(\<varphi\><rsub|z><rsup|H>,\<varphi\><rsub|y><rsup|H>))<rsub|z,y\<in\>\<cal-N\><rsub|H>>\<in\>\<bbb-R\><rsup|N<rsub|H>\<times\>N<rsub|H>><with|mode|text|
+    with >N<rsub|H>:=\|\<cal-N\><rsub|H>\|>>|<row|<cell|>|<cell|>|<cell|\<b-v\><rsub|H><rsup|T>\<b-A\><rsub|H>\<b-w\><rsub|H>=a(v<rsub|H>,w<rsub|H>)>>|<row|<cell|<with|mode|text|for
+    >\<b-v\><rsub|H>>|<cell|=>|<cell|<big|sum>\<b-v\><rsub|H>[z]\<varphi\><rsub|z><rsup|H>\<Leftrightarrow\>\<b-v\><rsub|H>=(v<rsub|H>(z))<rsub|z\<in\>\<cal-N\><rsub|H>>>>|<row|<cell|\<b-A\><rsub|h>>|<cell|\<in\>>|<cell|\<bbb-R\><rsup|N<rsub|h>\<times\>N<rsub|h>>>>|<row|<cell|\<b-v\><rsub|H>>|<cell|\<in\>>|<cell|V<rsub|H>\<subset\>V<rsub|h>>>|<row|<cell|\<b-v\><rsub|h>>|<cell|\<assign\>>|<cell|(v<rsub|H>(z))<rsub|z\<in\>\<cal-N\><rsub|h>>>>|<row|<cell|>|<cell|>|<cell|\<Rightarrow\>\<b-v\><rsub|n>(z)=<frac|1|2><left|(>\<b-v\><rsub|h>(x)+\<b-v\><rsub|h>(y)<right|)>>>|<row|<cell|\<b-v\><rsub|h>>|<cell|=>|<cell|\<b-I\><rsub|h><with|mode|text|
+    with >\<b-I\><rsub|h>\<in\>\<bbb-R\><rsup|N<rsub|h>\<times\>N<rsub|H>>>>>>
+  </eqnarray*>
+
+  <with|color|red|Bild 1>
+
+  <\eqnarray*>
+    <tformat|<table|<row|<cell|A<rsub|h>u<rsub|h>=f<rsub|h>>|<cell|\<Leftrightarrow\>>|<cell|<ip|A<rsub|h>u<rsub|h>|\<varphi\><rsub|z><rsup|h>>=<ip|f<rsub|h>|\<varphi\><rsub|z><rsup|h>><space|1fn>\<forall\>z\<in\>\<cal-N\><rsub|h>>>|<row|<cell|>|<cell|\<Leftrightarrow\>>|<cell|\<b-A\><rsub|h>\<b-u\><rsub|h>=\<b-f\><rsub|h><with|mode|text|
+    with >\<b-f\><rsub|h>=(<ip|f<rsub|h>|\<varphi\><rsub|h><rsup|z>>)<rsub|z\<in\>\<cal-N\><rsub|h>>>>>>
+  </eqnarray*>
+
+  Within finite element context,
+
+  <\eqnarray*>
+    <tformat|<table|<row|<cell|u<rsub|h><rsup|k-1/2>>|<cell|=>|<cell|u<rsub|h><rsup|k-1>+\<theta\><rsub|h>(f<rsub|h>-A<rsub|h>u<rsub|h><rsup|k-1>)>>|<row|<cell|<with|mode|text|solve
+    >a(c<rsub|H>,\<varphi\><rsub|z><rsup|H>)>|<cell|=>|<cell|<ip|f<rsub|h>|\<varphi\><rsub|z><rsup|H>>-a(u<rsup|k-1/2><rsub|h>,\<varphi\><rsub|z><rsup|H>)>>|<row|<cell|<ip|A<rsub|H>c<rsub|H>|\<varphi\><rsub|z><rsup|H>>>|<cell|=>|<cell|<ip|f<rsub|h>-A<rsub|h>u<rsup|k-1/2><rsub|h>|\<varphi\><rsub|z><rsup|H>>.>>>>
+  </eqnarray*>
+
+  Within vector context,
+
+  <\eqnarray*>
+    <tformat|<table|<row|<cell|\<b-u\><rsub|h><rsup|k-1/2>>|<cell|=>|<cell|\<theta\><rsub|h>(\<b-f\><rsub|h>-\<b-A\><rsub|h>\<b-u\><rsub|h><rsup|k-1>)>>|<row|<cell|(\<b-A\><rsub|H>\<b-c\><rsub|H>)<rsup|T>\<b-v\><rsub|H>>|<cell|=>|<cell|(\<b-f\><rsub|h>-\<b-A\><rsub|h>\<b-u\><rsub|h><rsup|k-1/2>)(\<b-I\><rsub|h>\<b-v\><rsub|H>)>>|<row|<cell|\<Rightarrow\>\<b-v\><rsup|T><rsub|H>\<b-A\><rsub|H>\<b-c\><rsub|H>>|<cell|=>|<cell|\<b-v\><rsub|H><rsup|T>\<b-I\><rsub|h><rsup|T>(\<b-f\><rsub|h>-\<b-A\><rsub|h>\<b-u\><rsub|h><rsup|k-1/2>)>>|<row|<cell|\<Rightarrow\>\<b-A\><rsub|H>\<b-c\><rsub|H>>|<cell|=>|<cell|\<b-I\><rsub|h><rsup|T>(\<b-f\><rsub|h>-\<b-A\><rsub|h>\<b-u\><rsub|h><rsup|k-1/2>).>>>>
+  </eqnarray*>
+
+  In particular,
+
+  <\eqnarray*>
+    <tformat|<table|<row|<cell|<ip|A<rsub|h>v<rsub|H>|w<rsub|H>>>|<cell|=>|<cell|<ip|A<rsub|H>v<rsub|H>|w<rsub|H>>>>|<row|<cell|\<Leftrightarrow\>(\<b-A\><rsub|h>\<b-I\><rsub|h>\<b-v\><rsub|H>)<rsup|T>(\<b-I\>\<b-w\><rsub|H>)>|<cell|=>|<cell|(\<b-A\><rsub|H>\<b-v\><rsub|H>)<rsup|T>\<b-w\><rsub|H>>>|<row|<cell|(\<b-v\><rsub|H>)<rsup|T>\<b-I\><rsub|h><rsup|T>>|<cell|=>|<cell|\<b-A\><rsub|h>\<b-I\><rsub|h>\<b-w\><rsub|H>>>|<row|<cell|\<Rightarrow\>\<b-A\><rsub|H>>|<cell|=>|<cell|\<b-I\><rsub|h><rsup|T>\<b-A\><rsub|h>\<b-I\><rsub|h><with|mode|text|
+    (called the <em|Galerkin product>)>.>>>>
+  </eqnarray*>
+
+  <section|Classical two-level analysis>
+
+  Let <with|mode|math|H<rsub|0>\<supset\>H<rsub|1>\<supset\>H<rsub|2>> be a
+  sequence of Hilbert spaces with norms <with|mode|math|<l2norm|\<cdot\>><rsub|m>>.
+  Consider a bilinear form
+
+  <\eqnarray*>
+    <tformat|<table|<row|<cell|a>|<cell|:>|<cell|H<rsub|1>\<times\>H<rsub|1>\<rightarrow\>\<bbb-R\>>>|<row|<cell|<with|mode|text|which
+    is continuous >a(v,w)>|<cell|\<leqslant\>>|<cell|C<rsub|1><l2norm|v><rsub|1><l2norm|w><rsub|1>>>|<row|<cell|<with|mode|text|and
+    elliptic >a(v,v)>|<cell|\<geqslant\>>|<cell|C<rsub|0><l2norm|v><rsub|1><rsup|2>.>>>>
+  </eqnarray*>
+
+  If <with|mode|math|a(\<cdot\>,\<cdot\>)> is symmetric, set
+  <with|mode|math|<enorm|\<cdot\>>=<sqrt|a(v,v)>>. We assume full regularity:
+  <with|mode|math|f\<in\>H<rsub|0>> and <with|mode|math|u\<in\>H<rsub|1>>
+  with <with|mode|math|a(v,u)=<ip|f|v><rsub|0>> for all
+  <with|mode|math|v\<in\>H<rsub|1>><with|mode|math|\<Rightarrow\>><with|mode|math|u\<in\>H<rsub|2>>
+  and <with|mode|math|<l2norm|u><rsub|2>\<leqslant\>C<rsub|2><l2norm|f><rsub|0>>.
+  (<with|color|red|Was bedeutet der Spaÿ?>)
+
+  Because of this assumption of full regularity, multigrid may not be a great
+  idea for non-smooth problems, e.g. hyperbolic equations.
+
+  <\example>
+    <with|mode|math|H<rsub|0>\<assign\>L<rsup|2>(0,1)>,
+    <with|mode|math|H<rsub|1>\<assign\>{v\<in\>H<rsub|0>:v<rprime|'>\<in\>L<rsup|2>(0,1),v(0)=v(1)=0}>,
+    <with|mode|math|H<rsub|2>\<assign\>{v\<in\>H<rsub|1>:v<rprime|''>\<in\>L<rsup|2>(0,1)}>.
+
+    <\equation*>
+      a(v,w)\<assign\><big|int><rsub|0><rsup|1>v<rprime|'>w<rprime|'>d*x=-<big|int><rsub|0><rsup|1>v<rprime|''>w*d*x
+    </equation*>
+
+    For norms, use
+
+    <\eqnarray*>
+      <tformat|<table|<row|<cell|<l2norm|v><rsub|0>>|<cell|\<assign\>>|<cell|<sqrt|<big|int>v<rsup|2>d*x>,>>|<row|<cell|<l2norm|v><rsub|1>>|<cell|=>|<cell|<l2norm|v<rprime|'>><rsub|0>,>>|<row|<cell|<l2norm|v><rsub|2>>|<cell|=>|<cell|<l2norm|v<rprime|''>><rsub|0>.>>>>
+    </eqnarray*>
+
+    Poincaré-Friedrichs says that <with|mode|math|<l2norm|\<cdot\>><rsub|1>>
+    is a norm.
+
+    <\equation*>
+      a(u,v)=<ip|f|v>
+    </equation*>
+
+    Then <with|mode|math|<l2norm|u<rprime|''>><rsub|0>=<l2norm|u><rsub|2>\<leqslant\><l2norm|f><rsub|0>>,
+    and, really, <with|mode|math|C<rsub|0>=C<rsub|1>=C<rsub|2>=1>.
+  </example>
+
+  <\example>
+    <with|mode|math|\<Omega\>\<in\>\<bbb-R\><rsup|d>> is our domain.
+
+    <\eqnarray*>
+      <tformat|<table|<row|<cell|H<rsub|0>>|<cell|\<assign\>>|<cell|L<rsup|2>(\<Omega\>)>>|<row|<cell|H<rsub|1>>|<cell|\<assign\>>|<cell|{v\<in\>H<rsub|0>:\<nabla\>v\<in\>L<rsup|2>(\<Omega\>),v\|<rsub|\<Gamma\>>=0}<with|mode|text|
+      with >\<Gamma\>\<subset\>\<partial\>\<Omega\>,
+      vol<rsub|d-1>(\<Gamma\>)\<gtr\>0>>|<row|<cell|H<rsub|2>>|<cell|\<assign\>>|<cell|{v\<in\>H<rsub|1>:D<rsub|2>v\<in\>L<rsup|2>(\<Omega\>)<rsup|d\<times\>d>}>>>>
+    </eqnarray*>
+
+    Then
+
+    <\equation*>
+      a(v,w)=<big|int><rsub|\<Omega\>><left|[>(K(x)\<nabla\>v(x))\<cdot\>\<nabla\>w(x)+c(x)\<cdot\>\<nabla\>v(x)w(x)+r(x)v(x)w(x)<right|]>dx
+    </equation*>
+
+    where
+
+    <\eqnarray*>
+      <tformat|<table|<row|<cell|K>|<cell|\<in\>>|<cell|L<rsup|\<infty\>>(\<Omega\>)<rsup|d\<times\>d><with|mode|text|
+      with >\<xi\><rsup|T>K(x)\<xi\>\<geqslant\>k<rsub|0>\|\<xi\>\|<rsup|2>,
+      k<rsub|0>\<gtr\>0<space|1fn>(\<xi\>\<in\>\<bbb-R\><rsup|d>),>>|<row|<cell|c>|<cell|\<in\>>|<cell|L<rsup|\<infty\>>(\<Omega\>)<rsup|d><with|mode|text|
+      with >\<nabla\>\<cdot\>c=div*c\<in\>L<rsup|\<infty\>>(\<Omega\>)<with|mode|text|
+      almost everywhere in <with|mode|math|\<Omega\>>>,>>|<row|<cell|r>|<cell|\<in\>>|<cell|L<rsup|\<infty\>>(\<Omega\>)<with|mode|text|
+      with >r(x)-1/2div*c(x)\<geqslant\>r<rsub|0>\<geqslant\>0<with|mode|text|
+      almost everywhere in <with|mode|math|\<Omega\>>>.>>>>
+    </eqnarray*>
+
+    Our previous special case was <with|mode|math|K=id>,
+    <with|mode|math|r=0>, <with|mode|math|c=0>, with
+    <with|mode|math|<enorm|v>=<l2norm|\<nabla\>v>> a norm.
+
+    The Poincaré inequality gives
+
+    <\equation*>
+      <l2norm|v><rsub|0>\<leqslant\>C<rsub|p><l2norm|\<nabla\>v><rsub|0><with|mode|text|
+      with >C<rsub|p><with|mode|text| dependent on >\<Gamma\>.
+    </equation*>
+
+    We obtain
+
+    <\equation*>
+      <l2norm|\<nabla\>v>=<enorm|v>\<geqslant\>(1+C<rsub|p><rsup|2>)<rsup|-1/2><l2norm|v><rsub|1>,
+    </equation*>
+
+    using
+
+    <\equation*>
+      <l2norm|v><rsub|1>=<sqrt|<l2norm|v><rsub|0><rsup|2>+<l2norm|\<nabla\>v><rsup|2><rsub|0>>.
+    </equation*>
+
+    In our special case of <with|mode|math|K=id>, <with|mode|math|r=0>,
+    <with|mode|math|c=0> and <with|mode|math|\<Omega\>> convex,
+
+    <\equation*>
+      <l2norm|D<rsup|2>u><rsub|0>\<leqslant\><wide*|<l2norm|\<Delta\>u><rsub|0>|\<wide-underbrace\>><rsub|=tr
+      D<rsup|2>u>\<Rightarrow\><l2norm|><rsub|2>\<leqslant\>C<rsub|2><l2norm|f><rsub|0>.
+    </equation*>
+  </example>
+
+  <\example>
+    <with|mode|math|\<Omega\>\<in\>\<bbb-R\><rsup|d>> is our domain.
+
+    <\eqnarray*>
+      <tformat|<table|<row|<cell|H<rsub|0>>|<cell|\<assign\>>|<cell|L<rsup|2>(\<Omega\>)<rsup|d>>>|<row|<cell|H<rsub|1>>|<cell|\<assign\>>|<cell|{v\<in\>H<rsub|0>:D*v\<in\>L<rsup|2>(\<Omega\>),v\|<rsub|\<Gamma\>>=0}<with|mode|text|
+      with >\<Gamma\>\<subset\>\<partial\>\<Omega\>,
+      vol<rsub|d-1>(\<Gamma\>)\<gtr\>0>>|<row|<cell|H<rsub|2>>|<cell|\<assign\>>|<cell|{v\<in\>H<rsub|1>:D<rsub|2>v<rsub|j>\<in\>L<rsup|2>(\<Omega\>)<rsup|d\<times\>d>}>>>>
+    </eqnarray*>
+
+    <with|mode|math|G,F\<in\>\<bbb-R\><rsup|d\<times\>d>>,
+    <with|mode|math|sym(F)=1/2(F+F<rsup|T>)>,
+    <with|mode|math|F:G=<big|sum>F<rsub|i,j>G<rsub|i,j>>
+
+    <\equation*>
+      a(v,w)=<big|int><rsub|\<Omega\>>(2\<mu\>*sym*\<nabla\>v:sym*\<nabla\>w+\<lambda\>div*v*div*w)d*x
+    </equation*>
+
+    Korn's inequality gives
+
+    <\equation*>
+      a(v,v)\<geqslant\>2\<mu\><l2norm|sym*\<nabla\>v>\<geqslant\>2\<mu\>C<rsub|K><l2norm|\<nabla\>v>
+    </equation*>
+
+    with <with|mode|math|\<lambda\>\<geqslant\>0>,
+    <with|mode|math|\<mu\>\<gtr\>0>.
+  </example>
+
+  <\lemma>
+    <\equation*>
+      <l2norm|(id-P<rsub|H>)(id-\<theta\><rsub|h>A<rsub|h>)<rsup|m>><rsub|0>\<leqslant\>C,
+    </equation*>
+
+    if
+
+    <\enumerate-alpha>
+      <item><with|mode|math|<l2norm|(id-P<rsub|H>)v<rsub|h>><rsub|0>\<leqslant\><wide|C|~><rsub|h><l2norm|A<rsub|h>v<rsub|h>><rsub|0>>
+      for <with|mode|math|v<rsub|h>\<in\>V<rsub|h>>, <em|(approximation
+      property)>
+
+      <item><with|mode|math|<wide|C|~><rsub|h><l2norm|A<rsub|h>(id-\<theta\><rsub|h>A<rsub|h>)e<rsub|h>>\<leqslant\>C<l2norm|e<rsub|h>>>
+      for <with|mode|math|e<rsub|h>\<in\>V<rsub|h>>. <em|(smoothing
+      property)>
+    </enumerate-alpha>
+  </lemma>
+
+  <\proof>
+    <with|mode|math|v<rsub|h>=(id-\<theta\><rsub|h>A<rsub|h>)<rsup|m>e<rsub|h>>
+    and <with|mode|math|<l2norm|(id-P<rsub|H>)(id-Q<rsub|H>A<rsub|h>)<rsup|m>>=sup<rsub|<l2norm|e<rsub|h>><rsub|0>=1><l2norm|(id-P<rsub|H>)(id-Q<rsub|H>A<rsub|h>)<rsup|m>e<rsub|h>><rsub|0>>.
+  </proof>
+
+  <\theorem>
+    <with|mode|math|V<rsub|H>\<subset\>V<rsub|h>\<subset\>H<rsub|1>> be
+    conforming finite element spaces with mesh size <with|mode|math|h>,
+    <with|mode|math|H=2h> and
+
+    <\enumerate-alpha>
+      <item><with|mode|math|inf<rsub|v<rsub|H>\<in\>V<rsub|H>><l2norm|v-v<rsub|H>>\<leqslant\>C<rsub|Q>H<l2norm|v><rsub|2>>
+      for <with|mode|math|v\<in\>H<rsub|2>>, (<with|color|red|sup??>)
+
+      <item><with|mode|math|<l2norm|v<rsub|h>><rsub|1>\<leqslant\>C<rsub|I>h<rsup|-1><l2norm|v<rsub|h>><rsub|0>>
+      for <with|mode|math|v<rsub|h>\<in\>V<rsub|h>>.
+    </enumerate-alpha>
+
+    Then, the <em|approximation property>
+
+    <\equation*>
+      <l2norm|v<rsub|h>-P<rsub|H>v<rsub|h>>\<leqslant\>C<rsub|A>\<lambda\><rsub|h><rsup|-1><l2norm|A<rsub|h>v<rsub|h>><rsub|0>
+    </equation*>
+
+    for all <with|mode|math|v<rsub|h>\<in\>V<rsub|h>> holds with
+
+    <\equation*>
+      \<lambda\><rsub|n>=<l2norm|A<rsub|h>><rsub|0>=sup<rsub|<l2norm|v<rsub|h>>=1><l2norm|A*v<rsub|h>><rsub|0>.
+    </equation*>
+  </theorem>
 </body>
 
 <\initial>
@@ -672,6 +892,8 @@
   <\collection>
     <associate|auto-1|<tuple|<uninit>|2>>
     <associate|auto-10|<tuple|2.3|5>>
+    <associate|auto-11|<tuple|2.2|?>>
+    <associate|auto-12|<tuple|3|?>>
     <associate|auto-2|<tuple|1|2>>
     <associate|auto-3|<tuple|1.1|2>>
     <associate|auto-4|<tuple|1.2|3>>
@@ -722,6 +944,14 @@
       <with|par-left|<quote|1.5fn>|2.1<space|2spc>The model problem
       <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
       <pageref|auto-7>>
+
+      <with|par-left|<quote|1.5fn>|2.2<space|2spc>Implementation of the
+      two-level method <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
+      <pageref|auto-11>>
+
+      3<space|2spc>Classical two-level analysis
+      <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
+      <pageref|auto-12>
     </associate>
   </collection>
 </auxiliary>
