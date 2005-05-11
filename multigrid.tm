@@ -1,4 +1,4 @@
-<TeXmacs|1.0.4>
+<TeXmacs|1.0.5>
 
 <style|<tuple|book|number-long-article>>
 
@@ -13,29 +13,37 @@
   <\table-of-contents|toc>
     <vspace*|1fn><with|font-series|bold|math-font-series|bold|Table of
     contents> <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
-    <pageref|auto-1><vspace|0.5fn>
+    <no-break><pageref|auto-1><vspace|0.5fn>
 
     1<space|2spc>Introduction <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
-    <pageref|auto-2>
+    <no-break><pageref|auto-2>
 
     <with|par-left|1.5fn|1.1<space|2spc>The model problem
     <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
-    <pageref|auto-3>>
+    <no-break><pageref|auto-3>>
 
     <with|par-left|1.5fn|1.2<space|2spc>Iterative Methods for Linear Systems
     <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
-    <pageref|auto-4>>
+    <no-break><pageref|auto-4>>
 
     <with|par-left|1.5fn|1.3<space|2spc>The Multigrid Idea
     <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
-    <pageref|auto-5>>
+    <no-break><pageref|auto-5>>
 
     2<space|2spc>A two-level method <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
-    <pageref|auto-6>
+    <no-break><pageref|auto-6>
 
     <with|par-left|1.5fn|2.1<space|2spc>The model problem
     <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
-    <pageref|auto-7>>
+    <no-break><pageref|auto-7>>
+
+    <with|par-left|1.5fn|2.2<space|2spc>Implementation of the two-level
+    method <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
+    <no-break><pageref|auto-11>>
+
+    3<space|2spc>Classical two-level analysis
+    <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
+    <no-break><pageref|auto-12>
   </table-of-contents>
 
   <section|Introduction>
@@ -313,7 +321,7 @@
     Lax-Milgram ensures the existence of <with|mode|math|A<rsup|-1>>.
   </proof>
 
-  <\example>
+  <\example*>
     <with|mode|math|\<Omega\>=(0,1)<rsup|2>>, <with|mode|math|h=1/n>. Then
     <with|mode|math|\<b-A\>> is exactly the same as in Section
     <reference|subsec:fd-model-problem>.
@@ -323,7 +331,7 @@
 
     <big-figure|<postscript|uniform-grid-unit-square.fig|4cm|||||>|A uniform
     grid on <with|mode|math|(0,1)<rsup|2>>.>
-  </example>
+  </example*>
 
   We define <with|mode|math|A<rsub|h>:V<rsub|h>\<rightarrow\>V<rsub|h>> to be
   <with|mode|math|(A<rsub|h>v<rsub|h>,w<rsub|h>)=a(v<rsub|h>,w<rsub|h>)> for
@@ -402,15 +410,15 @@
     <\eqnarray*>
       <tformat|<table|<row|<cell|Q<rsub|H>:L<rsup|2>(\<Omega\>)\<rightarrow\>V<rsub|H><with|mode|text|
       be the <with|mode|math|L<rsup|2>>-projection, i.e.
-      >>|<cell|>|<cell|<ip|Q<rsub|H>v|w<rsub|H>>=<ip|v|w<rsub|H>>,>>|<row|<cell|P<rsub|H>:H<rsup|1><rsub|<with|color|red|0>>(\<Omega\>)\<rightarrow\>V<rsub|H><with|mode|text|
+      >>|<cell|>|<cell|<ip|Q<rsub|H>v|w<rsub|H>>=<ip|v|w<rsub|H>>,>>|<row|<cell|P<rsub|H>:H<rsup|1><rsub|0>(\<Omega\>)\<rightarrow\>V<rsub|H><with|mode|text|
       be the Galerkin projection, i.e. >>|<cell|>|<cell|a(P<rsub|H>v,w<rsub|H>)=a(v,w<rsub|H>)>>>>
     </eqnarray*>
 
     with <with|mode|math|v\<in\>L<rsup|2>(\<Omega\>)\<supset\>V<rsub|h>>,
     <with|mode|math|w<rsub|H>\<in\>V<rsub|H>>,
-    <with|mode|math|v\<in\>H<rsup|1>(\<Omega\>)\<supset\>V<rsub|h>>, for all
-    <with|mode|math|w<rsub|H>\<in\>V<rsub|H>>. Then, we have for the error
-    propagation of the two-level method
+    <with|mode|math|v\<in\>H<rsup|1><rsub|0>(\<Omega\>)\<supset\>V<rsub|h>>,
+    for all <with|mode|math|w<rsub|H>\<in\>V<rsub|H>>. Then, we have for the
+    error propagation of the two-level method
 
     <\equation*>
       e<rsup|k><rsub|h>=<wide*|u<rsup|k><rsub|h>|\<wide-underbrace\>><rsub|=A<rsup|-1><rsub|h>f<rsub|h>>-u<rsub|h>=(id-P<rsub|H>)(id-\<theta\><rsub|h>A<rsub|h>)e<rsup|k-1><rsub|h>.
@@ -491,7 +499,18 @@
     i.e. <with|mode|math|<enorm|u<rsup|k><rsub|h>-u<rsub|h>>\<leqslant\>(1-1/C)<rsup|k/2><enorm|u<rsub|h><rsup|0>-u<rsub|h>>>.
   </theorem>
 
+  1) and 2) of Theorem <reference|the:twolevel> imply
+
+  <\equation*>
+    <l2norm|v<rsub|h>-Q<rsub|H>v<rsub|h>><rsup|2>\<leqslant\>C<l2norm|v<rsub|h>><rsup|2>\<Rightarrow\>C\<geqslant\>1.
+  </equation*>
+
+  The following two lemmata provide the (seemingly strong) assumptions of
+  this theorem.
+
   <\lemma>
+    <label|lem:2step-energy-estimate>
+
     <\enumerate-alpha>
       <item><with|mode|math|<l2norm|\<nabla\><wide|v|^>><rsub|<wide|\<Omega\>|^>>\<leqslant\><sqrt|48><l2norm|<wide|v|^>><rsub|<wide|\<Omega\>|^>>>
       for linear <with|mode|math|<wide|v|^>(x)=(1-<wide|x|^><rsub|1>-<wide|x|^><rsub|2>)v<rsub|0>+<wide|x|^><rsub|1>v<rsub|1>+<wide|x|^><rsub|2>v<rsub|2>>.
@@ -518,38 +537,38 @@
       and for <with|mode|math|P\<in\>\<bbb-P\><rsub|2>>
 
       <\equation*>
-        <l2norm|P><rsub|<wide|\<Omega\>|^>>=<frac|1|2>\<cdot\><frac|1|3><left|(>P<left|(><frac|1|2>(<wide|z<rsub|0>|^>+<wide|z<rsub|1>|^>)<right|)>+p<left|(><frac|1|2>(<wide|z<rsub|1>|^>+<wide|z<rsub|2>|^>)<right|)>+p<left|(><frac|1|2>(<wide|z<rsub|0>|^>+<wide|z<rsub|2>|^>)<right|)><right|)>
+        <l2norm|P><rsub|<wide|\<Omega\>|^>>=<frac|1|2>\<cdot\><frac|1|3><left|(>P<left|(><frac|1|2>(<wide|z<rsub|0>|^>+<wide|z<rsub|1>|^>)<right|)>+P<left|(><frac|1|2>(<wide|z<rsub|1>|^>+<wide|z<rsub|2>|^>)<right|)>+P<left|(><frac|1|2>(<wide|z<rsub|0>|^>+<wide|z<rsub|2>|^>)<right|)><right|)>
       </equation*>
 
       and
 
       <\equation*>
-        (a+b)<rsup|2>\<leqslant\>2a<rsup|2>+2b<rsup|2>,
+        <frac|1|2>(a+b)<rsup|2>\<leqslant\>a<rsup|2>+b<rsup|2>,
       </equation*>
 
       we compute
 
       <\eqnarray*>
-        <tformat|<table|<row|<cell|<l2norm|<wide|v|^><rsub|h>><rsub|<wide|\<Omega\>|^>><rsup|2>>|<cell|=>|<cell|<frac|1|2>(v<rsub|1>-v<rsub|0>)<rsup|2>+<frac|1|2>(v<rsub|2>-v<rsub|0>)<rsup|2>>>|<row|<cell|>|<cell|=>|<cell|<frac|1|2>(v<rsub|1>-v<rsub|2>+v<rsub|2>-v<rsub|0>)<rsup|2>+<frac|1|2>(v<rsub|2>-v<rsub|1>+v<rsub|1>-v<rsub|0>)<rsup|2>>>|<row|<cell|>|<cell|\<leqslant\>>|<cell|(v<rsub|1>+v<rsub|2>)<rsup|2>+(v<rsub|2>+v<rsub|1>)<rsup|2>+(v<rsub|2>+v<rsub|1>)<rsup|2>+(v<rsub|1>+v<rsub|0>)<rsup|2>>>|<row|<cell|>|<cell|\<leqslant\>>|<cell|2\<cdot\>4\<cdot\>6\<cdot\><frac|1|6><left|(>(v<rsub|1>+v<rsub|2>)<rsup|2>+(v<rsub|2>+v<rsub|1>)<rsup|2>+(v<rsub|1>+v<rsub|0>)<rsup|2><right|)>>>|<row|<cell|>|<cell|=>|<cell|48<l2norm|<wide|v|^><rsub|h>><rsub|<wide|\<Omega\>|^>>.>>>>
+        <tformat|<table|<row|<cell|<l2norm|\<nabla\><wide|v|^><rsub|h>><rsub|<wide|\<Omega\>|^>><rsup|2>>|<cell|=>|<cell|<frac|1|2>(v<rsub|1>-v<rsub|0>)<rsup|2>+<frac|1|2>(v<rsub|2>-v<rsub|0>)<rsup|2>>>|<row|<cell|>|<cell|=>|<cell|<frac|1|2>(v<rsub|1>-v<rsub|2>+v<rsub|2>-v<rsub|0>)<rsup|2>+<frac|1|2>(v<rsub|2>-v<rsub|1>+v<rsub|1>-v<rsub|0>)<rsup|2>>>|<row|<cell|>|<cell|\<leqslant\>>|<cell|(v<rsub|1>-v<rsub|2>)<rsup|2>+(v<rsub|2>-v<rsub|0>)<rsup|2>+(v<rsub|2>-v<rsub|1>)<rsup|2>+(v<rsub|1>-v<rsub|0>)<rsup|2>>>|<row|<cell|>|<cell|=>|<cell|2(v<rsub|2>-v<rsub|1>)<rsup|2>+(v<rsub|2>-v<rsub|0>)<rsup|2>+(v<rsub|1>-v<rsub|0>)<rsup|2>>>|<row|<cell|>|<cell|\<leqslant\>>|<cell|2<left|[>(v<rsub|2>-v<rsub|1>)<rsup|2>+(v<rsub|2>-v<rsub|0>)<rsup|2>+(v<rsub|1>-v<rsub|0>)<rsup|2><right|]>>>|<row|<cell|>|<cell|<with|color|red|<above|\<leqslant\>|?>>>|<cell|2\<cdot\>4\<cdot\>6\<cdot\><frac|1|6>\<cdot\><frac|1|4><left|(>(v<rsub|1>+v<rsub|2>)<rsup|2>+(v<rsub|2>+v<rsub|1>)<rsup|2>+(v<rsub|1>+v<rsub|0>)<rsup|2><right|)>>>|<row|<cell|>|<cell|=>|<cell|48<l2norm|<wide|v|^><rsub|h>><rsub|<wide|\<Omega\>|^>><rsup|2>.>>>>
       </eqnarray*>
 
       <item>On the transformed triangle, with
-      <with|mode|math|<wide|x|^>=T<rsub|C><wide|x|^>>.
+      <with|mode|math|x=T<rsub|C>(<wide|x|^>)> and considering
+      <with|mode|math|D*v(x)=\<nabla\>v(x)<rsup|T>>,
 
       <\eqnarray*>
-        <tformat|<table|<row|<cell|<wide|v|^>(<wide|x|^>)>|<cell|=>|<cell|v<rsub|h>(x)>>|<row|<cell|\<Rightarrow\>D<wide|v|^>(<wide|x|^>)>|<cell|=>|<cell|D(v\<circ\>T(<wide|x|^>))=D*v(x)D*T<rsub|C>=<with|color|red|\<ldots\>XXXX!>>>>>
+        <tformat|<table|<row|<cell|<wide|v|^>(<wide|x|^>)>|<cell|=>|<cell|v<rsub|h>(x)>>|<row|<cell|\<Rightarrow\>D<wide|v|^>(<wide|x|^>)>|<cell|=>|<cell|D(v\<circ\>T<rsub|C>(<wide|x|^>))=D*v(x)D*T<rsub|C>>>|<row|<cell|\<Rightarrow\>\<nabla\><wide|v|^>(x)>|<cell|=>|<cell|D<wide|v|^>(<wide|x|^>)<rsup|T>=(D*T<rsub|C>)<rsup|T>\<nabla\>v(x).>>>>
       </eqnarray*>
 
       <\eqnarray*>
-        <tformat|<table|<row|<cell|<l2norm|\<nabla\>v><rsub|\<Omega\><rsub|C>><rsup|2>=<big|int><rsub|\<Omega\><rsub|C>>\|\<nabla\>v\|<rsup|2>d*x>|<cell|=>|<cell|<big|int><rsub|<wide|\<Omega\>|^>>\|det*J<rsub|C>\|\|\<nabla\>v\<circ\>T\|d*x>>|<row|<cell|>|<cell|=>|<cell|<big|int><rsub|<wide|\<Omega\>|^>>\|det*J<rsub|C>\|\|J<rsub|C><rsup|-T>\<nabla\>v\|<rsup|2>\<leqslant\>\|J<rsub|C><rsup|-T>\|<rsup|2>\|det
-        J<rsub|C>\|<l2norm|<wide|v|^>><rsup|2><rsub|<wide|\<Omega\>|^>>>>|<row|<cell|>|<cell|\<leqslant\>>|<cell|C<rsub|\<Omega\>>h<rsup|-2>\|det
-        J<rsub|C>\|48<l2norm|<wide|v|^>><rsup|2>>>>>
+        <tformat|<table|<row|<cell|<l2norm|\<nabla\>v><rsub|\<Omega\><rsub|C>><rsup|2>=<big|int><rsub|\<Omega\><rsub|C>>\|\<nabla\>v\|<rsup|2>d*x>|<cell|=>|<cell|<big|int><rsub|<wide|\<Omega\>|^>>\|det*J<rsub|C>\|\|\<nabla\>v\<circ\>T\|<rsup|2>d*<wide|x|^>>>|<row|<cell|>|<cell|=>|<cell|<big|int><rsub|<wide|\<Omega\>|^>>\|det*J<rsub|C>\|\|J<rsub|C><rsup|-T>\<nabla\>v\|<rsup|2>d<wide|x|^>>>|<row|<cell|>|<cell|\<leqslant\>>|<cell|\|J<rsub|C><rsup|-T>\|<rsup|2>\|det
+        J<rsub|C>\|<l2norm|\<nabla\><wide|v|^>><rsup|2><rsub|<wide|\<Omega\>|^>>>>|<row|<cell|>|<cell|\<leqslant\>>|<cell|C<rsub|\<Omega\>>h<rsup|-2>48<l2norm|<wide|v|^>><rsup|2><rsub|\<Omega\><rsub|C>>>>>>
       </eqnarray*>
 
       So,
 
       <\equation*>
-        <enorm|v<rsub|h>><rsup|2>=<big|sum><rsub|C\<in\>\<cal-C\><rsub|h>><l2norm|\<nabla\>v<rsub|h>><rsub|\<Omega\><rsub|C>>\<leqslant\>48C<rsub|\<Omega\>><rsup|2>h<rsup|-2><big|sum><l2norm|v<rsub|h>><rsup|2><with|color|red|XXXX?>
+        <enorm|v<rsub|h>><rsup|2>=<big|sum><rsub|C\<in\>\<cal-C\><rsub|h>><l2norm|\<nabla\>v<rsub|h>><rsub|\<Omega\><rsub|C>>\<leqslant\>48C<rsub|\<Omega\>><rsup|2>h<rsup|-2><big|sum><rsub|C\<in\>\<cal-C\><rsub|h>><l2norm|v<rsub|h>><rsup|2><rsub|\<Omega\><rsub|C>>.
       </equation*>
     </enumerate-alpha>
 
@@ -561,10 +580,20 @@
     defined by <with|mode|math|<ip|A<rsub|h>v<rsub|h>|w<rsub|h>>=a(v<rsub|h>,w<rsub|h>)>.
     Then
 
-    <\eqnarray*>
-      <tformat|<table|<row|<cell|<l2norm|A<rsub|h>>>|<cell|=>|<cell|sup<rsub|<l2norm|v<rsub|h>>=1><l2norm|A<rsub|h>v<rsub|h>>\<leqslant\>C<rsub|I>h<rsup|-2>>>|<row|<cell|<l2norm|A<rsub|h>v<rsub|h>>>|<cell|=>|<cell|sup<rsub|<l2norm|w<rsub|h>>=1><ip|A<rsub|h>v<rsub|h>|w<rsub|h>>=sup<rsub|<l2norm|w<rsub|h>>=1>a(v<rsub|h>,w<rsub|h>)>>|<row|<cell|>|<cell|\<leqslant\>>|<cell|sup<rsub|<l2norm|w<rsub|h>>=1><enorm|v<rsub|h>><enorm|w<rsub|h>>>>|<row|<cell|>|<cell|\<leqslant\>>|<cell|sup<rsub|<l2norm|w<rsub|h>>=1>C<rsub|I>h<rsup|-1><l2norm|v<rsub|h>>C<rsub|I>h<rsup|-1><l2norm|w<rsub|h>>=C<rsub|I>h<rsup|-2><l2norm|v<rsub|h>>.>>>>
-    </eqnarray*>
+    <\equation*>
+      <l2norm|A<rsub|h>>=sup<rsub|<l2norm|v<rsub|h>>=1><l2norm|A<rsub|h>v<rsub|h>>\<leqslant\>C<rsub|I>h<rsup|-2>.
+    </equation*>
+
+    \;
   </corollary>
+
+  <\proof>
+    \;
+
+    <\eqnarray*>
+      <tformat|<table|<row|<cell|<l2norm|A<rsub|h>v<rsub|h>>>|<cell|=>|<cell|sup<rsub|<l2norm|w<rsub|h>>=1><ip|A<rsub|h>v<rsub|h>|w<rsub|h>>=sup<rsub|<l2norm|w<rsub|h>>=1>a(v<rsub|h>,w<rsub|h>)>>|<row|<cell|>|<cell|\<leqslant\>>|<cell|sup<rsub|<l2norm|w<rsub|h>>=1><enorm|v<rsub|h>><enorm|w<rsub|h>>>>|<row|<cell|>|<cell|<below|\<leqslant\>|(<with|mode|text|<reference|lem:2step-energy-estimate>)>>>|<cell|sup<rsub|<l2norm|w<rsub|h>>=1>C<rsub|I>h<rsup|-1><l2norm|v<rsub|h>>C<rsub|I>h<rsup|-1><l2norm|w<rsub|h>>=C<rsub|I>h<rsup|-2><l2norm|v<rsub|h>>.>>>>
+    </eqnarray*>
+  </proof>
 
   <\lemma>
     <\enumerate-alpha>
@@ -589,10 +618,11 @@
 
   <\proof>
     <\enumerate-alpha>
-      <item><with|mode|math|w<rsub|i,j>=v<rsub|i,j>-1/2(v<rsub|i>+v<rsub|j>)>
+      <item>Let <with|mode|math|w<rsub|i,j>\<assign\>v<rsub|i,j>-1/2(v<rsub|i>+v<rsub|j>)>.
+      Then
 
       <\eqnarray*>
-        <tformat|<table|<row|<cell|<l2norm|<wide|v|^>-<wide|\<Pi\>|^><wide|v|^>><rsub|<wide|\<Omega\>|^>>>|<cell|=>|<cell|<frac|1|4>*<frac|1|6><left|(><left|(><frac|w<rsub|0,2>|2><right|)><rsup|2>+<left|(><frac|w<rsub|0,2>+w<rsub|0,1>|2><right|)><rsup|2>+<left|(><frac|w<rsub|0,1>|2><right|)><rsup|2><right|)>>>|<row|<cell|>|<cell|\<leqslant\>>|<cell|<frac|1|4><big|sum><rsub|i\<less\>j><left|(><frac|w<rsub|i,j>|2><right|)><rsup|2>\<leqslant\><frac|1|4><big|sum><rsub|i\<less\>j><left|[>(v<rsub|i,j>-v<rsub|i>)<rsup|2>+(v<rsub|i,j>-v<rsub|j>)<rsup|2><right|]><with|color|red|XXX>>>>>
+        <tformat|<table|<row|<cell|<l2norm|<wide|v|^>-<wide|\<Pi\>|^><wide|v|^>><rsub|<wide|\<Omega\>|^>>>|<cell|=>|<cell|<frac|1|4>*<frac|1|6><left|(><left|(><frac|w<rsub|0,2>|2><right|)><rsup|2>+<left|(><frac|w<rsub|0,2>+w<rsub|0,1>|2><right|)><rsup|2>+<left|(><frac|w<rsub|0,1>|2><right|)><rsup|2><right|)>>>|<row|<cell|>|<cell|\<leqslant\>>|<cell|<frac|1|4><big|sum><rsub|i\<less\>j><left|(><frac|w<rsub|i,j>|2><right|)><rsup|2>\<leqslant\><frac|1|4><big|sum><rsub|i\<less\>j><left|[>(v<rsub|i,j>-v<rsub|i>)<rsup|2>+(v<rsub|i,j>-v<rsub|j>)<rsup|2><right|]>>>|<row|<cell|>|<cell|\<leqslant\>>|<cell|3<l2norm|\<nabla\><wide|v|^>><rsup|2>.>>>>
       </eqnarray*>
 
       <item>
@@ -608,7 +638,10 @@
   </proof>
 
   So, <with|mode|math|\<theta\><rsub|h>=h<rsup|2>/C<rsup|2><rsub|I>> and
-  <with|color|red|JETZT HAT DER DIE VERDAMMTEN KONSTANTEN WEGGEWISCHT!>
+  <with|mode|math|C*h<rsup|2>/C<rsup|2><rsub|I>=C<rsup|2><rsub|Q>h<rsup|2>><with|mode|math|\<Rightarrow\>><with|mode|math|C=C<rsup|2><rsub|Q>C<rsup|2><rsub|I>=48\<cdot\>12\<cdot\>C<rsup|4><rsub|\<Omega\>>>.
+  We obtain <with|mode|math|\<theta\><rsub|h>=h<rsup|2>/<sqrt|48C<rsub|\<Omega\>>>>.
+  <with|color|red|Was um alles in der Welt ist <with|mode|math|C<rsub|Q>>?>
+  (s. Wieners 12 unten)
 
   <\proof>
     (of <reference|the:twolevel>) <with|mode|math|e<rsub|h><rsup|k>=(id-P<rsub|H>)(id-\<theta\><rsub|h>A<rsub|h>)e<rsup|k-1><rsub|h>>,\ 
@@ -661,7 +694,7 @@
     \;
   </proof>
 
-  <subsection|Implementation of the two-level method>
+  <subsection|Implementation of the Two-Level Method>
 
   <\eqnarray*>
     <tformat|<table|<row|<cell|A<rsub|H>>|<cell|:>|<cell|V<rsub|H>\<rightarrow\>V<rsub|H>>>|<row|<cell|>|<cell|>|<cell|(A<rsub|H>v<rsub|H>,w<rsub|H>)=a(v<rsub|H>,w<rsub|H>)>>|<row|<cell|\<b-A\><rsub|H>>|<cell|\<assign\>>|<cell|(a(\<varphi\><rsub|z><rsup|H>,\<varphi\><rsub|y><rsup|H>))<rsub|z,y\<in\>\<cal-N\><rsub|H>>\<in\>\<bbb-R\><rsup|N<rsub|H>\<times\>N<rsub|H>><with|mode|text|
@@ -670,7 +703,8 @@
     with >\<b-I\><rsub|h>\<in\>\<bbb-R\><rsup|N<rsub|h>\<times\>N<rsub|H>>>>>>
   </eqnarray*>
 
-  <with|color|red|Bild 1>
+  <big-figure|<postscript|2step-refinement.fig|7cm|||||>|Interpolation to a
+  finer discretization.>
 
   <\eqnarray*>
     <tformat|<table|<row|<cell|A<rsub|h>u<rsub|h>=f<rsub|h>>|<cell|\<Leftrightarrow\>>|<cell|<ip|A<rsub|h>u<rsub|h>|\<varphi\><rsub|z><rsup|h>>=<ip|f<rsub|h>|\<varphi\><rsub|z><rsup|h>><space|1fn>\<forall\>z\<in\>\<cal-N\><rsub|h>>>|<row|<cell|>|<cell|\<Leftrightarrow\>>|<cell|\<b-A\><rsub|h>\<b-u\><rsub|h>=\<b-f\><rsub|h><with|mode|text|
@@ -893,7 +927,8 @@
     <associate|auto-1|<tuple|<uninit>|2>>
     <associate|auto-10|<tuple|2.3|5>>
     <associate|auto-11|<tuple|2.2|?>>
-    <associate|auto-12|<tuple|3|?>>
+    <associate|auto-12|<tuple|2.4|?>>
+    <associate|auto-13|<tuple|3|?>>
     <associate|auto-2|<tuple|1|2>>
     <associate|auto-3|<tuple|1.1|2>>
     <associate|auto-4|<tuple|1.2|3>>
@@ -903,9 +938,10 @@
     <associate|auto-8|<tuple|2.1|4>>
     <associate|auto-9|<tuple|2.2|5>>
     <associate|eq:twolevel-step2|<tuple|2.1|?>>
+    <associate|lem:2step-energy-estimate|<tuple|2.10|?>>
     <associate|subsec:fd-model-probelm|<tuple|1.1|?>>
     <associate|subsec:fd-model-problem|<tuple|1.1|2>>
-    <associate|the:twolevel|<tuple|2.10|?>>
+    <associate|the:twolevel|<tuple|2.9|?>>
   </collection>
 </references>
 
@@ -917,41 +953,43 @@
       <tuple|normal|A uniform grid on <with|mode|<quote|math>|(0,1)<rsup|2>>.|<pageref|auto-9>>
 
       <tuple|normal|Red refinement|<pageref|auto-10>>
+
+      <tuple|normal||<pageref|auto-12>>
     </associate>
     <\associate|toc>
       <vspace*|1fn><with|font-series|<quote|bold>|math-font-series|<quote|bold>|Table
       of contents> <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
-      <pageref|auto-1><vspace|0.5fn>
+      <no-break><pageref|auto-1><vspace|0.5fn>
 
       1<space|2spc>Introduction <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
-      <pageref|auto-2>
+      <no-break><pageref|auto-2>
 
       <with|par-left|<quote|1.5fn>|1.1<space|2spc>The model problem
       <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
-      <pageref|auto-3>>
+      <no-break><pageref|auto-3>>
 
       <with|par-left|<quote|1.5fn>|1.2<space|2spc>Iterative Methods for
       Linear Systems <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
-      <pageref|auto-4>>
+      <no-break><pageref|auto-4>>
 
       <with|par-left|<quote|1.5fn>|1.3<space|2spc>The Multigrid Idea
       <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
-      <pageref|auto-5>>
+      <no-break><pageref|auto-5>>
 
       2<space|2spc>A two-level method <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
-      <pageref|auto-6>
+      <no-break><pageref|auto-6>
 
       <with|par-left|<quote|1.5fn>|2.1<space|2spc>The model problem
       <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
-      <pageref|auto-7>>
+      <no-break><pageref|auto-7>>
 
       <with|par-left|<quote|1.5fn>|2.2<space|2spc>Implementation of the
       two-level method <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
-      <pageref|auto-11>>
+      <no-break><pageref|auto-11>>
 
       3<space|2spc>Classical two-level analysis
       <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
-      <pageref|auto-12>
+      <no-break><pageref|auto-13>
     </associate>
   </collection>
 </auxiliary>
