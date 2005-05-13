@@ -47,11 +47,11 @@
     <no-break><pageref|auto-12>
   </table-of-contents>
 
-  <include|/home/ak/work/multigrid/chapter01.tm>
+  <include|chapter01.tm>
 
-  <include|/home/ak/work/multigrid/chapter02.tm>
+  <include|chapter02.tm>
 
-  <include|/home/ak/work/multigrid/chapter03.tm>
+  <include|chapter03.tm>
 </body>
 
 <\initial>

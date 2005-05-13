@@ -312,7 +312,8 @@
   </equation*>
 
   The following two lemmata provide the (seemingly strong) assumptions of
-  this theorem.
+  this theorem. First, we have the reverse of the Poincaré-Friedrichs
+  inequality in Lemma <reference|lem:2step-energy-estimate> b).
 
   <\lemma>
     <label|lem:2step-energy-estimate>
@@ -343,7 +344,7 @@
       and for <with|mode|math|P\<in\>\<bbb-P\><rsub|2>>
 
       <\equation*>
-        <l2norm|P><rsub|<wide|\<Omega\>|^>>=<frac|1|2>\<cdot\><frac|1|3><left|(>P<left|(><frac|1|2>(<wide|z<rsub|0>|^>+<wide|z<rsub|1>|^>)<right|)>+P<left|(><frac|1|2>(<wide|z<rsub|1>|^>+<wide|z<rsub|2>|^>)<right|)>+P<left|(><frac|1|2>(<wide|z<rsub|0>|^>+<wide|z<rsub|2>|^>)<right|)><right|)>
+        <l2norm|P><rsup|2><rsub|<wide|\<Omega\>|^>>=<frac|1|2>\<cdot\><frac|1|3><left|(>P<rsup|2><left|(><frac|1|2>(<wide|z<rsub|0>|^>+<wide|z<rsub|1>|^>)<right|)>+P<rsup|2><left|(><frac|1|2>(<wide|z<rsub|1>|^>+<wide|z<rsub|2>|^>)<right|)>+P<rsup|2><left|(><frac|1|2>(<wide|z<rsub|0>|^>+<wide|z<rsub|2>|^>)<right|)><right|)>
       </equation*>
 
       and
@@ -355,7 +356,7 @@
       we compute
 
       <\eqnarray*>
-        <tformat|<table|<row|<cell|<l2norm|\<nabla\><wide|v|^><rsub|h>><rsub|<wide|\<Omega\>|^>><rsup|2>>|<cell|=>|<cell|<frac|1|2>(v<rsub|1>-v<rsub|0>)<rsup|2>+<frac|1|2>(v<rsub|2>-v<rsub|0>)<rsup|2>>>|<row|<cell|>|<cell|=>|<cell|<frac|1|2>(v<rsub|1>-v<rsub|2>+v<rsub|2>-v<rsub|0>)<rsup|2>+<frac|1|2>(v<rsub|2>-v<rsub|1>+v<rsub|1>-v<rsub|0>)<rsup|2>>>|<row|<cell|>|<cell|\<leqslant\>>|<cell|(v<rsub|1>-v<rsub|2>)<rsup|2>+(v<rsub|2>-v<rsub|0>)<rsup|2>+(v<rsub|2>-v<rsub|1>)<rsup|2>+(v<rsub|1>-v<rsub|0>)<rsup|2>>>|<row|<cell|>|<cell|\<leqslant\>>|<cell|2\<cdot\>4\<cdot\>6\<cdot\><frac|1|6>\<cdot\><frac|1|4><left|(>(v<rsub|1>+v<rsub|2>)<rsup|2>+(v<rsub|2>+v<rsub|0>)<rsup|2>+(v<rsub|1>+v<rsub|0>)<rsup|2><right|)>>>|<row|<cell|>|<cell|=>|<cell|48<l2norm|<wide|v|^><rsub|h>><rsub|<wide|\<Omega\>|^>><rsup|2>.>>>>
+        <tformat|<cwith|3|6|1|3|cell-valign|c>|<table|<row|<cell|<l2norm|\<nabla\><wide|v|^><rsub|h>><rsub|<wide|\<Omega\>|^>><rsup|2>>|<cell|=>|<cell|<frac|1|2>(v<rsub|1>-v<rsub|0>)<rsup|2>+<frac|1|2>(v<rsub|2>-v<rsub|0>)<rsup|2>>>|<row|<cell|>|<cell|=>|<cell|<frac|1|2>(v<rsub|1>+v<rsub|2>-v<rsub|2>-v<rsub|0>)<rsup|2>+<frac|1|2>(v<rsub|2>+v<rsub|1>+v<rsub|1>-v<rsub|0>)<rsup|2>>>|<row|<cell|>|<cell|\<leqslant\>>|<cell|(v<rsub|1>+v<rsub|2>)<rsup|2>+(v<rsub|2>+v<rsub|0>)<rsup|2>+(v<rsub|2>+v<rsub|1>)<rsup|2>+(v<rsub|1>+v<rsub|0>)<rsup|2>>>|<row|<cell|>|<cell|\<leqslant\>>|<cell|2(v<rsub|1>+v<rsub|2>)<rsup|2>+2(v<rsub|2>+v<rsub|0>)<rsup|2>+2(v<rsub|1>+v<rsub|0>)<rsup|2>>>|<row|<cell|>|<cell|\<leqslant\>>|<cell|2\<cdot\>(4\<cdot\>6\<cdot\><frac|1|6>\<cdot\><frac|1|4>)<left|(>(v<rsub|1>+v<rsub|2>)<rsup|2>+(v<rsub|2>+v<rsub|0>)<rsup|2>+(v<rsub|1>+v<rsub|0>)<rsup|2><right|)>>>|<row|<cell|>|<cell|=>|<cell|48<l2norm|<wide|v|^><rsub|h>><rsub|<wide|\<Omega\>|^>><rsup|2>.>>>>
       </eqnarray*>
 
       <item>On the transformed triangle, with
@@ -388,7 +389,7 @@
     Then
 
     <\equation*>
-      <l2norm|A<rsub|h>>=sup<rsub|<l2norm|v<rsub|h>>=1><l2norm|A<rsub|h>v<rsub|h>>\<leqslant\>C<rsub|I>h<rsup|-2>.
+      <l2norm|A<rsub|h>>=sup<rsub|<l2norm|v<rsub|h>>=1><l2norm|A<rsub|h>v<rsub|h>>\<leqslant\>C<rsup|2><rsub|I>h<rsup|-2>.
     </equation*>
 
     \;
@@ -398,14 +399,19 @@
     \;
 
     <\eqnarray*>
-      <tformat|<table|<row|<cell|<l2norm|A<rsub|h>v<rsub|h>>>|<cell|=>|<cell|sup<rsub|<l2norm|w<rsub|h>>=1><ip|A<rsub|h>v<rsub|h>|w<rsub|h>>=sup<rsub|<l2norm|w<rsub|h>>=1>a(v<rsub|h>,w<rsub|h>)>>|<row|<cell|>|<cell|\<leqslant\>>|<cell|sup<rsub|<l2norm|w<rsub|h>>=1><enorm|v<rsub|h>><enorm|w<rsub|h>>>>|<row|<cell|>|<cell|<below|\<leqslant\>|(<with|mode|text|<reference|lem:2step-energy-estimate>)>>>|<cell|sup<rsub|<l2norm|w<rsub|h>>=1>C<rsub|I>h<rsup|-1><l2norm|v<rsub|h>>C<rsub|I>h<rsup|-1><l2norm|w<rsub|h>>=C<rsub|I>h<rsup|-2><l2norm|v<rsub|h>>.>>>>
+      <tformat|<table|<row|<cell|<l2norm|A<rsub|h>v<rsub|h>>>|<cell|=>|<cell|sup<rsub|<l2norm|w<rsub|h>>=1><ip|A<rsub|h>v<rsub|h>|w<rsub|h>>=sup<rsub|<l2norm|w<rsub|h>>=1>a(v<rsub|h>,w<rsub|h>)>>|<row|<cell|>|<cell|\<leqslant\>>|<cell|sup<rsub|<l2norm|w<rsub|h>>=1><enorm|v<rsub|h>><enorm|w<rsub|h>>>>|<row|<cell|>|<cell|<below|\<leqslant\>|(<with|mode|text|<reference|lem:2step-energy-estimate>)>>>|<cell|sup<rsub|<l2norm|w<rsub|h>>=1>C<rsub|I>h<rsup|-1><l2norm|v<rsub|h>>C<rsub|I>h<rsup|-1><l2norm|w<rsub|h>>=C<rsup|2><rsub|I>h<rsup|-2><l2norm|v<rsub|h>>.>>>>
     </eqnarray*>
   </proof>
+
+  The subsequent lemma sheds some light on what happens when a function on a
+  fine triangulation is coarsened. Specifically,
+  <with|mode|math|\<Omega\><rsub|i>> represents one red-refined unit
+  triangle, and <with|mode|math|<wide|v|^>> is a function on that fine mesh.
 
   <\lemma>
     <\enumerate-alpha>
       <item>Let <with|mode|math|<wide|v|^>\<in\>C(<wide|\<Omega\>|^>)> be
-      linear on <with|mode|math|<wide|\<Omega\>|^><rsub|i>>, let
+      linear on <with|mode|math|<wide|\<Omega\>|^><rsup|i>>, let
       <with|mode|math|<wide|\<Pi\>|^><wide|v|^>> be linear on
       <with|mode|math|<wide|\<Omega\>|^>> with
       <with|mode|math|<wide|\<Pi\>|^><wide|v|^>(<wide|z|^><rsub|i>)=<wide|v|^>(<wide|z|^><rsub|i>)>.
@@ -427,11 +433,12 @@
     \;
 
     <\enumerate-alpha>
-      <item>Let <with|mode|math|w<rsub|i,j>\<assign\>v<rsub|i,j>-1/2(v<rsub|i>+v<rsub|j>)>.
-      Then
+      <item>Let <with|mode|math|<wide|w|^>\<assign\><wide|v|^>-<wide|\<Pi\>|^><wide|v|^>>.
+      Then, <with|mode|math|w<rsub|i,j>=v<rsub|i,j>-1/2(v<rsub|i>+v<rsub|j>)>
+      and
 
       <\eqnarray*>
-        <tformat|<table|<row|<cell|<l2norm|<wide|v|^>-<wide|\<Pi\>|^><wide|v|^>><rsub|<wide|\<Omega\>|^>>>|<cell|=>|<cell|<frac|1|4>*<frac|1|6><left|(><left|(><frac|w<rsub|0,2>|2><right|)><rsup|2>+<left|(><frac|w<rsub|0,2>+w<rsub|0,1>|2><right|)><rsup|2>+<left|(><frac|w<rsub|0,1>|2><right|)><rsup|2><right|)>>>|<row|<cell|>|<cell|\<leqslant\>>|<cell|<frac|1|4><big|sum><rsub|i\<less\>j><left|(><frac|w<rsub|i,j>|2><right|)><rsup|2>\<leqslant\><frac|1|4><big|sum><rsub|i\<less\>j><left|[>(v<rsub|i,j>-v<rsub|i>)<rsup|2>+(v<rsub|i,j>-v<rsub|j>)<rsup|2><right|]>>>|<row|<cell|>|<cell|\<leqslant\>>|<cell|3<l2norm|\<nabla\><wide|v|^>><rsup|2>.>>>>
+        <tformat|<table|<row|<cell|<l2norm|<wide|v|^>-<wide|\<Pi\>|^><wide|v|^>><rsup|2><rsub|<wide|\<Omega\>|^>>>|<cell|=>|<cell|<frac|1|4>*<frac|1|6><left|(><left|(><frac|w<rsub|0,2>|2><right|)><rsup|2>+<left|(><frac|w<rsub|0,2>+w<rsub|0,1>|2><right|)><rsup|2>+<left|(><frac|w<rsub|0,1>|2><right|)><rsup|2><right|)>>>|<row|<cell|<with|font-base-size|24|<with|math-font-series|bold|<with|color|red|?>>>>|<cell|\<leqslant\>>|<cell|<frac|1|4><big|sum><rsub|i\<less\>j><left|(><frac|w<rsub|i,j>|2><right|)><rsup|2>\<leqslant\><frac|1|4><big|sum><rsub|i\<less\>j><left|[>(v<rsub|i,j>-v<rsub|i>)<rsup|2>+(v<rsub|i,j>-v<rsub|j>)<rsup|2><right|]>>>|<row|<cell|>|<cell|\<leqslant\>>|<cell|3<l2norm|\<nabla\><wide|v|^>><rsup|2>.>>>>
       </eqnarray*>
 
       <item>
@@ -578,15 +585,15 @@
       discretization.|<pageref|auto-7>>
     </associate>
     <\associate|toc>
-      <vspace*|1fn><with|font-series|<quote|bold>|math-font-series|<quote|bold>|18<space|2spc>A
+      <vspace*|1fn><with|font-series|<quote|bold>|math-font-series|<quote|bold>|2<space|2spc>A
       Two-Level Method> <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
       <no-break><pageref|auto-1><vspace|0.5fn>
 
-      <with|par-left|<quote|1.5fn>|18.1<space|2spc>The Model Problem
+      <with|par-left|<quote|1.5fn>|2.1<space|2spc>The Model Problem
       <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
       <no-break><pageref|auto-2>>
 
-      <with|par-left|<quote|1.5fn>|18.2<space|2spc>Implementation of the
+      <with|par-left|<quote|1.5fn>|2.2<space|2spc>Implementation of the
       Two-Level Method <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
       <no-break><pageref|auto-6>>
     </associate>
