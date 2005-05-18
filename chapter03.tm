@@ -2,7 +2,7 @@
 
 <project|multigrid.tm>
 
-<style|<tuple|article|skript|number-long-article>>
+<style|<tuple|article|number-long-article|skript>>
 
 <\body>
   <assign|section-nr|2><section|Classical Two-Level Analysis>
@@ -350,7 +350,7 @@
 
 <\initial>
   <\collection>
-    <associate|language|german>
+    <associate|language|american>
   </collection>
 </initial>
 
@@ -363,7 +363,7 @@
 <\auxiliary>
   <\collection>
     <\associate|toc>
-      <vspace*|1fn><with|font-series|<quote|bold>|math-font-series|<quote|bold>|18<space|2spc>Classical
+      <vspace*|1fn><with|font-series|<quote|bold>|math-font-series|<quote|bold>|3<space|2spc>Classical
       Two-Level Analysis> <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
       <no-break><pageref|auto-1><vspace|0.5fn>
     </associate>

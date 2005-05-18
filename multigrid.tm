@@ -3,8 +3,6 @@
 <style|<tuple|article|number-long-article|skript>>
 
 <\body>
-  \;
-
   Multigrid Methods
 
   Prof. Christian Wieners, SS 2005

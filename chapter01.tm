@@ -166,7 +166,7 @@
 
 <\initial>
   <\collection>
-    <associate|language|german>
+    <associate|language|american>
   </collection>
 </initial>
 
