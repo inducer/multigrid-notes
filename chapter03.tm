@@ -320,7 +320,9 @@
   </proof>
 
   <\lemma>
-    Let <with|mode|math|A<rsub|h>> and <with|mode|math|\<theta\><rsub|h>\<leqslant\>\<lambda\><rsub|h><rsup|-1>>.
+    Let <with|mode|math|A<rsub|h>> be symmetric and
+    <with|mode|math|\<theta\><rsub|h>\<leqslant\>\<lambda\><rsub|h><rsup|-1>>
+    and <with|mode|math|\<theta\><rsub|h><rsup|-1>\<leqslant\>C\<lambda\><rsub|h>>.
     Then, the smoothing property
 
     <\equation*>
@@ -341,11 +343,104 @@
     Then
 
     <\eqnarray*>
-      <tformat|<table|<row|<cell|<l2norm|A<rsub|h>(id-\<theta\><rsub|h>A<rsub|h>)<rsup|m>v<rsub|h>><rsup|2>>|<cell|=>|<cell|<l2norm|<big|sum><ip|w<rsub|h><rsup|j>|v<rsub|h>>A<rsub|h>(id-\<theta\><rsub|h>A<rsub|h>)<rsup|m>w<rsub|h><rsup|j>><rsup|2>>>|<row|<cell|>|<cell|=>|<cell|\<theta\><rsub|h><rsup|-1><l2norm|<big|sum><ip|w<rsub|h><rsup|j>|v<rsub|h>><rsub|0><wide*|\<theta\><rsub|h>\<mu\><rsub|j>|\<wide-underbrace\>><rsub|t>(1-\<theta\><rsub|h>\<mu\><rsub|j>)<rsup|m>w<rsub|j>><rsub|0>>>|<row|<cell|>|<cell|\<leqslant\>>|<cell|\<ldots\>\<ldots\>>>|<row|<cell|>|<cell|\<leqslant\>>|<cell|\<lambda\><rsub|h>max<rsub|t\<in\>[0,1]><left|(>t(1-t)<rsup|m><right|)><rsup|2><l2norm|v<rsub|h>><rsub|0><rsup|2>,>>>>
+      <tformat|<table|<row|<cell|<l2norm|A<rsub|h>(id-\<theta\><rsub|h>A<rsub|h>)<rsup|m>v<rsub|h>||2>>|<cell|=>|<cell|<l2norm|<big|sum><ip|w<rsub|h><rsup|i>|v<rsub|h>>A<rsub|h>(id-\<theta\><rsub|h>A<rsub|h>)<rsup|m>w<rsub|h><rsup|i>><rsup|2>>>|<row|<cell|>|<cell|=>|<cell|<l2norm|<big|sum><ip|w<rsub|h><rsup|i>|v<rsub|h>>\<mu\><rsub|i>(id-\<theta\><rsub|h>\<mu\><rsub|i>)<rsup|m>w<rsub|h><rsup|i>||2>>>|<row|<cell|>|<cell|\<leqslant\>>|<cell|\<theta\><rsub|h><rsup|-2><big|sum>(\<theta\><rsub|h>(1-\<theta\><rsub|h>\<lambda\><rsub|h>)<rsup|m>)<rsup|2><ip|v<rsub|h>|w<rsub|h><rsup|i>><rsup|2>>>|<row|<cell|>|<cell|\<leqslant\>>|<cell|\<theta\><rsub|h><rsup|-2>max<rsub|t\<in\>[0,1]>(t(1-t)<rsup|m>)<big|sum><wide*|<ip|v<rsub|h>|w<rsub|h><rsup|i>><rsup|2>|\<wide-underbrace\>><rsub|<l2norm|v<rsub|h>|0|2>>>>>>
     </eqnarray*>
 
-    considering <with|mode|math|\<lambda\><rsub|h>=max \<mu\><rsub|j>>.
+    considering <with|mode|math|\<lambda\><rsub|h>=max \<mu\><rsub|j>>. So,
+
+    <\eqnarray*>
+      <tformat|<table|<row|<cell|<l2norm|A<rsub|h>(id-\<theta\><rsub|h>A<rsub|h>)<rsup|m>||>>|<cell|\<leqslant\>>|<cell|\<theta\><rsub|h><rsup|-1>max<rsub|t\<in\>[0,1]>(1-t)<rsup|m>t>>|<row|<cell|>|<cell|\<leqslant\>>|<cell|C\<lambda\><rsub|h>p<left|(><frac|1|m+1><right|)>>>|<row|<cell|>|<cell|\<leqslant\>>|<cell|C\<lambda\><rsub|h><frac|1|m>,>>>>
+    </eqnarray*>
+
+    with the maximum of the polynomial <with|mode|math|p> suitably estimated.
+    In Example <inactive|<reference|ex:1>>
+
+    <\eqnarray*>
+      <tformat|<table|<row|<cell|<left|\|><big|int>\<nabla\>v\<cdot\>\<nabla\>w*d
+      x<right|\|>>|<cell|\<leqslant\>>|<cell|<l2norm|v<rsub|1>><l2norm|w><rsub|1>\<leqslant\>C<rsup|2><rsub|I>h<rsup|-2><l2norm|v><rsub|0><l2norm|w><rsub|0>>>|<row|<cell|<left|\|><big|int>c\<nabla\>v*w*d
+      x<right|\|>>|<cell|\<leqslant\>>|<cell|C<l2norm|v><rsub|1><l2norm|w><rsub|0>\<leqslant\>C<rsub|I>h<rsup|-1><l2norm|v><rsub|0><l2norm|w><rsub|0>>>>>
+    </eqnarray*>
+
+    <\eqnarray*>
+      <tformat|<table|<row|<cell|\<Rightarrow\><l2norm|A<rsub|h>><rsub|0>\<leqslant\>C*h<rsup|-2>>|<cell|,>|<cell|<l2norm|<wide*|sym
+      A<rsub|h>|\<wide-underbrace\>><rsub|\<assign\>1/2(A<rsub|h>+A<rsup|T><rsub|h>)>>\<leqslant\>C*h<rsup|-2>>>|<row|<cell|>|<cell|>|<cell|<l2norm|<wide*|skew
+      A<rsub|h>|\<wide-underbrace\>><rsub|\<assign\>1/2(A<rsub|h>-A<rsup|T><rsub|h>)>>\<leqslant\>C*h<rsup|-1>>>>>
+    </eqnarray*>
   </proof>
+
+  <\lemma>
+    Let <with|mode|math|lim<rsub|h\<rightarrow\>0>1/\<lambda\><rsub|h><l2norm|skew
+    A<rsub|h>|0|>=0> and <with|mode|math|1/C\<lambda\><rsub|h><rsup|-1>\<leqslant\>\<theta\><rsub|h>\<leqslant\>\<lambda\><rsub|h><rsup|-1>>.
+    Then <with|mode|math|\<mu\>:\<bbb-N\>\<rightarrow\>\<bbb-R\>>,
+    <with|mode|math|\<nu\>:\<bbb-R\><rsub|+>\<rightarrow\>\<bbb-R\>> exist,
+    such that
+
+    <\equation*>
+      <l2norm|A<rsub|h>(id-\<theta\><rsub|h>A<rsub|h>)<rsup|m>|0|>\<leqslant\>\<mu\>(m)\<lambda\><rsub|n>
+    </equation*>
+
+    for <with|mode|math|m\<gtr\>\<nu\>(h)> and
+    <with|mode|math|lim<rsub|m\<rightarrow\>\<infty\>>\<mu\>(m)\<rightarrow\>\<infty\>>
+    and <with|mode|math|lim<rsub|h\<rightarrow\>0>\<nu\>(h)=\<infty\>>.
+  </lemma>
+
+  <\proof>
+    \;
+
+    <\eqnarray*>
+      <tformat|<table|<row|<cell|<l2norm|A<rsub|h>(id-\<theta\><rsub|h>A<rsub|h>)<rsup|m>|0|>>|<cell|\<leqslant\>>|<cell|<l2norm|sym
+      A<rsub|h>(id-\<theta\><rsub|h>sym A<rsub|h>)<rsup|m>|0|>+<l2norm|skew
+      A<rsub|h>(id-\<Theta\><rsub|h>sym A<rsub|h>)<rsup|m>|0|>>>|<row|<cell|>|<cell|>|<cell|+<l2norm|-A<rsub|h><left|[>(id-\<theta\><rsub|h>A<rsub|h>)<rsup|m>-(id-\<theta\><rsub|h>A<rsub|h>)<rsup|m><right|]>|0|><with|color|red|????>>>|<row|<cell|>|<cell|\<leqslant\>>|<cell|\<lambda\><rsub|h><frac|C<rsub|R>|m>+\<lambda\><rsub|h><frac|<l2norm|skew
+      A<rsub|h>|0|>|\<lambda\><rsub|h>><l2norm|K<rsub|h>||m>+\<lambda\><rsub|h><l2norm|(id-\<theta\><rsub|h>sym
+      A<rsub|h>)<rsup|m>-(id-\<theta\><rsub|h>A<rsub|h>)<rsup|m>|0|>>>|<row|<cell|>|<cell|\<leqslant\>>|<cell|\<lambda\><rsub|h><frac|C<rsub|R>|m>+\<lambda\><rsub|h><frac|<l2norm|skew
+      A<rsub|h>|0|>|\<lambda\><rsub|h>>+\<lambda\><rsub|h><l2norm|(id-\<theta\><rsub|h>sym
+      A<rsub|h>)<rsup|m>-(id-\<theta\><rsub|h>A<rsub|h>)<rsup|m>|0|>>>|<row|<cell|>|<cell|<above|\<leqslant\>|\<ast\>>>|<cell|\<lambda\><rsub|h><left|(><frac|C<rsub|R>|m>+<frac|<l2norm|skew
+      A<rsub|h>|0|>|\<lambda\><rsub|h>>(1+C<rsup|m>m)<right|)>>>>>
+    </eqnarray*>
+
+    Choose <with|mode|math|\<alpha\>\<gtr\>0> and <with|mode|math|\<nu\>(k)>
+    such that <with|mode|math|\<lambda\><rsub|h><rsup|-1><l2norm|skew
+    A<rsub|h>|0|>(1+C<rsup|m>m)\<leqslant\>C*m<rsup|-\<alpha\>>> for
+    <with|mode|math|m\<less\>\<nu\>(h)>.
+
+    <with|mode|math|(\<ast\>)>: Set <with|mode|math|K<rsub|h>\<assign\>id-\<theta\><rsub|h>sym
+    A<rsub|h>>, <with|mode|math|L<rsub|h>\<assign\>\<theta\><rsub|h>skew
+    A<rsub|h>>. [Consider <with|mode|math|<l2norm|K<rsub|h>-L<rsub|h>||>\<leqslant\>1>.]
+
+    <\eqnarray*>
+      <tformat|<table|<row|<cell|x<rsup|m>-(x-y)<rsup|m>>|<cell|=>|<cell|x<left|[>x<rsup|m-1>-(x-y)<rsup|m-1><right|]>+y(x-y)<rsup|m-1>>>|<row|<cell|<l2norm|K<rsub|h><rsup|m>-(K<rsub|h>L<rsub|h>)<rsup|m>|0|>>|<cell|=>|<cell|<l2norm|<big|sum><rsub|j=0><rsup|m-1>K<rsub|h><rsup|j>L<rsub|h>(K<rsub|h>-L<rsub|h>)<rsup|m-1-j>|0|><with|color|red|Induktion?>>>|<row|<cell|>|<cell|\<leqslant\>>|<cell|<l2norm|L<rsub|h>|0|><big|sum><rsub|j=0><rsup|m-1><wide*|<l2norm|K<rsub|h>|0|>|\<wide-underbrace\>><rsub|\<leqslant\>1><l2norm|K<rsub|h>-L<rsub|h>|0|m-1-j>\<leqslant\>C<rsup|m>m<l2norm|L<rsub|h>|0|>>>>>
+    </eqnarray*>
+
+    with <with|mode|math|<l2norm|K<rsub|h>L<rsub|h>|0|>\<leqslant\>C> and
+    <with|mode|math|L<rsub|h>\<rightarrow\>0> for
+    <with|mode|math|h\<rightarrow\>0>.
+  </proof>
+
+  <\corollary>
+    If the approximation property
+
+    <\eqnarray*>
+      <tformat|<table|<row|<cell|<l2norm|(id-P<rsub|H>)v<rsub|h>|0|>>|<cell|\<leqslant\>>|<cell|C<rsub|A>\<lambda\><rsub|h><rsup|-1><l2norm|A<rsub|h>v<rsub|h>|0|>>>>>
+    </eqnarray*>
+
+    and the smoothing property
+
+    <\eqnarray*>
+      <tformat|<table|<row|<cell|<l2norm|A<rsub|h>(id-R<rsub|h>A<rsub|h>)<rsup|m>|0|>>|<cell|\<leqslant\>>|<cell|\<mu\>(m)\<lambda\><rsub|h><space|1em><with|mode|text|for
+      >m\<less\>\<nu\>(h)>>>>
+    </eqnarray*>
+
+    hold, we have for the two-level method
+
+    <\eqnarray*>
+      <tformat|<table|<row|<cell|<l2norm|(id-P<rsub|H>)(id-R<rsub|h>A<rsub|h>)<rsup|m>|0|>>|<cell|\<leqslant\>>|<cell|C<rsub|A>\<mu\>(m)>>>>
+    </eqnarray*>
+
+    and for any given <with|mode|math|\<rho\>\<in\>(0,1)>, we can fix
+    <with|mode|math|h<rsub|0>\<gtr\>0> and <with|mode|math|m\<in\>\<bbb-N\>>
+    with <with|mode|math|C<rsub|A>\<mu\>(n)\<less\>\<rho\>> for
+    <with|mode|math|h\<less\>h<rsub|0>>.
+  </corollary>
 </body>
 
 <\initial>
@@ -357,6 +452,7 @@
 <\references>
   <\collection>
     <associate|auto-1|<tuple|3|?>>
+    <associate|auto-2|<tuple|4|?>>
   </collection>
 </references>
 

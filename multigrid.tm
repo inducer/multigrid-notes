@@ -50,6 +50,8 @@
   <include|chapter02.tm>
 
   <include|chapter03.tm>
+
+  <include|chapter04.tm>
 </body>
 
 <\initial>
@@ -65,6 +67,8 @@
     <associate|auto-11|<tuple|2.2|10|chapter02.tm>>
     <associate|auto-12|<tuple|2.4|11|chapter02.tm>>
     <associate|auto-13|<tuple|3|11|chapter03.tm>>
+    <associate|auto-14|<tuple|4|?|chapter04.tm>>
+    <associate|auto-15|<tuple|4.1|?|chapter04.tm>>
     <associate|auto-2|<tuple|1|3|chapter01.tm>>
     <associate|auto-3|<tuple|1.1|3|chapter01.tm>>
     <associate|auto-4|<tuple|1.2|4|chapter01.tm>>
