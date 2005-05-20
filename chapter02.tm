@@ -39,15 +39,15 @@
     Let
 
     <\eqnarray*>
-      <tformat|<table|<row|<cell|<ip|v|w>>|<cell|\<assign\>>|<cell|<big|int><rsub|\<Omega\>>v*w*d
+      <tformat|<table|<row|<cell|<ip|v|w||>>|<cell|\<assign\>>|<cell|<big|int><rsub|\<Omega\>>v*w*d
       v<space|1fn><with|mode|text|(inner product in
       <with|mode|math|L<rsup|2>(\<Omega\>)>)>,>>|<row|<cell|a(v,w)>|<cell|\<assign\>>|<cell|<big|int><rsub|\<Omega\>>\<nabla\>v\<cdot\>\<nabla\>w*d
       v<space|1fn><with|mode|text|(<em|energy inner product> in
       <with|mode|math|L<rsup|2>(\<Omega\>)>)>,>>>>
     </eqnarray*>
 
-    and <with|mode|math|\<\|\|\>v\<\|\|\>\<assign\><sqrt|<ip|v|v>>>,
-    <with|mode|math|\<interleave\>v\<interleave\>\<assign\><sqrt|a(v,v)>>.
+    and <with|mode|math|<l2norm|v||>\<assign\><sqrt|<ip|v|v||>>>,
+    <with|mode|math|<enorm|v||>\<assign\><sqrt|a(v,v)>>.
 
     <\equation*>
       H<rsup|1>(\<Omega\>)\<assign\>{v:v\<in\>L<rsup|2>(\<Omega\>),\<partial\><rsub|1>v,\<partial\><rsub|2>v\<in\>L<rsup|2>(\<Omega\>)}.
@@ -56,9 +56,9 @@
 
   <\theorem>
     <with|mode|math|H<rsup|1>(\<Omega\>)> is a Hilbert space with
-    <with|mode|math|\<\|\|\>u\<\|\|\><rsub|<rsub|1>>\<assign\><sqrt|\<\|\|\>u\<\|\|\><rsup|2>+\<interleave\>u\<interleave\><rsup|2>>>.
-    <with|mode|math|H<rsup|1><rsub|0>(\<Omega\>)\<assign\>clos(C<rsub|0><rsup|\<infty\>>(\<Omega\>),<l2norm|\<cdot\>><rsub|1>)>
-    is a Hilbert space with <with|mode|math|<enorm|\<cdot\>>>.
+    <with|mode|math|<l2norm|u|1|>\<assign\><sqrt|<l2norm|u||2>+<enorm|u||2>>>.
+    <with|mode|math|H<rsup|1><rsub|0>(\<Omega\>)\<assign\>clos(C<rsub|0><rsup|\<infty\>>(\<Omega\>),<l2norm|\<cdot\>|1|>)>
+    is a Hilbert space with <with|mode|math|<enorm|\<cdot\>||>>.
   </theorem>
 
   <\definition>
@@ -151,10 +151,10 @@
     u<rsup|k+1><rsub|h>=u<rsup|k><rsub|h>\<theta\><rsub|h>(f<rsub|h>-A<rsub|h>u<rsub|h><rsup|k>)<rsup|h>.
   </equation*>
 
-  The former converges if <with|mode|math|\<rho\>(\<b-I\>-\<theta\>\<b-A\>)=\<\|\|\>\<b-I\>-\<theta\>\<b-A\>\<\|\|\>\<less\>1>.
+  The former converges if <with|mode|math|\<rho\>(\<b-I\>-\<theta\>\<b-A\>)=<l2norm|\<b-I\>-\<theta\>\<b-A\>||>\<less\>1>.
   (For the equality, remember that <with|mode|math|\<b-A\>> is symmetric.)
-  The latter converges if <with|mode|math|\<\|\|\>id-\<theta\><rsub|h>A<rsub|h>\<\|\|\>\<less\>1\<Leftrightarrow\>\<theta\><rsub|h>\<\|\|\>A<rsub|h>\<\|\|\>\<less\>1>,
-  where <with|mode|math|\<\|\|\>A<rsub|h>\<\|\|\>\<assign\>sup<rsub|\<\|\|\>v<rsub|h>\<\|\|\>=1>\<\|\|\>A<rsub|h>v<rsub|h>\<\|\|\>>.
+  The latter converges if <with|mode|math|<l2norm|id-\<theta\><rsub|h>A<rsub|h>||>\<less\>1\<Leftrightarrow\>\<theta\><rsub|h><l2norm|A<rsub|h>||>\<less\>1>,
+  where <with|mode|math|<l2norm|A<rsub|h>||>\<assign\>sup<rsub|<l2norm|v<rsub|h>||>=1><l2norm|A<rsub|h>v<rsub|h>||>>.
 
   <big-figure|<postscript|red-refinement.fig|*5/8|*5/8||||>|Red refinement.>
 
@@ -179,7 +179,7 @@
   finite element spaces are <em|nested>.
 
   <\equation*>
-    A<rsub|h>u<rsub|h>=f<rsub|h>\<Leftrightarrow\><ip|A<rsub|h>u<rsub|h>|v<rsub|h>>=<ip|f<rsub|h>|v<rsub|h>><space|1fn><with|mode|text|for
+    A<rsub|h>u<rsub|h>=f<rsub|h>\<Leftrightarrow\><ip|A<rsub|h>u<rsub|h>|v<rsub|h>||>=<ip|f<rsub|h>|v<rsub|h>||><space|1fn><with|mode|text|for
     all <with|mode|math|v<rsub|h>\<in\>V<rsub|h>>>.
   </equation*>
 
@@ -187,7 +187,7 @@
   coarse-space residual by requiring
 
   <\equation*>
-    a(c<rsub|H>,v<rsub|H>)=<ip|A<rsub|H>c<rsub|H>|v<rsub|H>><above|=|!><ip|f<rsub|h>-A<rsub|h>u<rsup|k><rsub|h>|v<rsub|H>>=<ip|f<rsub|h>|v<rsub|H>>-a(u<rsup|k>,v<rsub|H>)<space|1fn><with|mode|text|for
+    a(c<rsub|H>,v<rsub|H>)=<ip|A<rsub|H>c<rsub|H>|v<rsub|H>||><above|=|!><ip|f<rsub|h>-A<rsub|h>u<rsup|k><rsub|h>|v<rsub|H>||>=<ip|f<rsub|h>|v<rsub|H>||>-a(u<rsup|k>,v<rsub|H>)<space|1fn><with|mode|text|for
     all <with|mode|math|v<rsub|H>\<in\>V<rsub|H>.>>
   </equation*>
 
@@ -202,7 +202,7 @@
       <item>compute <with|mode|math|u<rsub|h><rsup|k-1/2>=u<rsup|k-1><rsub|h>+\<theta\><rsub|h>(f<rsub|h>-A<rsub|h>u<rsub|h><rsup|k-1>)>,
 
       <item>compute <with|mode|math|c<rsup|k><rsub|H>\<in\>V<rsub|h>>:
-      <with|mode|math|a(c<rsub|H><rsup|k>,v<rsub|H>)=<ip|f<rsub|h>|v<rsub|H>>-a(u<rsub|h><rsup|k-1/2>,v<rsub|H>)>,
+      <with|mode|math|a(c<rsub|H><rsup|k>,v<rsub|H>)=<ip|f<rsub|h>|v<rsub|H>||>-a(u<rsub|h><rsup|k-1/2>,v<rsub|H>)>,
 
       <item>set <with|mode|math|u<rsup|k>=u<rsub|h><rsup|k-1/2>+c<rsub|H><rsup|k>>.
     </enumerate>
@@ -214,7 +214,7 @@
     <\eqnarray*>
       <tformat|<table|<row|<cell|Q<rsub|H>:L<rsup|2>(\<Omega\>)\<rightarrow\>V<rsub|H><with|mode|text|
       be the <with|mode|math|L<rsup|2>>-projection, i.e.
-      >>|<cell|>|<cell|<ip|Q<rsub|H>v|w<rsub|H>>=<ip|v|w<rsub|H>>,>>|<row|<cell|P<rsub|H>:H<rsup|1><rsub|0>(\<Omega\>)\<rightarrow\>V<rsub|H><with|mode|text|
+      >>|<cell|>|<cell|<ip|Q<rsub|H>v|w<rsub|H>||>=<ip|v|w<rsub|H>||>,>>|<row|<cell|P<rsub|H>:H<rsup|1><rsub|0>(\<Omega\>)\<rightarrow\>V<rsub|H><with|mode|text|
       be the Galerkin projection, i.e. >>|<cell|>|<cell|a(P<rsub|H>v,w<rsub|H>)=a(v,w<rsub|H>)>>>>
     </eqnarray*>
 
@@ -242,7 +242,7 @@
       <item>
 
       <\equation*>
-        (A<rsub|H>c<rsub|H><rsup|k>,v<rsub|H>)=a(c<rsub|H><rsup|k>,v<rsub|H>)=a(u<rsub|h>,v<rsub|H>)-a(u<rsub|h><rsup|k-1/2>,v<rsub|H>)=<ip|Q<rsub|H>f<rsub|h>|v<rsub|H>>-<ip|A<rsub|h>u<rsup|k-1/2><rsub|h>|v<rsub|H>>=<ip|Q<rsub|H>f<rsub|h>-Q<rsub|H>A<rsub|h>u<rsup|k-1/2><rsub|h>|v<rsub|H>>
+        (A<rsub|H>c<rsub|H><rsup|k>,v<rsub|H>)=a(c<rsub|H><rsup|k>,v<rsub|H>)=a(u<rsub|h>,v<rsub|H>)-a(u<rsub|h><rsup|k-1/2>,v<rsub|H>)=<ip|Q<rsub|H>f<rsub|h>|v<rsub|H>||>-<ip|A<rsub|h>u<rsup|k-1/2><rsub|h>|v<rsub|H>||>=<ip|Q<rsub|H>f<rsub|h>-Q<rsub|H>A<rsub|h>u<rsup|k-1/2><rsub|h>|v<rsub|H>||>
       </equation*>
 
       Then
@@ -260,7 +260,7 @@
       <item>For <with|mode|math|w<rsub|H>\<in\>V<rsub|H>>,
 
       <\equation*>
-        <ip|A<rsub|H>P<rsub|H>v<rsub|h>|w<rsub|H>>=a(P<rsub|H>v<rsub|h>,w<rsub|H>)=a(v<rsub|h>,w<rsub|H>)=<ip|A<rsub|h>v<rsub|h>|w<rsub|H<with|color|red|>>>=<ip|Q<rsub|H>A<rsub|h>v<rsub|h>|w<rsub|H>>,
+        <ip|A<rsub|H>P<rsub|H>v<rsub|h>|w<rsub|H>||>=a(P<rsub|H>v<rsub|h>,w<rsub|H>)=a(v<rsub|h>,w<rsub|H>)=<ip|A<rsub|h>v<rsub|h>|w<rsub|H>||>=<ip|Q<rsub|H>A<rsub|h>v<rsub|h>|w<rsub|H>||>,
       </equation*>
 
       so
@@ -280,13 +280,13 @@
       <item><with|mode|math|Q<rsub|H>> is an orthogonal projection.
       <with|mode|math|Q<rsub|H><rsup|2>=Q<rsub|H>>,
       <with|mode|math|Q<rsub|H>(id-Q<rsub|H>)=0>,
-      <with|mode|math|<l2norm|Q<rsub|H>>=1>,
-      <with|mode|math|<l2norm|P<rsub|H>>\<gtr\>1>!
+      <with|mode|math|<l2norm|Q<rsub|H>||>=1>,
+      <with|mode|math|<l2norm|P<rsub|H>||>\<gtr\>1>!
 
       <item><with|mode|math|P<rsub|H>> is an orthogonal projection.
       <with|mode|math|P<rsub|H><rsup|2>=P<rsub|H>>,
       <with|mode|math|P<rsub|H>(id-P<rsub|H>)=0>,
-      <with|mode|math|<enorm|P<rsub|H>>=1>.
+      <with|mode|math|<enorm|P<rsub|H>||>=1>.
     </itemize-dot>
   </remark>
 
@@ -294,21 +294,21 @@
     <label|the:twolevel>Let
 
     <\enumerate>
-      <item><with|mode|math|<enorm|v<rsub|h>><rsup|2>\<leqslant\>\<theta\><rsub|h><rsup|-1><l2norm|v<rsub|h>><rsup|2>>
-      (<with|mode|math|\<Leftrightarrow\>><with|mode|math|\<theta\><rsub|h><l2norm|A<rsub|h>>\<leqslant\>1>),
+      <item><with|mode|math|<enorm|v<rsub|h>||2>\<leqslant\>\<theta\><rsub|h><rsup|-1><l2norm|v<rsub|h>||2>>
+      (<with|mode|math|\<Leftrightarrow\>><with|mode|math|\<theta\><rsub|h><l2norm|A<rsub|h>||>\<leqslant\>1>),
 
-      <item><with|mode|math|<l2norm|v<rsub|h>-Q<rsub|H>v<rsub|h>><rsup|2>\<leqslant\>C\<theta\><rsub|h><enorm|v<rsub|h>><rsup|2>>
-      (<with|mode|math|\<leqslant\>C<l2norm|v<rsub|h>><rsup|2>><with|mode|math|\<Rightarrow\>><with|mode|math|C\<geqslant\>1>).
+      <item><with|mode|math|<l2norm|v<rsub|h>-Q<rsub|H>v<rsub|h>||2>\<leqslant\>C\<theta\><rsub|h><enorm|v<rsub|h>||2>>
+      (<with|mode|math|\<leqslant\>C<l2norm|v<rsub|h>||2>><with|mode|math|\<Rightarrow\>><with|mode|math|C\<geqslant\>1>).
     </enumerate>
 
-    Then, we have <with|mode|math|<enorm|(id-P<rsub|H>)(id-\<theta\><rsub|h>A<rsub|h>)><rsup|2>\<leqslant\>1-1/C\<less\>1>,
-    i.e. <with|mode|math|<enorm|u<rsup|k><rsub|h>-u<rsub|h>>\<leqslant\>(1-1/C)<rsup|k/2><enorm|u<rsub|h><rsup|0>-u<rsub|h>>>.
+    Then, we have <with|mode|math|<enorm|(id-P<rsub|H>)(id-\<theta\><rsub|h>A<rsub|h>)||2>\<leqslant\>1-1/C\<less\>1>,
+    i.e. <with|mode|math|<enorm|u<rsup|k><rsub|h>-u<rsub|h>||>\<leqslant\>(1-1/C)<rsup|k/2><enorm|u<rsub|h><rsup|0>-u<rsub|h>>>.
   </theorem>
 
   1) and 2) of Theorem <reference|the:twolevel> imply
 
   <\equation*>
-    <l2norm|v<rsub|h>-Q<rsub|H>v<rsub|h>><rsup|2>\<leqslant\>C<l2norm|v<rsub|h>><rsup|2>\<Rightarrow\>C\<geqslant\>1.
+    <l2norm|v<rsub|h>-Q<rsub|H>v<rsub|h>||2>\<leqslant\>C<l2norm|v<rsub|h>||2>\<Rightarrow\>C\<geqslant\>1.
   </equation*>
 
   The following two lemmata provide the (seemingly strong) assumptions of
@@ -319,10 +319,10 @@
     <label|lem:2step-energy-estimate>
 
     <\enumerate-alpha>
-      <item><with|mode|math|<l2norm|\<nabla\><wide|v|^>><rsub|<wide|\<Omega\>|^>>\<leqslant\><sqrt|48><l2norm|<wide|v|^>><rsub|<wide|\<Omega\>|^>>>
+      <item><with|mode|math|<l2norm|\<nabla\><wide|v|^>|<wide|\<Omega\>|^>|>\<leqslant\><sqrt|48><l2norm|<wide|v|^>|<wide|\<Omega\>|^>|>>
       for linear <with|mode|math|<wide|v|^>(x)=(1-<wide|x|^><rsub|1>-<wide|x|^><rsub|2>)v<rsub|0>+<wide|x|^><rsub|1>v<rsub|1>+<wide|x|^><rsub|2>v<rsub|2>>.
 
-      <item><with|mode|math|<l2norm|\<nabla\>v<rsub|h>>\<leqslant\>C<rsub|I>h<rsup|-1><l2norm|v<rsub|h>>>
+      <item><with|mode|math|<l2norm|\<nabla\>v<rsub|h>||>\<leqslant\>C<rsub|I>h<rsup|-1><l2norm|v<rsub|h>||>>
       for <with|mode|math|v<rsub|h>\<in\>X<rsub|h>> with
       <with|mode|math|C<rsub|I>=<sqrt|48>C<rsub|\<Omega\>>>.
     </enumerate-alpha>
@@ -344,7 +344,7 @@
       and for <with|mode|math|P\<in\>\<bbb-P\><rsub|2>>
 
       <\equation*>
-        <l2norm|P><rsup|2><rsub|<wide|\<Omega\>|^>>=<frac|1|2>\<cdot\><frac|1|3><left|(>P<rsup|2><left|(><frac|1|2>(<wide|z<rsub|0>|^>+<wide|z<rsub|1>|^>)<right|)>+P<rsup|2><left|(><frac|1|2>(<wide|z<rsub|1>|^>+<wide|z<rsub|2>|^>)<right|)>+P<rsup|2><left|(><frac|1|2>(<wide|z<rsub|0>|^>+<wide|z<rsub|2>|^>)<right|)><right|)>
+        <l2norm|P|<wide|\<Omega\>|^>|2>=<frac|1|2>\<cdot\><frac|1|3><left|(>P<rsup|2><left|(><frac|1|2>(<wide|z<rsub|0>|^>+<wide|z<rsub|1>|^>)<right|)>+P<rsup|2><left|(><frac|1|2>(<wide|z<rsub|1>|^>+<wide|z<rsub|2>|^>)<right|)>+P<rsup|2><left|(><frac|1|2>(<wide|z<rsub|0>|^>+<wide|z<rsub|2>|^>)<right|)><right|)>
       </equation*>
 
       and
@@ -356,7 +356,7 @@
       we compute
 
       <\eqnarray*>
-        <tformat|<cwith|3|6|1|3|cell-valign|c>|<table|<row|<cell|<l2norm|\<nabla\><wide|v|^><rsub|h>><rsub|<wide|\<Omega\>|^>><rsup|2>>|<cell|=>|<cell|<frac|1|2>(v<rsub|1>-v<rsub|0>)<rsup|2>+<frac|1|2>(v<rsub|2>-v<rsub|0>)<rsup|2>>>|<row|<cell|>|<cell|=>|<cell|<frac|1|2>(v<rsub|1>+v<rsub|2>-v<rsub|2>-v<rsub|0>)<rsup|2>+<frac|1|2>(v<rsub|2>+v<rsub|1>+v<rsub|1>-v<rsub|0>)<rsup|2>>>|<row|<cell|>|<cell|\<leqslant\>>|<cell|(v<rsub|1>+v<rsub|2>)<rsup|2>+(v<rsub|2>+v<rsub|0>)<rsup|2>+(v<rsub|2>+v<rsub|1>)<rsup|2>+(v<rsub|1>+v<rsub|0>)<rsup|2>>>|<row|<cell|>|<cell|\<leqslant\>>|<cell|2(v<rsub|1>+v<rsub|2>)<rsup|2>+2(v<rsub|2>+v<rsub|0>)<rsup|2>+2(v<rsub|1>+v<rsub|0>)<rsup|2>>>|<row|<cell|>|<cell|\<leqslant\>>|<cell|2\<cdot\>(4\<cdot\>6\<cdot\><frac|1|6>\<cdot\><frac|1|4>)<left|(>(v<rsub|1>+v<rsub|2>)<rsup|2>+(v<rsub|2>+v<rsub|0>)<rsup|2>+(v<rsub|1>+v<rsub|0>)<rsup|2><right|)>>>|<row|<cell|>|<cell|=>|<cell|48<l2norm|<wide|v|^><rsub|h>><rsub|<wide|\<Omega\>|^>><rsup|2>.>>>>
+        <tformat|<cwith|3|6|1|3|cell-valign|c>|<table|<row|<cell|<l2norm|\<nabla\><wide|v|^><rsub|h>|<wide|\<Omega\>|^>|2>>|<cell|=>|<cell|<frac|1|2>(v<rsub|1>-v<rsub|0>)<rsup|2>+<frac|1|2>(v<rsub|2>-v<rsub|0>)<rsup|2>>>|<row|<cell|>|<cell|=>|<cell|<frac|1|2>(v<rsub|1>+v<rsub|2>-v<rsub|2>-v<rsub|0>)<rsup|2>+<frac|1|2>(v<rsub|2>+v<rsub|1>+v<rsub|1>-v<rsub|0>)<rsup|2>>>|<row|<cell|>|<cell|\<leqslant\>>|<cell|(v<rsub|1>+v<rsub|2>)<rsup|2>+(v<rsub|2>+v<rsub|0>)<rsup|2>+(v<rsub|2>+v<rsub|1>)<rsup|2>+(v<rsub|1>+v<rsub|0>)<rsup|2>>>|<row|<cell|>|<cell|\<leqslant\>>|<cell|2(v<rsub|1>+v<rsub|2>)<rsup|2>+2(v<rsub|2>+v<rsub|0>)<rsup|2>+2(v<rsub|1>+v<rsub|0>)<rsup|2>>>|<row|<cell|>|<cell|\<leqslant\>>|<cell|2\<cdot\>(4\<cdot\>6\<cdot\><frac|1|6>\<cdot\><frac|1|4>)<left|(>(v<rsub|1>+v<rsub|2>)<rsup|2>+(v<rsub|2>+v<rsub|0>)<rsup|2>+(v<rsub|1>+v<rsub|0>)<rsup|2><right|)>>>|<row|<cell|>|<cell|=>|<cell|48<l2norm|<wide|v|^><rsub|h>|<wide|\<Omega\>|^>|2>.>>>>
       </eqnarray*>
 
       <item>On the transformed triangle, with
@@ -368,15 +368,15 @@
       </eqnarray*>
 
       <\eqnarray*>
-        <tformat|<table|<row|<cell|<l2norm|\<nabla\>v><rsub|\<Omega\><rsub|C>><rsup|2>=<big|int><rsub|\<Omega\><rsub|C>>\|\<nabla\>v\|<rsup|2>d
+        <tformat|<table|<row|<cell|<l2norm|\<nabla\>v|\<Omega\><rsub|C>|2>=<big|int><rsub|\<Omega\><rsub|C>>\|\<nabla\>v\|<rsup|2>d
         x>|<cell|=>|<cell|<big|int><rsub|<wide|\<Omega\>|^>>\|det*J<rsub|C>\|\|\<nabla\>v\<circ\>T\|<rsup|2>d<wide|x|^>>>|<row|<cell|>|<cell|=>|<cell|<big|int><rsub|<wide|\<Omega\>|^>>\|det*J<rsub|C>\|\|J<rsub|C><rsup|-T>\<nabla\>v\|<rsup|2>d<wide|x|^>>>|<row|<cell|>|<cell|\<leqslant\>>|<cell|\|J<rsub|C><rsup|-T>\|<rsup|2>\|det
-        J<rsub|C>\|<l2norm|\<nabla\><wide|v|^>><rsup|2><rsub|<wide|\<Omega\>|^>>>>|<row|<cell|>|<cell|\<leqslant\>>|<cell|C<rsub|\<Omega\>>h<rsup|-2>48<l2norm|<wide|v|^>><rsup|2><rsub|\<Omega\><rsub|C>>>>>>
+        J<rsub|C>\|<l2norm|\<nabla\><wide|v|^>|<wide|\<Omega\>|^>|2>>>|<row|<cell|>|<cell|\<leqslant\>>|<cell|C<rsub|\<Omega\>>h<rsup|-2>48<l2norm|<wide|v|^>|\<Omega\><rsub|C>|2>>>>>
       </eqnarray*>
 
       So,
 
       <\equation*>
-        <enorm|v<rsub|h>><rsup|2>=<big|sum><rsub|C\<in\>\<cal-C\><rsub|h>><l2norm|\<nabla\>v<rsub|h>><rsub|\<Omega\><rsub|C>>\<leqslant\>48C<rsub|\<Omega\>><rsup|2>h<rsup|-2><big|sum><rsub|C\<in\>\<cal-C\><rsub|h>><l2norm|v<rsub|h>><rsup|2><rsub|\<Omega\><rsub|C>>.
+        <enorm|v<rsub|h>||2>=<big|sum><rsub|C\<in\>\<cal-C\><rsub|h>><l2norm|\<nabla\>v<rsub|h>|\<Omega\><rsub|C>|>\<leqslant\>48C<rsub|\<Omega\>><rsup|2>h<rsup|-2><big|sum><rsub|C\<in\>\<cal-C\><rsub|h>><l2norm|v<rsub|h>|\<Omega\><rsub|C>|2>.
       </equation*>
     </enumerate-alpha>
 
@@ -385,11 +385,11 @@
 
   <\corollary>
     Let <with|mode|math|A<rsub|h>:V<rsub|h>\<rightarrow\>V<rsub|h>> be
-    defined by <with|mode|math|<ip|A<rsub|h>v<rsub|h>|w<rsub|h>>=a(v<rsub|h>,w<rsub|h>)>.
+    defined by <with|mode|math|<ip|A<rsub|h>v<rsub|h>|w<rsub|h>||>=a(v<rsub|h>,w<rsub|h>)>.
     Then
 
     <\equation*>
-      <l2norm|A<rsub|h>>=sup<rsub|<l2norm|v<rsub|h>>=1><l2norm|A<rsub|h>v<rsub|h>>\<leqslant\>C<rsup|2><rsub|I>h<rsup|-2>.
+      <l2norm|A<rsub|h>||>=sup<rsub|<l2norm|v<rsub|h>||>=1><l2norm|A<rsub|h>v<rsub|h>||>\<leqslant\>C<rsup|2><rsub|I>h<rsup|-2>.
     </equation*>
 
     \;
@@ -399,7 +399,7 @@
     \;
 
     <\eqnarray*>
-      <tformat|<table|<row|<cell|<l2norm|A<rsub|h>v<rsub|h>>>|<cell|=>|<cell|sup<rsub|<l2norm|w<rsub|h>>=1><ip|A<rsub|h>v<rsub|h>|w<rsub|h>>=sup<rsub|<l2norm|w<rsub|h>>=1>a(v<rsub|h>,w<rsub|h>)>>|<row|<cell|>|<cell|\<leqslant\>>|<cell|sup<rsub|<l2norm|w<rsub|h>>=1><enorm|v<rsub|h>><enorm|w<rsub|h>>>>|<row|<cell|>|<cell|<below|\<leqslant\>|(<with|mode|text|<reference|lem:2step-energy-estimate>)>>>|<cell|sup<rsub|<l2norm|w<rsub|h>>=1>C<rsub|I>h<rsup|-1><l2norm|v<rsub|h>>C<rsub|I>h<rsup|-1><l2norm|w<rsub|h>>=C<rsup|2><rsub|I>h<rsup|-2><l2norm|v<rsub|h>>.>>>>
+      <tformat|<table|<row|<cell|<l2norm|A<rsub|h>v<rsub|h>||>>|<cell|=>|<cell|sup<rsub|<l2norm|w<rsub|h>||>=1><ip|A<rsub|h>v<rsub|h>|w<rsub|h>||>=sup<rsub|<l2norm|w<rsub|h>||>=1>a(v<rsub|h>,w<rsub|h>)>>|<row|<cell|>|<cell|\<leqslant\>>|<cell|sup<rsub|<l2norm|w<rsub|h>||>=1><enorm|v<rsub|h>||>*<enorm|w<rsub|h>||>>>|<row|<cell|>|<cell|<below|\<leqslant\>|(<with|mode|text|<reference|lem:2step-energy-estimate>)>>>|<cell|sup<rsub|<l2norm|w<rsub|h>||>=1>C<rsub|I>h<rsup|-1><l2norm|v<rsub|h>||>C<rsub|I>h<rsup|-1><l2norm|w<rsub|h>||>=C<rsup|2><rsub|I>h<rsup|-2><l2norm|v<rsub|h>||>.>>>>
     </eqnarray*>
   </proof>
 
@@ -418,13 +418,13 @@
       Then, we have
 
       <\equation*>
-        <l2norm|<wide|v|^>-<wide|\<Pi\>|^><wide|v|^>><rsub|<wide|\<Omega\>|^>>\<leqslant\>3<l2norm|\<nabla\><wide|v|^>><rsub|<wide|\<Omega\>|^>>.
+        <l2norm|<wide|v|^>-<wide|\<Pi\>|^><wide|v|^>|<wide|\<Omega\>|^>|>\<leqslant\>3<l2norm|\<nabla\><wide|v|^>|<wide|\<Omega\>|^>|>.
       </equation*>
 
       <item>
 
       <\equation*>
-        <l2norm|v<rsub|h>-Q<rsub|H>v<rsub|h>>\<leqslant\>2<sqrt|3>C<rsub|\<Omega\>>h<enorm|v<rsub|h>>.
+        <l2norm|v<rsub|h>-Q<rsub|H>v<rsub|h>||>\<leqslant\>2<sqrt|3>C<rsub|\<Omega\>>h<enorm|v<rsub|h>||>.
       </equation*>
     </enumerate-alpha>
   </lemma>
@@ -438,20 +438,20 @@
       and
 
       <\eqnarray*>
-        <tformat|<table|<row|<cell|<l2norm|<wide|v|^>-<wide|\<Pi\>|^><wide|v|^>><rsup|2><rsub|<wide|\<Omega\>|^>>>|<cell|=>|<cell|<frac|1|4>*<frac|1|6><left|(><left|(><frac|w<rsub|0,2>|2><right|)><rsup|2>+<left|(><frac|w<rsub|0,2>+w<rsub|0,1>|2><right|)><rsup|2>+<left|(><frac|w<rsub|0,1>|2><right|)><rsup|2><right|)>>>|<row|<cell|<with|font-base-size|24|<with|math-font-series|bold|<with|color|red|?>>>>|<cell|\<leqslant\>>|<cell|<frac|1|4><big|sum><rsub|i\<less\>j><left|(><frac|w<rsub|i,j>|2><right|)><rsup|2>\<leqslant\><frac|1|4><big|sum><rsub|i\<less\>j><left|[>(v<rsub|i,j>-v<rsub|i>)<rsup|2>+(v<rsub|i,j>-v<rsub|j>)<rsup|2><right|]>>>|<row|<cell|>|<cell|\<leqslant\>>|<cell|3<l2norm|\<nabla\><wide|v|^>><rsup|2>.>>>>
+        <tformat|<table|<row|<cell|<l2norm|<wide|v|^>-<wide|\<Pi\>|^><wide|v|^>|<wide|\<Omega\>|^>|2>>|<cell|=>|<cell|<frac|1|4>*<frac|1|6><left|(><left|(><frac|w<rsub|0,2>|2><right|)><rsup|2>+<left|(><frac|w<rsub|0,2>+w<rsub|0,1>|2><right|)><rsup|2>+<left|(><frac|w<rsub|0,1>|2><right|)><rsup|2><right|)>>>|<row|<cell|<with|font-base-size|24|<with|math-font-series|bold|<with|color|red|?>>>>|<cell|\<leqslant\>>|<cell|<frac|1|4><big|sum><rsub|i\<less\>j><left|(><frac|w<rsub|i,j>|2><right|)><rsup|2>\<leqslant\><frac|1|4><big|sum><rsub|i\<less\>j><left|[>(v<rsub|i,j>-v<rsub|i>)<rsup|2>+(v<rsub|i,j>-v<rsub|j>)<rsup|2><right|]>>>|<row|<cell|>|<cell|\<leqslant\>>|<cell|3<l2norm|\<nabla\><wide|v|^>||2><rsup|>.>>>>
       </eqnarray*>
 
       <item>
 
       <\eqnarray*>
-        <tformat|<table|<row|<cell|<l2norm|v<rsub|h>-\<Pi\><rsub|H>v<rsub|H>><rsub|\<Omega\><rsub|C>><rsup|2>>|<cell|=>|<cell|<big|int><rsub|\<Omega\><rsub|C>>\|v<rsub|h>-\<Pi\><rsub|H>v<rsub|H>\|<rsup|2>d
+        <tformat|<table|<row|<cell|<l2norm|v<rsub|h>-\<Pi\><rsub|H>v<rsub|H>|\<Omega\><rsub|C>|2>>|<cell|=>|<cell|<big|int><rsub|\<Omega\><rsub|C>>\|v<rsub|h>-\<Pi\><rsub|H>v<rsub|H>\|<rsup|2>d
         x>>|<row|<cell|>|<cell|=>|<cell|<big|int><rsub|<wide|\<Omega\>|^>>\|det*J<rsub|C>\|\|<wide|v|^>-<wide|\<Pi\>|^><wide|v|^>\|d*
         <wide|x|^>>>|<row|<cell|>|<cell|\<leqslant\>>|<cell|3<big|int><rsub|<wide|\<Omega\>|^>>\|det*J<rsub|C>\|<below|\|\<nabla\><wide|v|^>\|<rsup|2><rsub|>|=\|J<rsub|C><rsup|T>\<nabla\>v<rsub|h>\|>d
-        x>>|<row|<cell|>|<cell|\<leqslant\>>|<cell|3C<rsub|\<Omega\>><rsup|2>h<rsup|2><l2norm|\<nabla\>v<rsub|h>><rsup|2><rsub|\<Omega\><rsub|C>>.>>>>
+        x>>|<row|<cell|>|<cell|\<leqslant\>>|<cell|3C<rsub|\<Omega\>><rsup|2>h<rsup|2><l2norm|\<nabla\>v<rsub|h>|\<Omega\><rsub|C>|2>.>>>>
       </eqnarray*>
 
       <\eqnarray*>
-        <tformat|<table|<row|<cell|<l2norm|v<rsub|h>-Q<rsub|H>v<rsub|h>><rsup|2>>|<cell|=>|<cell|min<rsub|V<rsub|H>\<in\>V<rsub|H>><l2norm|v<rsub|h>-V<rsub|H>><rsup|2>>>|<row|<cell|>|<cell|\<leqslant\>>|<cell|<l2norm|v<rsub|h>-\<Pi\><rsub|H>v<rsub|h>><rsup|2>>>|<row|<cell|>|<cell|=>|<cell|<big|sum><rsub|C\<in\>\<cal-C\><rsub|H>><l2norm|v<rsub|h>-\<Pi\>V<rsub|h>><rsup|2><rsub|\<Omega\><rsub|C>>>>|<row|<cell|>|<cell|\<leqslant\>>|<cell|3C<rsub|\<Omega\>><rsup|2>h<rsup|2><enorm|v<rsub|h>>.>>>>
+        <tformat|<table|<row|<cell|<l2norm|v<rsub|h>-Q<rsub|H>v<rsub|h>||2>>|<cell|=>|<cell|min<rsub|V<rsub|H>\<in\>V<rsub|H>><l2norm|v<rsub|h>-V<rsub|H>||2>>>|<row|<cell|>|<cell|\<leqslant\>>|<cell|<l2norm|v<rsub|h>-\<Pi\><rsub|H>v<rsub|h>||2>>>|<row|<cell|>|<cell|=>|<cell|<big|sum><rsub|C\<in\>\<cal-C\><rsub|H>><l2norm|v<rsub|h>-\<Pi\>v<rsub|h>|\<Omega\><rsub|C>|2>>>|<row|<cell|>|<cell|\<leqslant\>>|<cell|3C<rsub|\<Omega\>><rsup|2>h<rsup|2><l2norm|v<rsub|h>||2>.>>>>
       </eqnarray*>
     </enumerate-alpha>
   </proof>
@@ -466,7 +466,7 @@
     (of <reference|the:twolevel>) <with|mode|math|e<rsub|h><rsup|k>=(id-P<rsub|H>)(id-\<theta\><rsub|h>A<rsub|h>)e<rsup|k-1><rsub|h>>,\ 
 
     <\eqnarray*>
-      <tformat|<table|<row|<cell|\<rho\>>|<cell|=>|<cell|<enorm|(id-P<rsub|H>)(id-\<theta\><rsub|h>A<rsub|h>)>=sup<rsub|<l2norm|v<rsub|h>>><enorm|(id-P<rsub|H>)(id-\<theta\><rsub|h>A<rsub|h>)>>>|<row|<cell|\<Leftrightarrow\><enorm|e<rsup|k><rsub|h>>>|<cell|=>|<cell|<enorm|(id-P<rsub|H>)<wide*|(id-\<theta\><rsub|h>A<rsub|h>)e<rsup|k-1><rsub|h>|\<wide-underbrace\>><rsub|e<rsup|k-1/2><rsub|h>>>\<leqslant\>\<rho\><enorm|e<rsup|k-1><rsub|h>>>>>>
+      <tformat|<table|<row|<cell|\<rho\>>|<cell|=>|<cell|<enorm|(id-P<rsub|H>)(id-\<theta\><rsub|h>A<rsub|h>)||>=sup<rsub|<l2norm|v<rsub|h>||>=1><enorm|(id-P<rsub|H>)(id-\<theta\><rsub|h>A<rsub|h>)||>>>|<row|<cell|\<Leftrightarrow\><enorm|e<rsup|k><rsub|h>||>>|<cell|=>|<cell|<enorm|(id-P<rsub|H>)<wide*|(id-\<theta\><rsub|h>A<rsub|h>)e<rsup|k-1><rsub|h>|\<wide-underbrace\>><rsub|e<rsup|k-1/2><rsub|h>>||>\<leqslant\>\<rho\><enorm|e<rsup|k-1><rsub|h>||>>>>>
     </eqnarray*>
 
     for all <with|mode|math|e<rsup|k-1><rsub|h>\<in\>V<rsub|h>>.
@@ -486,7 +486,7 @@
     using assumption 2.
 
     <\equation>
-      <label|eq:twolevel-step2>\<Rightarrow\><enorm|e<rsup|k><rsub|h>><rsup|2>\<leqslant\><sqrt|C\<theta\><rsub|h>><l2norm|A<rsub|h>e<rsub|h><rsup|k>>\<Rightarrow\><enorm|e<rsub|h><rsup|k>><rsup|2>\<leqslant\>C\<theta\><rsub|h><l2norm|A<rsub|h>e<rsup|k><rsub|h>><rsup|2>
+      <label|eq:twolevel-step2>\<Rightarrow\><enorm|e<rsup|k><rsub|h>||>\<leqslant\><sqrt|C\<theta\><rsub|h>><l2norm|A<rsub|h>e<rsup|k><rsub|h>||>\<Rightarrow\><enorm|e<rsup|k><rsub|h>||2>\<leqslant\>C\<theta\><rsub|h><l2norm|A<rsub|h>e<rsub|h><rsup|k>||2>.
     </equation>
 
     \;
@@ -494,20 +494,20 @@
     <em|3rd step.>
 
     <\eqnarray*>
-      <tformat|<table|<row|<cell|\<Rightarrow\><enorm|(id-\<theta\><rsub|h>A<rsub|h>)e<rsup|k><rsub|h>><rsup|2>>|<cell|=>|<cell|<enorm|e<rsub|h><rsup|k>><rsup|2>-2a(e<rsup|k><rsub|h>,\<theta\><rsub|h>A<rsub|h>e<rsup|k><rsub|h>)+<enorm|\<theta\><rsub|h>A<rsub|h>e<rsup|k><rsub|h>><rsup|2>>>|<row|<cell|>|<cell|=>|<cell|<enorm|e<rsub|h><rsup|k>><rsup|2>-2\<theta\><rsub|h><l2norm|A<rsub|h>e<rsub|h><rsup|k>><rsup|2>+\<theta\><rsub|h><rsup|2><enorm|A<rsub|h>e<rsup|k><rsub|h>><rsup|2>>>|<row|<cell|>|<cell|=>|<cell|<enorm|e<rsup|k><rsub|h>><rsup|2>-\<theta\><rsub|h><l2norm|A<rsub|h>e<rsub|h><rsup|k>><rsup|2>-\<theta\><rsub|h><left|(><l2norm|A<rsub|h>e<rsup|k><rsub|h>><rsup|2>-\<theta\><rsub|h><enorm|A<rsub|h>e<rsup|h><rsub|k>><rsup|2><right|)>>>|<row|<cell|>|<cell|\<leqslant\>>|<cell|<enorm|e<rsup|k><rsub|h>><rsup|2>-\<theta\><rsub|h><l2norm|A<rsub|h>e<rsup|k><rsub|h>><rsup|2>>>|<row|<cell|>|<cell|<below|\<leqslant\>|(<reference|eq:twolevel-step2>)>>|<cell|<enorm|e<rsup|k><rsub|h>><rsup|2>-<frac|1|C><enorm|e<rsup|k><rsub|h>><rsup|2>=<left|(>1-<frac|1|C><right|)><enorm|e<rsup|k><rsub|h>><rsup|2>,>>>>
+      <tformat|<table|<row|<cell|\<Rightarrow\><enorm|(id-\<theta\><rsub|h>A<rsub|h>)e<rsup|k><rsub|h>||2>>|<cell|=>|<cell|<enorm|e<rsup|k><rsub|h>||2>-2a(e<rsup|k><rsub|h>,\<theta\><rsub|h>A<rsub|h>e<rsup|k><rsub|h>)+<enorm|\<theta\><rsub|h>A<rsub|h>e<rsup|k><rsub|h>||2>>>|<row|<cell|>|<cell|=>|<cell|<enorm|e<rsub|h><rsup|k>||2>-2\<theta\><rsub|h><l2norm|A<rsub|h>e<rsup|k><rsub|h>||2>+\<theta\><rsub|h><rsup|2><enorm|A<rsub|h>e<rsup|k><rsub|h>||2>>>|<row|<cell|>|<cell|=>|<cell|<enorm|e<rsub|h><rsup|k>||2>-\<theta\><rsub|h><l2norm|A<rsub|h>e<rsup|k><rsub|h>||2>-\<theta\><rsub|h><left|(><l2norm|A<rsub|h>e<rsup|k><rsub|h>||2><rsup|>-\<theta\><rsub|h><enorm|A<rsub|h>e<rsub|h><rsup|k>||2><right|)>>>|<row|<cell|>|<cell|\<leqslant\>>|<cell|<enorm|e<rsub|h><rsup|k>||2>-\<theta\><rsub|h><l2norm|A<rsub|h>e<rsup|k><rsub|h>||2>>>|<row|<cell|>|<cell|<below|\<leqslant\>|(<reference|eq:twolevel-step2>)>>|<cell|<enorm|e<rsub|h><rsup|k>||2>-<frac|1|C><enorm|e<rsup|k><rsub|h>||2>=<left|(>1-<frac|1|C><right|)><enorm|e<rsup|k><rsub|h>||2>,>>>>
     </eqnarray*>
 
     where, considering (<reference|eq:twolevel-step2>), we used
 
     <\equation*>
-      -\<theta\><rsub|h><l2norm|A<rsub|h>e<rsup|k><rsub|h>><rsup|2>\<leqslant\>-<frac|1|C><enorm|e<rsup|k><rsub|h>>.
+      -\<theta\><rsub|h><l2norm|A<rsub|h>e<rsub|h><rsup|k>||2>\<leqslant\>-<frac|1|C><enorm|e<rsup|k><rsub|h>||2>.
     </equation*>
 
     <em|4th step.>
 
     <\eqnarray*>
-      <tformat|<table|<row|<cell|<enorm|e<rsup|k><rsub|h>><rsup|2>>|<cell|=>|<cell|<enorm|(id-P<rsub|H>)(id-\<theta\><rsub|h>A<rsub|h>)e<rsup|k-1><rsub|h>><rsup|2>>>|<row|<cell|>|<cell|=>|<cell|a((id-P<rsub|H>)(id-\<theta\><rsub|h>A<rsub|h>)e<rsup|k-1><rsub|h>,(id-P<rsub|H>)(id-\<theta\><rsub|h>A<rsub|h>)e<rsup|k-1><rsub|h>)>>|<row|<cell|>|<cell|=>|<cell|a((id-\<theta\><rsub|h>A<rsub|h>)(id-P<rsub|H>)(id-\<theta\><rsub|h>A<rsub|h>)e<rsup|k-1><rsub|h>,e<rsup|k-1><rsub|h>)>>|<row|<cell|>|<cell|=>|<cell|<ip|(id-\<theta\><rsub|h>A<rsub|h>)e<rsup|k><rsub|h>|e<rsup|k><rsub|h>>>>|<row|<cell|>|<cell|\<leqslant\>>|<cell|<enorm|(id-\<theta\><rsub|h>A<rsub|h>)e<rsup|k><rsub|h>><enorm|e<rsup|k-1><rsub|h>>\<leqslant\><rsub|3rd
-      step><sqrt|1-1/C><enorm|e<rsup|k><rsub|h>><enorm|e<rsup|k-1><rsub|h>>.>>>>
+      <tformat|<table|<row|<cell|<enorm|e<rsub|h><rsup|k>||2>>|<cell|=>|<cell|<enorm|(id-P<rsub|H>)(id-\<theta\><rsub|h>A<rsub|h>)e<rsup|k-1><rsub|h>||2>>>|<row|<cell|>|<cell|=>|<cell|a((id-P<rsub|H>)(id-\<theta\><rsub|h>A<rsub|h>)e<rsup|k-1><rsub|h>,(id-P<rsub|H>)(id-\<theta\><rsub|h>A<rsub|h>)e<rsup|k-1><rsub|h>)>>|<row|<cell|>|<cell|=>|<cell|a((id-\<theta\><rsub|h>A<rsub|h>)(id-P<rsub|H>)(id-\<theta\><rsub|h>A<rsub|h>)e<rsup|k-1><rsub|h>,e<rsup|k-1><rsub|h>)>>|<row|<cell|>|<cell|=>|<cell|<ip|(id-\<theta\><rsub|h>A<rsub|h>)e<rsup|k><rsub|h>|e<rsup|k><rsub|h>||>>>|<row|<cell|>|<cell|\<leqslant\>>|<cell|<enorm|(id-\<theta\><rsub|h>A<rsub|h>)e<rsup|k><rsub|h>||><enorm|e<rsup|k-1><rsub|h>||>\<leqslant\><rsub|3rd
+      step><sqrt|1-1/C><enorm|e<rsup|k><rsub|h>||><enorm|e<rsup|k-1><rsub|h>||>.>>>>
     </eqnarray*>
 
     \;
@@ -526,15 +526,15 @@
   finer discretization.>
 
   <\eqnarray*>
-    <tformat|<table|<row|<cell|A<rsub|h>u<rsub|h>=f<rsub|h>>|<cell|\<Leftrightarrow\>>|<cell|<ip|A<rsub|h>u<rsub|h>|\<varphi\><rsub|z><rsup|h>>=<ip|f<rsub|h>|\<varphi\><rsub|z><rsup|h>><space|1fn>\<forall\>z\<in\>\<cal-N\><rsub|h>>>|<row|<cell|>|<cell|\<Leftrightarrow\>>|<cell|\<b-A\><rsub|h>\<b-u\><rsub|h>=\<b-f\><rsub|h><with|mode|text|
-    with >\<b-f\><rsub|h>=(<ip|f<rsub|h>|\<varphi\><rsub|h><rsup|z>>)<rsub|z\<in\>\<cal-N\><rsub|h>>>>>>
+    <tformat|<table|<row|<cell|A<rsub|h>u<rsub|h>=f<rsub|h>>|<cell|\<Leftrightarrow\>>|<cell|<ip|A<rsub|h>u<rsub|h>|\<varphi\><rsub|z><rsup|h>||>=<ip|f<rsub|h>|\<varphi\><rsub|z><rsup|h>||><space|1fn>\<forall\>z\<in\>\<cal-N\><rsub|h>>>|<row|<cell|>|<cell|\<Leftrightarrow\>>|<cell|\<b-A\><rsub|h>\<b-u\><rsub|h>=\<b-f\><rsub|h><with|mode|text|
+    with >\<b-f\><rsub|h>=(<ip|f<rsub|h>|\<varphi\><rsub|h><rsup|z>||>)<rsub|z\<in\>\<cal-N\><rsub|h>>>>>>
   </eqnarray*>
 
   Within finite element context,
 
   <\eqnarray*>
     <tformat|<table|<row|<cell|u<rsub|h><rsup|k-1/2>>|<cell|=>|<cell|u<rsub|h><rsup|k-1>+\<theta\><rsub|h>(f<rsub|h>-A<rsub|h>u<rsub|h><rsup|k-1>),>>|<row|<cell|<with|mode|text|solve
-    >a(c<rsub|H>,\<varphi\><rsub|z><rsup|H>)>|<cell|=>|<cell|<ip|f<rsub|h>|\<varphi\><rsub|z><rsup|H>>-a(u<rsup|k-1/2><rsub|h>,\<varphi\><rsub|z><rsup|H>),>>|<row|<cell|<ip|A<rsub|H>c<rsub|H>|\<varphi\><rsub|z><rsup|H>>>|<cell|=>|<cell|<ip|f<rsub|h>-A<rsub|h>u<rsup|k-1/2><rsub|h>|\<varphi\><rsub|z><rsup|H>>.>>>>
+    >a(c<rsub|H>,\<varphi\><rsub|z><rsup|H>)>|<cell|=>|<cell|<ip|f<rsub|h>|\<varphi\><rsub|z><rsup|H>||>-a(u<rsup|k-1/2><rsub|h>,\<varphi\><rsub|z><rsup|H>),>>|<row|<cell|<ip|A<rsub|H>c<rsub|H>|\<varphi\><rsub|z><rsup|H>||>>|<cell|=>|<cell|<ip|f<rsub|h>-A<rsub|h>u<rsup|k-1/2><rsub|h>|\<varphi\><rsub|z><rsup|H>||>.>>>>
   </eqnarray*>
 
   Within vector context,
@@ -546,7 +546,7 @@
   In particular,
 
   <\eqnarray*>
-    <tformat|<table|<row|<cell|<ip|A<rsub|h>v<rsub|H>|w<rsub|H>>>|<cell|=>|<cell|<ip|A<rsub|H>v<rsub|H>|w<rsub|H>>,>>|<row|<cell|\<Leftrightarrow\>(\<b-A\><rsub|h>\<b-I\><rsub|h>\<b-v\><rsub|H>)<rsup|T>(\<b-I\>\<b-w\><rsub|H>)>|<cell|=>|<cell|(\<b-A\><rsub|H>\<b-v\><rsub|H>)<rsup|T>\<b-w\><rsub|H>,>>|<row|<cell|(\<b-v\><rsub|H>)<rsup|T>\<b-I\><rsub|h><rsup|T>>|<cell|=>|<cell|\<b-A\><rsub|h>\<b-I\><rsub|h>\<b-w\><rsub|H>,>>|<row|<cell|\<Rightarrow\>\<b-A\><rsub|H>>|<cell|=>|<cell|\<b-I\><rsub|h><rsup|T>\<b-A\><rsub|h>\<b-I\><rsub|h><with|mode|text|
+    <tformat|<table|<row|<cell|<ip|A<rsub|h>v<rsub|H>|w<rsub|H>||>>|<cell|=>|<cell|<ip|A<rsub|H>v<rsub|H>|w<rsub|H>||>,>>|<row|<cell|\<Leftrightarrow\>(\<b-A\><rsub|h>\<b-I\><rsub|h>\<b-v\><rsub|H>)<rsup|T>(\<b-I\>\<b-w\><rsub|H>)>|<cell|=>|<cell|(\<b-A\><rsub|H>\<b-v\><rsub|H>)<rsup|T>\<b-w\><rsub|H>,>>|<row|<cell|(\<b-v\><rsub|H>)<rsup|T>\<b-I\><rsub|h><rsup|T>>|<cell|=>|<cell|\<b-A\><rsub|h>\<b-I\><rsub|h>\<b-w\><rsub|H>,>>|<row|<cell|\<Rightarrow\>\<b-A\><rsub|H>>|<cell|=>|<cell|\<b-I\><rsub|h><rsup|T>\<b-A\><rsub|h>\<b-I\><rsub|h><with|mode|text|
     (called the <em|Galerkin product>)>.>>>>
   </eqnarray*>
 </body>

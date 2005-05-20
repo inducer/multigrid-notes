@@ -4,11 +4,11 @@
 
 <\body>
   <\with|mode|math>
-    <assign|ip|<macro|left|right|(<arg|left>,<arg|right>)>>
+    <assign|ip|<macro|left-arg|right-arg|subi|supi|<left|(><arg|left-arg>,<arg|right-arg><right|)><rsub|<arg|subi>><rsup|<arg|supi>>>>
 
     <assign|l2norm|<macro|arg|subi|supi|<left|\|\|><arg|arg><right|\|\|><rsub|<arg|subi>><rsup|<arg|supi>>>>
 
-    <assign|enorm|<macro|arg|<left|\|><left|\|\|><arg|arg><right|\|\|><right|\|>>>
+    <assign|enorm|<macro|arg|subi|supi|<left|\|><left|\|\|><arg|arg><right|\|\|><right|\|><rsub|<arg|subi>><rsup|<arg|supi>>>>
   </with>
 </body>
 
