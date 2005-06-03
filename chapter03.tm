@@ -410,7 +410,7 @@
     A<rsub|h>>. [Consider <with|mode|math|<l2norm|K<rsub|h>-L<rsub|h>||>\<leqslant\>1>.]
 
     <\eqnarray*>
-      <tformat|<table|<row|<cell|x<rsup|m>-(x-y)<rsup|m>>|<cell|=>|<cell|x<left|[>x<rsup|m-1>-(x-y)<rsup|m-1><right|]>+y(x-y)<rsup|m-1>>>|<row|<cell|<l2norm|K<rsub|h><rsup|m>-(K<rsub|h>L<rsub|h>)<rsup|m>|0|>>|<cell|=>|<cell|<l2norm|<big|sum><rsub|j=0><rsup|m-1>K<rsub|h><rsup|j>L<rsub|h>(K<rsub|h>-L<rsub|h>)<rsup|m-1-j>|0|><with|color|red|Induktion?>>>|<row|<cell|>|<cell|\<leqslant\>>|<cell|<l2norm|L<rsub|h>|0|><big|sum><rsub|j=0><rsup|m-1><wide*|<l2norm|K<rsub|h>|0|>|\<wide-underbrace\>><rsub|\<leqslant\>1><l2norm|K<rsub|h>-L<rsub|h>|0|m-1-j>\<leqslant\>C<rsup|m>m<l2norm|L<rsub|h>|0|>>>>>
+      <tformat|<table|<row|<cell|x<rsup|m>-(<wide*|x-y|\<wide-underbrace\>><rsub|z\<assign\>>)<rsup|m>>|<cell|=>|<cell|x<rsup|m-1>(x-z)+x<rsup|m-2>(x-z)z+x<rsup|m-3>(x-z)z<rsup|2>+\<cdots\>+(x-z)z<rsup|m-1>>>|<row|<cell|>|<cell|=>|<cell|<big|sum><rsub|j=0><rsup|m-1>x<rsup|m-1-j>(x-z)z<rsup|j>.>>|<row|<cell|<l2norm|K<rsub|h><rsup|m>-(K<rsub|h>L<rsub|h>)<rsup|m>|0|>>|<cell|=>|<cell|<l2norm|<big|sum><rsub|j=0><rsup|m-1>K<rsub|h><rsup|j>L<rsub|h>(K<rsub|h>-L<rsub|h>)<rsup|m-1-j>|0|><with|color|red|Induktion?>>>|<row|<cell|>|<cell|\<leqslant\>>|<cell|<l2norm|L<rsub|h>|0|><big|sum><rsub|j=0><rsup|m-1><wide*|<l2norm|K<rsub|h>|0|>|\<wide-underbrace\>><rsub|\<leqslant\>1><l2norm|K<rsub|h>-L<rsub|h>|0|m-1-j>\<leqslant\>C<rsup|m>m<l2norm|L<rsub|h>|0|>>>>>
     </eqnarray*>
 
     with <with|mode|math|<l2norm|K<rsub|h>L<rsub|h>|0|>\<leqslant\>C> and
