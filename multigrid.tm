@@ -58,6 +58,8 @@
   <include|chapter03.tm>
 
   <include|chapter04.tm>
+
+  <include|chapter05.tm>
 </body>
 
 <\initial>
