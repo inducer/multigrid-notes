@@ -28,7 +28,7 @@
   idea for non-smooth problems, e.g. hyperbolic equations.
 
   <\example>
-    <with|mode|math|H<rsub|0>\<assign\>L<rsup|2>(0,1)>,
+    <label|exa:2level-1d><with|mode|math|H<rsub|0>\<assign\>L<rsup|2>(0,1)>,
     <with|mode|math|H<rsub|1>\<assign\>{v\<in\>H<rsub|0>,v<rprime|'>\<in\>L<rsup|2>(0,1),v(0)=v(1)=0}>,
     <with|mode|math|H<rsub|2>\<assign\>{v\<in\>H<rsub|1>,v<rprime|''>\<in\>L<rsup|2>(0,1)}>.
 
@@ -59,7 +59,7 @@
     <with|mode|math|\<Omega\>\<in\>\<bbb-R\><rsup|d>> is our domain.
 
     <\eqnarray*>
-      <tformat|<table|<row|<cell|H<rsub|0>>|<cell|\<assign\>>|<cell|L<rsup|2>(\<Omega\>),>>|<row|<cell|H<rsub|1>>|<cell|\<assign\>>|<cell|{v\<in\>H<rsub|0>,\<nabla\>v\<in\>L<rsup|2>(\<Omega\>),v\|<rsub|\<Gamma\>>=0}<with|mode|text|
+      <tformat|<table|<row|<cell|H<rsub|0>>|<cell|\<assign\>>|<cell|L<rsup|2>(\<Omega\>),>>|<row|<cell|H<rsub|1>>|<cell|\<assign\>>|<cell|{v\<in\>H<rsub|0>,\<nabla\>v\<in\>L<rsup|2>(\<Omega\>)<rsup|d>,v\|<rsub|\<Gamma\>>=0}<with|mode|text|
       with >\<Gamma\>\<subset\>\<partial\>\<Omega\>,
       vol<rsub|d-1>(\<Gamma\>)\<gtr\>0,>>|<row|<cell|H<rsub|2>>|<cell|\<assign\>>|<cell|{v\<in\>H<rsub|1>,D<rsub|2>v\<in\>L<rsup|2>(\<Omega\>)<rsup|d\<times\>d>}.>>>>
     </eqnarray*>
@@ -81,22 +81,23 @@
       almost everywhere in <with|mode|math|\<Omega\>>>.>>>>
     </eqnarray*>
 
-    Our previous special case was <with|mode|math|K=id>,
-    <with|mode|math|r=0>, <with|mode|math|c=0>, with
-    <with|mode|math|<enorm|v||>=<l2norm|\<nabla\>v||>> a norm.
+    Example <reference|exa:2level-1d> was a special case of our current
+    situation, namely <with|mode|math|K=id>, <with|mode|math|r=0>,
+    <with|mode|math|c=0>, with <with|mode|math|<enorm|v||>=<l2norm|\<nabla\>v||>>
+    a norm.
 
     The Poincaré inequality gives
 
     <\equation*>
       <l2norm|v|0|>\<leqslant\>C<rsub|p><l2norm|\<nabla\>v|0|><with|mode|text|
-      with >C<rsub|p><with|mode|text| dependent on <with|mode|math|\<Gamma\>>
-      <with|color|red|(nicht <with|mode|math|\<Omega\>>?)>>.
+      with >C<rsub|p><with|mode|text| dependent on
+      <with|mode|math|\<Gamma\>>>.
     </equation*>
 
     We obtain
 
     <\equation*>
-      <l2norm|\<nabla\>v||>=<enorm|v||>\<geqslant\>(1+C<rsub|p><rsup|2>)<rsup|-1/2><l2norm|v|1|>,
+      <l2norm|\<nabla\>v||>\<geqslant\>(1+C<rsub|p><rsup|2>)<rsup|-1/2><l2norm|v|1|>,
     </equation*>
 
     using
@@ -110,7 +111,7 @@
     <with|mode|math|tr D<rsup|2>u=\<Delta\>u>
 
     <\equation*>
-      <l2norm|D<rsup|2>u|0|>\<leqslant\><l2norm|\<Delta\>u|0|>\<Rightarrow\><l2norm|u|2|>\<leqslant\>C<rsub|2><l2norm|f|0|>.
+      <value|huh><l2norm|D<rsup|2>u|0|>\<leqslant\><l2norm|\<Delta\>u|0|>\<Rightarrow\><l2norm|u|2|>\<leqslant\>C<rsub|2><l2norm|f|0|>.
     </equation*>
   </example>
 
@@ -118,14 +119,14 @@
     <with|mode|math|\<Omega\>\<in\>\<bbb-R\><rsup|d>> is our domain.
 
     <\eqnarray*>
-      <tformat|<table|<row|<cell|H<rsub|0>>|<cell|\<assign\>>|<cell|L<rsup|2>(\<Omega\>)<rsup|d>,>>|<row|<cell|H<rsub|1>>|<cell|\<assign\>>|<cell|{v\<in\>H<rsub|0>,D*v\<in\>L<rsup|2>(\<Omega\>),v\|<rsub|\<Gamma\>>=0}<with|mode|text|
+      <tformat|<table|<row|<cell|H<rsub|0>>|<cell|\<assign\>>|<cell|L<rsup|2>(\<Omega\>)<rsup|d>,>>|<row|<cell|H<rsub|1>>|<cell|\<assign\>>|<cell|{v\<in\>H<rsub|0>,D*v\<in\>L<rsup|2>(\<Omega\>)<rsup|d>,v\|<rsub|\<Gamma\>>=0}<with|mode|text|
       with >\<Gamma\>\<subset\>\<partial\>\<Omega\>,
       vol<rsub|d-1>(\<Gamma\>)\<gtr\>0,>>|<row|<cell|H<rsub|2>>|<cell|\<assign\>>|<cell|{v\<in\>H<rsub|1>,D<rsub|2>v<rsub|j>\<in\>L<rsup|2>(\<Omega\>)<rsup|d\<times\>d>}.>>>>
     </eqnarray*>
 
     <with|mode|math|G,F\<in\>\<bbb-R\><rsup|d\<times\>d>>,
     <with|mode|math|sym(F)=1/2(F+F<rsup|T>)>,
-    <with|mode|math|F:G=<big|sum>F<rsub|i,j>G<rsub|i,j>>
+    <with|mode|math|F:G\<assign\><big|sum><rsub|i,j>F<rsub|i,j>G<rsub|i,j>>
 
     <\equation*>
       a(v,w)\<assign\><big|int><rsub|\<Omega\>>(2\<mu\>*sym*\<nabla\>v:sym*\<nabla\>w+\<lambda\>div*v*div*w)d
@@ -136,7 +137,7 @@
 
     <\equation*>
       a(v,v)\<geqslant\>2\<mu\><l2norm|sym
-      \<nabla\>v||>\<geqslant\>2\<mu\>C<rsub|K><l2norm|\<nabla\>v||>
+      \<nabla\>v|0|2>\<geqslant\>2\<mu\>C<rsub|K><l2norm|\<nabla\>v|0|2>
     </equation*>
 
     with <with|mode|math|\<lambda\>\<geqslant\>0>,
@@ -155,7 +156,7 @@
       for <with|mode|math|v<rsub|h>\<in\>V<rsub|h>>, <em|(approximation
       property)>
 
-      <item><with|mode|math|<wide|C|~><rsub|h><l2norm|A<rsub|h>(id-\<theta\><rsub|h>A<rsub|h>)e<rsub|h>||>\<leqslant\>C<l2norm|e<rsub|h>||>>
+      <item><with|mode|math|<wide|C|~><rsub|h><l2norm|A<rsub|h>(id-\<theta\><rsub|h>A<rsub|h>)e<rsub|h>|0|>\<leqslant\>C<l2norm|e<rsub|h>|0|>>
       for <with|mode|math|e<rsub|h>\<in\>V<rsub|h>>. <em|(smoothing
       property)>
     </enumerate-alpha>
@@ -163,16 +164,16 @@
 
   <\proof>
     <with|mode|math|v<rsub|h>=(id-\<theta\><rsub|h>A<rsub|h>)<rsup|m>e<rsub|h>>
-    and <with|mode|math|<l2norm|(id-P<rsub|H>)(id-Q<rsub|H>A<rsub|h>)<rsup|m>|0|>=sup<rsub|<l2norm|e<rsub|h>|0|><rsub|0>=1><l2norm|(id-P<rsub|H>)(id-Q<rsub|H>A<rsub|h>)<rsup|m>e<rsub|h>|0|>>.
+    and <with|mode|math|<l2norm|(id-P<rsub|H>)(id-Q<rsub|H>A<rsub|h>)<rsup|m>|0|>=sup<rsub|<l2norm|e<rsub|h>|0|>=1><l2norm|(id-P<rsub|H>)(id-Q<rsub|H>A<rsub|h>)<rsup|m>e<rsub|h>|0|>>.
   </proof>
 
   <\theorem>
     <with|mode|math|V<rsub|H>\<subset\>V<rsub|h>\<subset\>H<rsub|1>> be
-    conforming finite element spaces with mesh size <with|mode|math|h>,
+    conforming finite element spaces with mesh sizes <with|mode|math|h>,
     <with|mode|math|H=2h> and
 
     <\enumerate-alpha>
-      <item><with|mode|math|inf<rsub|v<rsub|H>\<in\>V<rsub|H>><l2norm|v-v<rsub|H>||>\<leqslant\>C<rsub|Q>H<l2norm|v|2|>>
+      <item><with|mode|math|inf<rsub|v<rsub|H>\<in\>V<rsub|H>><l2norm|v-v<rsub|H>|0|>\<leqslant\>C<rsub|Q>H<l2norm|v|2|>>
       for <with|mode|math|v\<in\>H<rsub|2>>, (<with|color|red|sup??>)
 
       <item><with|mode|math|<l2norm|v<rsub|h>|1|>\<leqslant\>C<rsub|I>h<rsup|-1><l2norm|v<rsub|h>|0|>>
@@ -182,13 +183,13 @@
     Then, the <em|approximation property>
 
     <\equation*>
-      <l2norm|v<rsub|h>-P<rsub|H>v<rsub|h>||>\<leqslant\>C<rsub|A>\<lambda\><rsub|h><rsup|-1><l2norm|A<rsub|h>v<rsub|h>|0|>
+      <l2norm|v<rsub|h>-P<rsub|H>v<rsub|h>|0|>\<leqslant\>C<rsub|A>\<lambda\><rsub|h><rsup|-1><l2norm|A<rsub|h>v<rsub|h>|0|>
     </equation*>
 
     for all <with|mode|math|v<rsub|h>\<in\>V<rsub|h>> holds with
 
     <\equation*>
-      \<lambda\><rsub|n>=<l2norm|A<rsub|h>|0|>=sup<rsub|<l2norm|v<rsub|h>|0|>=1><l2norm|A<rsub|h>v<rsub|h>|0|>.
+      \<lambda\><rsub|h>=<l2norm|A<rsub|h>|0|>=sup<rsub|<l2norm|v<rsub|h>|0|>=1><l2norm|A<rsub|h>v<rsub|h>|0|>.
     </equation*>
   </theorem>
 
@@ -202,7 +203,7 @@
     By standard finite element analysis, we find
 
     <\equation*>
-      <l2norm|u-u<rsub|h>|1|>\<leqslant\>C<rsub|3>inf<rsub|v<rsub|h>\<in\>V<rsub|h>><l2norm|u-v<rsub|h>||>\<leqslant\>C<rsub|4>h<l2norm|u|2|>\<leqslant\>C<rsub|5><wide*|h|\<wide-underbrace\>><rsub|\<lambda\><rsub|h>=h<rsup|-2>><wide*|<l2norm|f|0|>|\<wide-underbrace\>><rsub|=A<rsub|h>u<rsub|h>\<Rightarrow\><l2norm|u-u<rsub|h>|0|>\<leqslant\>C<rsub|6>h<rsup|2><l2norm|f|0|>>+<with|mode|text|duality>.
+      <l2norm|u-u<rsub|h>|1|><below|\<leqslant\>|<with|mode|text|Céa>>C<rsub|3>inf<rsub|v<rsub|h>\<in\>V<rsub|h>><l2norm|u-v<rsub|h>||>\<leqslant\>C<rsub|4>h<l2norm|u|2|>\<leqslant\>C<rsub|5><wide*|h|\<wide-underbrace\>><rsub|\<lambda\><rsub|h>=h<rsup|-2>><wide*|<l2norm|f|0|>|\<wide-underbrace\>><rsub|=A<rsub|h>u<rsub|h>\<Rightarrow\><l2norm|u-u<rsub|h>|0|>\<leqslant\>C<rsub|6>h<rsup|2><l2norm|f|0|>>+<with|mode|text|duality>.
     </equation*>
   </remark*>
 
@@ -241,7 +242,7 @@
   </proof>
 
   <\remark*>
-    Consider example <inactive|<reference|ex:0>> with <with|mode|math|h=1/N>,
+    Consider Example <reference|exa:2level-1d> with <with|mode|math|h=1/N>,
     <with|mode|math|X<rsub|h>={v\<in\>C[0,1]:v<with|mode|text| linear in
     <with|mode|math|[x<rsub|n-1>,x<rsub|n>]>>}.> For
     <with|mode|math|v\<in\>C<rsup|2>[0,1]> define
@@ -455,6 +456,7 @@
   <\collection>
     <associate|auto-1|<tuple|3|?>>
     <associate|auto-2|<tuple|4|?>>
+    <associate|exa:2level-1d|<tuple|3.1|?>>
   </collection>
 </references>
 

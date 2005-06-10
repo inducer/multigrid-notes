@@ -9,6 +9,8 @@
     <assign|l2norm|<macro|arg|subi|supi|<left|\|\|><arg|arg><right|\|\|><rsub|<arg|subi>><rsup|<arg|supi>>>>
 
     <assign|enorm|<macro|arg|subi|supi|<left|\|><left|\|\|><arg|arg><right|\|\|><right|\|><rsub|<arg|subi>><rsup|<arg|supi>>>>
+
+    <assign|huh|<with|mode|text|<with|font-base-size|24|<with|color|red|<strong|?>>>>>
   </with>
 </body>
 
