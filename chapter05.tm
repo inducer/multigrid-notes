@@ -8,13 +8,49 @@
   <assign|section-nr|4><section|The symmetric V-cycle>
 
   Let <with|mode|math|><with|mode|math|V<rsub|0>\<subset\>\<cdots\>\<subset\>V<rsub|J>>
-  be a sequence of nested Finite Element Spaces.
+  be a sequence of nested Finite Element Spaces. Further, let
+  <with|mode|math|a:V<rsub|J>\<times\>V<rsub|J>\<rightarrow\>\<bbb-R\>> be
+  symmetric positive definite, with
 
-  <big-figure|a) <with|color|red|Bild> b) <with|color|red|Bild>|a)... b)...>
+  <\eqnarray*>
+    <tformat|<table|<row|<cell|<enorm|v<rsub|J>||>>|<cell|\<assign\>>|<cell|<sqrt|a(v<rsub|J>,v<rsub|J>)>,>>|<row|<cell|<ip|\<cdot\>|\<cdot\>||>>|<cell|:>|<cell|<ip|A<rsub|J>v<rsub|J>|w<rsub|J>||>\<assign\>a(v<rsub|J>,w<rsub|J>),>>|<row|<cell|<l2norm|v<rsub|J>||>>|<cell|\<assign\>>|<cell|<sqrt|<ip|v<rsub|J>|v<rsub|J>||>>.>>>>
+  </eqnarray*>
 
-  <with|color|red|...Wolfgang...>
+  <big-figure|a) <postscript|deep-v-cycle.fig|*5/8|*5/8||||> b)
+  <postscript|double-w-cycle.fig|*5/8|*5/8||||>|a)... b)...>
+
+  Further, consider <with|mode|math|R<rsub|j>:V<rsub|j>\<rightarrow\>V<rsub|j>>
+  and <with|mode|math|R<rsub|j><rsup|T>:V<rsub|j>\<rightarrow\>V<rsub|j>>
+  with
+
+  <\equation*>
+    <ip|R<rsub|j>v<rsub|j>|w<rsub|j>||>=<ip|v<rsub|j>|R<rsub|j><rsup|T>w<rsub|j>||>,
+  </equation*>
+
+  which is the <with|color|red|Wasistdas?>. For
+  <with|mode|math|u<rsup|0><rsub|J>\<in\>V<rsub|J>> define
+
+  <\equation*>
+    u<rsub|J><rsup|k+1>\<assign\>u<rsub|J><rsup|k>+B<rsub|J>(f<rsub|J>-A<rsub|J>u<rsub|J>)
+  </equation*>
+
+  with <with|mode|math|B<rsub|J>> recursively defined by
+  <with|mode|math|B<rsub|0>\<assign\>A<rsup|-1>> and
+  <with|mode|math|c<rsub|j>=B<rsub|j>r<rsub|j>> with
+
+  <\eqnarray*>
+    <tformat|<table|<row|<cell|c<rsub|j><rsup|0>>|<cell|\<assign\>>|<cell|0>>|<row|<cell|c<rsub|j><rsup|1>>|<cell|\<assign\>>|<cell|c<rsub|j><rsup|0>+R<rsub|j><rsup|T>(r<rsub|j>-A<rsub|j>c<rsub|j><rsup|0>)>>|<row|<cell|c<rsub|j><rsup|2>>|<cell|\<assign\>>|<cell|c<rsub|j><rsup|1>+B<rsub|j-1>Q<rsub|j-1>(r<rsub|j>-A<rsub|j>c<rsub|j><rsup|1>)>>|<row|<cell|c<rsup|3><rsub|j>>|<cell|\<assign\>>|<cell|c<rsub|j><rsup|2>+R<rsub|j>(r<rsub|j>-A<rsub|j>c<rsub|j><rsup|2>)>>|<row|<cell|c<rsub|j>>|<cell|\<assign\>>|<cell|c<rsub|j><rsup|3>.>>>>
+  </eqnarray*>
+
+  <with|color|red|(oben: <with|mode|math|R\<rightarrow\>K>, unten:
+  <with|mode|math|R\<rightarrow\>B>?) >Also, consider
+
+  <\eqnarray*>
+    <tformat|<table|<row|<cell|a(K<rsub|j>v<rsub|j>,w<rsub|j>)>|<cell|=>|<cell|<ip|(id-R<rsub|j>A<rsub|j>)v<rsub|j>|A<rsub|j>w<rsub|j>||>>>|<row|<cell|>|<cell|=>|<cell|a(v<rsub|j>,w<rsub|j>)-<ip|R<rsub|j>A<rsub|j>v<rsub|j>|A<rsub|j>w<rsub|j>||>>>|<row|<cell|>|<cell|=>|<cell|a(v<rsub|j>,w<rsub|j>)-<ip|A<rsub|j>v<rsub|j>|R<rsup|T><rsub|j>A<rsub|j>w<rsub|j>||>>>|<row|<cell|>|<cell|=>|<cell|a(v<rsub|j>,K<rsub|j><rsup|\<ast\>>w<rsub|j>).>>>>
+  </eqnarray*>
 
   <with|mode|math|K<rsub|j>> is just <em|any> smoother.
+  <with|color|red|Huh??>
 
   The error propagation is
 
@@ -146,6 +182,9 @@
 
 <\auxiliary>
   <\collection>
+    <\associate|figure>
+      <tuple|normal|a)... b)...|<pageref|auto-2>>
+    </associate>
     <\associate|toc>
       <vspace*|1fn><with|font-series|<quote|bold>|math-font-series|<quote|bold>|5<space|2spc>The
       symmetric V-cycle> <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
