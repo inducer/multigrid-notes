@@ -60,6 +60,8 @@
   <include|chapter04.tm>
 
   <include|chapter05.tm>
+
+  <include|chapter06.tm>
 </body>
 
 <\initial>
