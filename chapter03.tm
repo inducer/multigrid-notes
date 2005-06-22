@@ -168,13 +168,13 @@
   </proof>
 
   <\theorem>
-    <with|mode|math|V<rsub|H>\<subset\>V<rsub|h>\<subset\>H<rsub|1>> be
+    Let <with|mode|math|V<rsub|H>\<subset\>V<rsub|h>\<subset\>H<rsub|1>> be
     conforming finite element spaces with mesh sizes <with|mode|math|h>,
     <with|mode|math|H=2h> and
 
     <\enumerate-alpha>
       <item><with|mode|math|inf<rsub|v<rsub|H>\<in\>V<rsub|H>><l2norm|v-v<rsub|H>|0|>\<leqslant\>C<rsub|Q>H<l2norm|v|2|>>
-      for <with|mode|math|v\<in\>H<rsub|2>>, (<with|color|red|sup??>)
+      for <with|mode|math|v\<in\>H<rsub|2>>,
 
       <item><with|mode|math|<l2norm|v<rsub|h>|1|>\<leqslant\>C<rsub|I>h<rsup|-1><l2norm|v<rsub|h>|0|>>
       for <with|mode|math|v<rsub|h>\<in\>V<rsub|h>>.
@@ -197,7 +197,7 @@
     \;
 
     <\eqnarray*>
-      <tformat|<table|<row|<cell|a(u,v)>|<cell|=>|<cell|<ip|f|v||><space|1em>u\<in\>H<rsub|2>,v\<in\>H<rsup|1>>>|<row|<cell|a(u<rsub|h>,v<rsub|h>)>|<cell|=>|<cell|<ip|f|f<rsub|h>||><space|1em>v<rsub|h>\<in\>V<rsub|h>>>>>
+      <tformat|<table|<row|<cell|a(u,v)>|<cell|=>|<cell|<ip|f|v||><space|1em>u\<in\>H<rsub|2>,v\<in\>H<rsup|1>>>|<row|<cell|a(u<rsub|h>,v<rsub|h>)>|<cell|=>|<cell|<ip|f|v<rsub|h>||><space|1em>v<rsub|h>\<in\>V<rsub|h>>>>>
     </eqnarray*>
 
     By standard finite element analysis, we find

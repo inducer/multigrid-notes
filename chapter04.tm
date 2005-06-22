@@ -194,20 +194,22 @@
 
   <\remark*>
     <\enumerate-alpha>
-      <item>In practice, always use <with|mode|math|\<gamma\>=1>. In
-      practcice, use <with|mode|math|B<rsub|J>> as a preconditioner.
+      <item>In practice, always use <with|mode|math|\<gamma\>=1> and use
+      <with|mode|math|B<rsub|J>> as a preconditioner.
 
       <item>Variable V-cycle: <with|mode|math|m<rsub|j>=2<rsup|J-j+1>>
       smooting:
 
       <tabular|<tformat|<table|<row|<cell|1>|<cell|smoothings>|<cell|<with|mode|math|J>>>|<row|<cell|2>|<cell|>|<cell|<with|mode|math|J-1>>>|<row|<cell|4>|<cell|>|<cell|<with|mode|math|J-2>>>|<row|<cell|<with|mode|math|\<vdots\>>>|<cell|>|<cell|<with|mode|math|\<vdots\>>>>>>>
 
-      So, you have the same number of smoothings as W-cycle, and you get a
-      bounded condition number <with|mode|math|\<kappa\><rsub|2>(B<rsub|J>A<rsub|J>)>.
+      So, you have the same number of smoothings as for the W-cycle, and you
+      get a bounded condition number <with|mode|math|\<kappa\><rsub|2>(B<rsub|J>A<rsub|J>)>.
 
-      <item>W-cycle result requires only the smoothing property and the
-      approximation property. If an <with|mode|math|L<rsup|2>> estimate is
-      available (i.e. <with|mode|math|<l2norm|u-u<rsub|h>|0|>\<leqslant\>C*h<rsup|2><l2norm|f|0|>>),
+      <item>The W-cycle result requires only the smoothing property and the
+      approximation property.
+
+      If an <with|mode|math|L<rsup|2>>-estimate is available (i.e.
+      <with|mode|math|<l2norm|u-u<rsub|h>|0|>\<leqslant\>C*h<rsup|2><l2norm|f|0|>>),
       the approximation property holds automatically. Applications to
       non-conforming or non-nested problems.
     </enumerate-alpha>
@@ -237,6 +239,10 @@
       <vspace*|1fn><with|font-series|<quote|bold>|math-font-series|<quote|bold>|4<space|2spc>The
       W-Cycle> <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
       <no-break><pageref|auto-1><vspace|0.5fn>
+
+      <with|par-left|<quote|1.5fn>|4.1<space|2spc>Implementation
+      <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
+      <no-break><pageref|auto-3>>
     </associate>
   </collection>
 </auxiliary>

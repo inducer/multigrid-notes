@@ -218,11 +218,11 @@
       be the Galerkin projection, i.e. >>|<cell|>|<cell|a(P<rsub|H>v,w<rsub|H>)=a(v,w<rsub|H>)>>>>
     </eqnarray*>
 
-    with <with|mode|math|v\<in\>L<rsup|2>(\<Omega\>)\<supset\>V<rsub|h>>,
-    <with|mode|math|w<rsub|H>\<in\>V<rsub|H>>,
+    for all <with|mode|math|w<rsub|H>\<in\>V<rsub|H>> with
+    <with|mode|math|v\<in\>L<rsup|2>(\<Omega\>)\<supset\>V<rsub|h>>, and
     <with|mode|math|v\<in\>H<rsup|1><rsub|0>(\<Omega\>)\<supset\>V<rsub|h>>,
-    for all <with|mode|math|w<rsub|H>\<in\>V<rsub|H>>. Then, we have for the
-    error propagation of the two-level method
+    respectively. Then, we have for the error propagation of the two-level
+    method
 
     <\equation*>
       e<rsup|k><rsub|h>=<wide*|u<rsup|k><rsub|h>|\<wide-underbrace\>><rsub|=A<rsup|-1><rsub|h>f<rsub|h>>-u<rsub|h>=(id-P<rsub|H>)(id-\<theta\><rsub|h>A<rsub|h>)e<rsup|k-1><rsub|h>.
@@ -302,7 +302,7 @@
     </enumerate>
 
     Then, we have <with|mode|math|<enorm|(id-P<rsub|H>)(id-\<theta\><rsub|h>A<rsub|h>)||2>\<leqslant\>1-1/C\<less\>1>,
-    i.e. <with|mode|math|<enorm|u<rsup|k><rsub|h>-u<rsub|h>||>\<leqslant\>(1-1/C)<rsup|k/2><enorm|u<rsub|h><rsup|0>-u<rsub|h>>>.
+    i.e. <with|mode|math|<enorm|u<rsup|k><rsub|h>-u<rsub|h>||>\<leqslant\>(1-1/C)<rsup|k/2><enorm|u<rsub|h><rsup|0>-u<rsub|h>||>>.
   </theorem>
 
   1) and 2) of Theorem <reference|the:twolevel> imply
