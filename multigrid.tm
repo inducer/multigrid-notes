@@ -49,6 +49,26 @@
     <vspace*|1fn><with|font-series|bold|math-font-series|bold|4<space|2spc>The
     W-Cycle> <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
     <no-break><pageref|auto-14><vspace|0.5fn>
+
+    <with|par-left|1.5fn|4.1<space|2spc>Implementation
+    <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
+    <no-break><pageref|auto-16>>
+
+    <vspace*|1fn><with|font-series|bold|math-font-series|bold|5<space|2spc>The
+    symmetric V-cycle> <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
+    <no-break><pageref|auto-17><vspace|0.5fn>
+
+    <vspace*|1fn><with|font-series|bold|math-font-series|bold|6<space|2spc>Smoothing>
+    <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
+    <no-break><pageref|auto-19><vspace|0.5fn>
+
+    <with|par-left|1.5fn|6.1<space|2spc>Method of succesive subspace
+    correction <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
+    <no-break><pageref|auto-20>>
+
+    <with|par-left|1.5fn|6.2<space|2spc>Parallel Subspace Correction
+    <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
+    <no-break><pageref|auto-21>>
   </table-of-contents>
 
   <include|chapter01.tm>
@@ -79,7 +99,13 @@
     <associate|auto-13|<tuple|3|11|chapter03.tm>>
     <associate|auto-14|<tuple|4|?|chapter04.tm>>
     <associate|auto-15|<tuple|4.1|?|chapter04.tm>>
+    <associate|auto-16|<tuple|4.1|?|chapter04.tm>>
+    <associate|auto-17|<tuple|5|?|chapter05.tm>>
+    <associate|auto-18|<tuple|5.1|?|chapter05.tm>>
+    <associate|auto-19|<tuple|6|?|chapter06.tm>>
     <associate|auto-2|<tuple|1|3|chapter01.tm>>
+    <associate|auto-20|<tuple|6.1|?|chapter06.tm>>
+    <associate|auto-21|<tuple|6.2|?|chapter06.tm>>
     <associate|auto-3|<tuple|1.1|3|chapter01.tm>>
     <associate|auto-4|<tuple|1.2|4|chapter01.tm>>
     <associate|auto-5|<tuple|1.3|4|chapter01.tm>>
@@ -87,7 +113,11 @@
     <associate|auto-7|<tuple|2.1|5|chapter02.tm>>
     <associate|auto-8|<tuple|2.1|5|chapter02.tm>>
     <associate|auto-9|<tuple|2.2|6|chapter02.tm>>
+    <associate|eq:smoothing-id-e|<tuple|6.1|?|chapter06.tm>>
     <associate|eq:twolevel-step2|<tuple|2.1|10|chapter02.tm>>
+    <associate|eq:vcycle-approxprop|<tuple|5.2|?|chapter05.tm>>
+    <associate|eq:vcycle-smoothingprop|<tuple|5.1|?|chapter05.tm>>
+    <associate|exa:2level-1d|<tuple|3.1|?|chapter03.tm>>
     <associate|lem:2step-energy-estimate|<tuple|2.10|8|chapter02.tm>>
     <associate|subsec:fd-model-probelm|<tuple|1.1|?>>
     <associate|subsec:fd-model-problem|<tuple|1.1|3|chapter01.tm>>
@@ -108,6 +138,8 @@
       discretization.|<pageref|auto-12>>
 
       <tuple|normal||<pageref|auto-15>>
+
+      <tuple|normal|a)... b)...|<pageref|auto-18>>
     </associate>
     <\associate|toc>
       <vspace*|1fn><with|font-series|<quote|bold>|math-font-series|<quote|bold>|Table
@@ -149,6 +181,26 @@
       <vspace*|1fn><with|font-series|<quote|bold>|math-font-series|<quote|bold>|4<space|2spc>The
       W-Cycle> <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
       <no-break><pageref|auto-14><vspace|0.5fn>
+
+      <with|par-left|<quote|1.5fn>|4.1<space|2spc>Implementation
+      <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
+      <no-break><pageref|auto-16>>
+
+      <vspace*|1fn><with|font-series|<quote|bold>|math-font-series|<quote|bold>|5<space|2spc>The
+      symmetric V-cycle> <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
+      <no-break><pageref|auto-17><vspace|0.5fn>
+
+      <vspace*|1fn><with|font-series|<quote|bold>|math-font-series|<quote|bold>|6<space|2spc>Smoothing>
+      <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
+      <no-break><pageref|auto-19><vspace|0.5fn>
+
+      <with|par-left|<quote|1.5fn>|6.1<space|2spc>Method of succesive
+      subspace correction <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
+      <no-break><pageref|auto-20>>
+
+      <with|par-left|<quote|1.5fn>|6.2<space|2spc>Parallel Subspace
+      Correction <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
+      <no-break><pageref|auto-21>>
     </associate>
   </collection>
 </auxiliary>
