@@ -193,7 +193,7 @@
     </equation*>
   </theorem>
 
-  <\remark*>
+  <\remark>
     \;
 
     <\eqnarray*>
@@ -205,7 +205,7 @@
     <\equation*>
       <l2norm|u-u<rsub|h>|1|><below|\<leqslant\>|<with|mode|text|Céa>>C<rsub|3>inf<rsub|v<rsub|h>\<in\>V<rsub|h>><l2norm|u-v<rsub|h>||>\<leqslant\>C<rsub|4>h<l2norm|u|2|>\<leqslant\>C<rsub|5><wide*|h|\<wide-underbrace\>><rsub|\<lambda\><rsub|h>=h<rsup|-2>><wide*|<l2norm|f|0|>|\<wide-underbrace\>><rsub|=A<rsub|h>u<rsub|h>\<Rightarrow\><l2norm|u-u<rsub|h>|0|>\<leqslant\>C<rsub|6>h<rsup|2><l2norm|f|0|>>+<with|mode|text|duality>.
     </equation*>
-  </remark*>
+  </remark>
 
   <\proof>
     <em|1st step.> Consider a dual solution <with|mode|math|z\<in\>H<rsub|1>>
@@ -241,7 +241,7 @@
     \;
   </proof>
 
-  <\remark*>
+  <\remark>
     Consider Example <reference|exa:2level-1d> with <with|mode|math|h=1/N>,
     <with|mode|math|X<rsub|h>={v\<in\>C[0,1]:v<with|mode|text| linear in
     <with|mode|math|[x<rsub|n-1>,x<rsub|n>]>>}.> For
@@ -269,7 +269,7 @@
     <\eqnarray*>
       <tformat|<table|<row|<cell|<l2norm|v<rprime|'><rsub|h>|0|2>>|<cell|=>|<cell|<big|sum><rsub|n=1><rsup|N><big|int><rsub|x<rsub|n-1>><rsup|x<rsub|n>><left|(><frac|1|h>(v(x<rsub|n>)-v(x<rsub|n-1>))<right|)><rsup|2>>>|<row|<cell|>|<cell|=>|<cell|h<rsup|-1><big|sum><rsub|n=1><rsup|N>(v(x<rsub|n>)-v(x<rsub|n-1>))<rsup|2>>>|<row|<cell|>|<cell|\<leqslant\>>|<cell|2h<rsup|-2><big|sum><rsub|n=1><rsup|N>(v(x<rsub|n>)+v(x<rsub|n-1>))<rsup|2>>>|<row|<cell|>|<cell|\<leqslant\>>|<cell|<frac|12|h<rsup|2>><big|sum><rsub|n=1><rsup|N>h<frac|1|6><left|(>v(x<rsub|n-1>)<rsup|2>+4<left|(><frac|v(x<rsub|n>)+v(x<rsub|n-1>)|2><right|)><rsup|2>+v(x<rsub|n>)<rsup|2><right|)>=<l2norm|v|0|2>.>>>>
     </eqnarray*>
-  </remark*>
+  </remark>
 
   <\corollary>
     For symmetric <with|mode|math|A> and <with|mode|math|<l2norm|\<cdot\>|1|>=<enorm|\<cdot\>||>>,

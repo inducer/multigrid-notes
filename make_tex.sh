@@ -8,8 +8,8 @@ for i in chapter*.tm ; do
   if test ! -f $TEXFILE -o "(" $i -nt $TEXFILE ")"; then
     echo converting $i to $TEXFILE
     texmacs -c $i $TEMPTEXFILE --quit
+    python strip_texmacs_boilerplate.py $TEMPTEXFILE $TEXFILE
   fi
-  python strip_texmacs_boilerplate.py $TEMPTEXFILE $TEXFILE
   #rm $TEMPTEXFILE
 done
 

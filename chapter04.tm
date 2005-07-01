@@ -192,7 +192,7 @@
     \;
   </proof>
 
-  <\remark*>
+  <\remark>
     <\enumerate-alpha>
       <item>In practice, always use <with|mode|math|\<gamma\>=1> and use
       <with|mode|math|B<rsub|J>> as a preconditioner.
@@ -213,7 +213,7 @@
       the approximation property holds automatically. Applications to
       non-conforming or non-nested problems.
     </enumerate-alpha>
-  </remark*>
+  </remark>
 </body>
 
 <\initial>

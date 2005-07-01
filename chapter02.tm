@@ -125,7 +125,7 @@
     Lax-Milgram ensures the existence of <with|mode|math|\<b-A\><rsup|-1>>.
   </proof>
 
-  <\example*>
+  <\example>
     <with|mode|math|\<Omega\>=(0,1)<rsup|2>>, <with|mode|math|h=1/n>. Then
     <with|mode|math|\<b-A\>> is exactly the same as in Section
     <reference|subsec:fd-model-problem>.
@@ -135,7 +135,7 @@
 
     <big-figure|<postscript|uniform-grid-unit-square.fig|4cm|||||>|A uniform
     grid on <with|mode|math|(0,1)<rsup|2>>.>
-  </example*>
+  </example>
 
   We define <with|mode|math|A<rsub|h>:V<rsub|h>\<rightarrow\>V<rsub|h>> to be
   <with|mode|math|(A<rsub|h>v<rsub|h>,w<rsub|h>)=a(v<rsub|h>,w<rsub|h>)> for
