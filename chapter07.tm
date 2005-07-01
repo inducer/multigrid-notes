@@ -153,9 +153,9 @@
   for <with|mode|math|k\<geqslant\>j>, <with|mode|math|v<rsub|j>\<in\>V<rsub|j>>,
   <with|mode|math|v<rsub|k>\<in\>V<rsub|k>> with a constant
   <with|mode|math|\<varepsilon\>\<in\>(0,1)>. With full regularity, both
-  (<reference|eq:stable-decomp>) and (<reference|eq:strong-cs>) are easy.
-  Using the smoothing theory from Chapter <inactive|<reference|6>>, we assume
-  a sort-of decomposition
+  (<reference|eq:stable-decomp>) and (<reference|eq:strengthened-cs>) are
+  easy. Using the smoothing theory from Chapter <with|color|red|XXXXX>6, we
+  assume a sort-of decomposition
 
   <\equation*>
     V<rsub|j>=<big|sum><rsub|n=1><rsup|N<rsub|j>>W<rsub|n><rsup|j>,
@@ -258,8 +258,6 @@
     </equation*>
   </theorem>
 
-  This lecture is bad on <em|so many levels.>
-
   <\proof>
     <with|mode|math|v<rsub|0>=Q<rsub|0>v>,
     <with|mode|math|v<rsub|j>=(Q<rsub|j>-Q<rsub|j-1>)v>,
@@ -272,7 +270,7 @@
     </equation*>
 
     <\eqnarray*>
-      <tformat|<table|<row|<cell|c<rsub|0>>|<cell|\<leqslant\>>|<cell|<wide*|<enorm|P<rsub|0>(v-v<rsub|0>)||2>|\<wide-underbrace\>><rsub|<sqrt|\<cdot\>>\<leqslant\><enorm|v-v<rsub|0>||>\<leqslant\><enorm|v||>+<enorm|Q*v<rsub|0>||>>+<big|sum><rsub|j=1><rsup|J><big|sum><rsub|n=1><rsup|N<rsub|j>><enorm|P<rsub|n><rsup|j><left|(><big|sum><rsub|m=n+1><rsup|N<rsub|j>>w<rsub|m><rsup|j>+<big|sum><rsub|k=j+1><rsup|J>v<rsub|j><right|)>||2>>>|<row|<cell|>|<cell|\<leqslant\>>|<cell|(<enorm|v||>+<enorm|Q*v<rsub|0>||>)<rsup|2>+<big|sum><rsub|j=1><rsup|J><big|sum><rsub|n=1><rsup|N<rsub|j>><left|(><enorm|P<rsub|n><rsup|j><big|sum><rsub|m=n+1><rsup|N<rsub|j>>w<rsub|m><rsup|j>||>+<enorm|P<rsub|n><rsup|j><rsub|><big|sum><rsub|k=j+1><rsup|J>v<rsub|j>||><right|)><rsup|2>>>|<row|<cell|>|<cell|\<leqslant\>>|<cell|(<enorm|v||>+<enorm|Q*v<rsub|0>||>)<rsup|2>+<big|sum><rsub|j=1><rsup|J><big|sum><rsub|n=1><rsup|N<rsub|j>><left|(><enorm|<big|sum><rsub|m=m+1><rsup|N<rsub|j>>\<Pi\><rsub|j>(\<psi\><rsub|n><rsup|j>v<rsub|j>)||>+<wide|C|~><rsub|0><enorm|v<rsub|j>|\<Omega\><rsub|n><rsup|j>|2>+<wide|C|~><rsub|1>\<lambda\><rsub|j><enorm|v<rsub|j>|\<Omega\><rsub|n><rsup|j>|2><right|)><rsup|2>>>|<row|<cell|>|<cell|\<leqslant\>>|<cell|(<enorm|v||>+<enorm|Q*v<rsub|0>||>)<rsup|2>+<big|sum><rsub|j=1><rsup|J><big|sum><rsub|n=1><rsup|N<rsub|j>><left|(><enorm|<big|sum><rsub|m=m+1><rsup|N<rsub|j>>\<Pi\><rsub|j>(\<psi\><rsub|n><rsup|j>v<rsub|j>)||>+<wide|C|~><rsub|2><l2norm|v<rsub|j>|\<Omega\><rsub|n><rsup|j>|><right|)><rsup|2>>>|<row|<cell|>|<cell|\<leqslant\>>|<cell|2<enorm|v||2>+2<enorm|Q<rsub|0>v<rsub|0>||>+<big|sum><rsub|j=1><rsup|J>C<rsub|5><wide|C|~><rsub|0>\<lambda\><rsub|j><l2norm|Q<rsub|j>v<rsub|j>-Q<rsub|j-1>v<rsub|j>||2>+<big|sum><rsub|j=1><rsup|J><big|sum><rsub|n=1><rsup|N<rsub|j>><enorm|P<rsub|n><rsup|j>(v-Q<rsub|j>v)||2>>>|<row|<cell|>|<cell|\<leqslant\>>|<cell|<wide|C|~><rsub|3>K<rsub|0><enorm|v||2>+<big|sum><rsub|j=1><rsup|J><big|sum><rsub|n=1><rsup|N<rsub|j>><enorm|P<rsub|n><rsup|j>(v-Q<rsub|j>v)||2>>>>>
+      <tformat|<table|<row|<cell|c<rsub|0>>|<cell|\<leqslant\>>|<cell|<wide*|<enorm|P<rsub|0>(v-v<rsub|0>)||2>|\<wide-underbrace\>><rsub|<sqrt|\<cdot\>>\<leqslant\><enorm|v-v<rsub|0>||>\<leqslant\><enorm|v||>+<enorm|Q*v<rsub|0>||>>+<big|sum><rsub|j=1><rsup|J><big|sum><rsub|n=1><rsup|N<rsub|j>><enorm|P<rsub|n><rsup|j><left|(><big|sum><rsub|m=n+1><rsup|N<rsub|j>>w<rsub|m><rsup|j>+<big|sum><rsub|k=j+1><rsup|J>v<rsub|j><right|)>||2>>>|<row|<cell|>|<cell|\<leqslant\>>|<cell|(<enorm|v||>+<enorm|Q*v<rsub|0>||>)<rsup|2>+<big|sum><rsub|j=1><rsup|J><big|sum><rsub|n=1><rsup|N<rsub|j>><left|(><enorm|P<rsub|n><rsup|j><big|sum><rsub|m=n+1><rsup|N<rsub|j>>w<rsub|m><rsup|j>||>+<enorm|P<rsub|n><rsup|j><big|sum><rsub|k=j+1><rsup|J>v<rsub|j>||><right|)><rsup|2>>>|<row|<cell|>|<cell|\<leqslant\>>|<cell|(<enorm|v||>+<enorm|Q*v<rsub|0>||>)<rsup|2>+<big|sum><rsub|j=1><rsup|J><big|sum><rsub|n=1><rsup|N<rsub|j>><left|(><enorm|<big|sum><rsub|m=m+1><rsup|N<rsub|j>>\<Pi\><rsub|j>(\<psi\><rsub|n><rsup|j>v<rsub|j>)||>+<wide|C|~><rsub|0><enorm|v<rsub|j>|\<Omega\><rsub|n><rsup|j>|2>+<wide|C|~><rsub|1>\<lambda\><rsub|j><enorm|v<rsub|j>|\<Omega\><rsub|n><rsup|j>|2><right|)><rsup|2>>>|<row|<cell|>|<cell|\<leqslant\>>|<cell|(<enorm|v||>+<enorm|Q*v<rsub|0>||>)<rsup|2>+<big|sum><rsub|j=1><rsup|J><big|sum><rsub|n=1><rsup|N<rsub|j>><left|(><enorm|<big|sum><rsub|m=m+1><rsup|N<rsub|j>>\<Pi\><rsub|j>(\<psi\><rsub|n><rsup|j>v<rsub|j>)||>+<wide|C|~><rsub|2><l2norm|v<rsub|j>|\<Omega\><rsub|n><rsup|j>|><right|)><rsup|2>>>|<row|<cell|>|<cell|\<leqslant\>>|<cell|2<enorm|v||2>+2<enorm|Q<rsub|0>v<rsub|0>||>+<big|sum><rsub|j=1><rsup|J>C<rsub|5><wide|C|~><rsub|0>\<lambda\><rsub|j><l2norm|Q<rsub|j>v<rsub|j>-Q<rsub|j-1>v<rsub|j>||2>+<big|sum><rsub|j=1><rsup|J><big|sum><rsub|n=1><rsup|N<rsub|j>><enorm|P<rsub|n><rsup|j>(v-Q<rsub|j>v)||2>>>|<row|<cell|>|<cell|\<leqslant\>>|<cell|<wide|C|~><rsub|3>K<rsub|0><enorm|v||2>+<big|sum><rsub|j=1><rsup|J><big|sum><rsub|n=1><rsup|N<rsub|j>><enorm|P<rsub|n><rsup|j>(v-Q<rsub|j>v)||2>>>>>
     </eqnarray*>
 
     <with|color|red|Quadrate aufräumen!> Whatever this next thing means, it
@@ -311,6 +309,10 @@
       <vspace*|1fn><with|font-series|<quote|bold>|math-font-series|<quote|bold>|7<space|2spc>Multiplicative
       Schwarz Methods> <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
       <no-break><pageref|auto-1><vspace|0.5fn>
+
+      <with|par-left|<quote|1.5fn>|7.1<space|2spc>V-cycle estimate without
+      regularity <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
+      <no-break><pageref|auto-2>>
     </associate>
   </collection>
 </auxiliary>

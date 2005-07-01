@@ -235,7 +235,7 @@
     <em|3rd step.>
 
     <\eqnarray*>
-      <tformat|<table|<row|<cell|c<rsub|0><l2norm|v<rsub|h>-P<rsub|H>v<rsub|h>|1|2>>|<cell|\<leqslant\>>|<cell|a(v<rsub|h>-P<rsub|H>v<rsub|h>,v<rsub|h>-P<rsub|H>v<rsub|h>)>>|<row|<cell|>|<cell|=>|<cell|a(v<rsub|h>-P<rsub|H>v<rsub|h>,v<rsub|h>)>>|<row|<cell|>|<cell|=>|<cell|<ip|A<rsub|h>(v<rsub|h>-P<rsub|H>v<rsub|h>)|v<rsub|h>||>>>|<row|<cell|>|<cell|=>|<cell|<ip|v<rsub|h>-P<rsub|H>|A<rsup|T><rsub|h>v<rsub|h>|0|>\<leqslant\><l2norm|v<rsub|h>-P<rsub|H>v<rsub|h>|0|><wide*|<l2norm|A<rsup|T><rsub|h>v<rsub|h>||>|\<wide-underbrace\>><rsub|\<leqslant\>C<l2norm|A<rsub|h>v<rsub|h>||>>>>|<row|<cell|>|<cell|\<leqslant\>>|<cell|C<rsub|4><rsub|>\<lambda\><rsup|-1/2><rsub|h><l2norm|A<rsub|h>v<rsub|h>||><l2norm|v<rsub|h>-P<rsub|H>v<rsub|h>|1|>>>>>
+      <tformat|<table|<row|<cell|c<rsub|0><l2norm|v<rsub|h>-P<rsub|H>v<rsub|h>|1|2>>|<cell|\<leqslant\>>|<cell|a(v<rsub|h>-P<rsub|H>v<rsub|h>,v<rsub|h>-P<rsub|H>v<rsub|h>)>>|<row|<cell|>|<cell|=>|<cell|a(v<rsub|h>-P<rsub|H>v<rsub|h>,v<rsub|h>)>>|<row|<cell|>|<cell|=>|<cell|<ip|A<rsub|h>(v<rsub|h>-P<rsub|H>v<rsub|h>)|v<rsub|h>||>>>|<row|<cell|>|<cell|=>|<cell|<ip|v<rsub|h>-P<rsub|H>|A<rsup|T><rsub|h>v<rsub|h>|0|>\<leqslant\><l2norm|v<rsub|h>-P<rsub|H>v<rsub|h>|0|><wide*|<l2norm|A<rsup|T><rsub|h>v<rsub|h>||>|\<wide-underbrace\>><rsub|\<leqslant\>C<l2norm|A<rsub|h>v<rsub|h>||>>>>|<row|<cell|>|<cell|\<leqslant\>>|<cell|C<rsub|4>\<lambda\><rsup|-1/2><rsub|h><l2norm|A<rsub|h>v<rsub|h>||><l2norm|v<rsub|h>-P<rsub|H>v<rsub|h>|1|>>>>>
     </eqnarray*>
 
     \;

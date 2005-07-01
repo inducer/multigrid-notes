@@ -1,0 +1,75 @@
+\documentclass[a4paper]{article}
+\usepackage{amsmath,amssymb,enumerate,epsfig,bbm,calc,ifthen,capt-of,color}
+\batchmode
+
+%%%%%%%%%% Start TeXmacs macros
+\catcode`\ä=\active \defä{\"a} \catcode`\Ä=\active \defÄ{\"A}
+\catcode`\ö=\active \defö{\"o} \catcode`\Ö=\active \defÖ{\"O}
+\catcode`\ü=\active \defü{\"u} \catcode`\Ü=\active \defÜ{\"U}
+\catcode`\é=\active \defé{\'e} \catcode`\É=\active \defÉ{\'E}
+\catcode`\ß=\active \defß{{\ss}}
+
+\newcommand{\assign}{:=}
+\newcommand{\tmem}[1]{{\em #1\/}}
+\newcommand{\tmmathbf}[1]{\ensuremath{\boldsymbol{#1}}}
+\newcommand{\tmop}[1]{\ensuremath{\operatorname{#1}}}
+\newcommand{\nin}{\not\in}
+\newcommand{\emdash}{---}
+
+\newtheorem{definition}{Definition}
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}{Lemma}
+\newcommand{\tmdummy}{$\mbox{}$}
+\newtheorem{corollary}{Corollary}
+\newenvironment{proof}{
+  \noindent\textbf{Proof}\ }{\hspace*{\fill}
+  \begin{math}\Box\end{math}\medskip}
+\newtheorem{varremark}{Remark}
+\newenvironment{remark}{\begin{varremark}\em}{\em\end{varremark}}
+\newtheorem{varnote}{Note}
+\newenvironment{note}{\begin{varnote}\em}{\em\end{varnote}}
+\newtheorem{varexample}{Example}
+\newenvironment{example}{\begin{varexample}\em}{\em\end{varexample}}
+
+\newlength{\tmfloatwidth}
+\newcommand{\tmfloatcontents}{}
+\newcommand{\tmfloat}[5]{
+  \renewcommand{\tmfloatcontents}{#4}
+  \setlength{\tmfloatwidth}{\widthof{\tmfloatcontents}+1in}
+  \ifthenelse{\equal{#2}{small}}
+    {\ifthenelse{\lengthtest{\tmfloatwidth > \linewidth}}
+      {\setlength{\tmfloatwidth}{\linewidth}}{}}
+    {\setlength{\tmfloatwidth}{\linewidth}}  \begin{minipage}[#1]{\tmfloatwidth}
+    \begin{center}
+      \tmfloatcontents
+      \captionof{#3}{#5}
+    \end{center}
+  \end{minipage}}
+\newenvironment{enumeratealpha}{\begin{enumerate}[a{\textup{)}}]}{\end{enumerate}}
+\newenvironment{enumeratenumeric}{\begin{enumerate}[1.]}{\end{enumerate}}
+\newenvironment{itemizedot}
+  {\begin{itemize}\renewcommand{\labelitemi}{$\bullet$}\renewcommand{\labelitemii}{$\bullet$}\renewcommand{\labelitemiii}{$\bullet$}\renewcommand{\labelitemiv}{$\bullet$}}{\end{itemize}}
+%%%%%%%%%% End TeXmacs macros
+
+\def\ltwonorm#1{\left|\left|#1\right|\right|}
+\def\enorm#1{\left|\left|\left|#1\right|\right|\right|}
+\def\ip#1#2{\left(#1,#2\right)}
+\def\huh{???}
+
+\newcommand{\sectionnr}{0}
+
+\begin{document}
+
+Multigrid Methods
+
+Christian Wieners, SS 2005
+
+\input chapter01
+\input chapter02
+\input chapter03
+\input chapter04
+\input chapter05
+\input chapter06
+\input chapter07
+
+\end{document}
