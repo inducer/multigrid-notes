@@ -2,7 +2,7 @@
 set -e
 
 mkdir -p ,,latex
-for i in chapter*.tm ; do
+for i in chapter0*.tm ; do
   TEXFILE=,,latex/${i%.tm}.tex
   TEMPTEXFILE=,,latex/${i%.tm}temp.tex
   if test ! -f $TEXFILE -o "(" $i -nt $TEXFILE ")"; then
@@ -10,7 +10,7 @@ for i in chapter*.tm ; do
     texmacs -c $i $TEMPTEXFILE --quit
     python strip_texmacs_boilerplate.py $TEMPTEXFILE $TEXFILE
   fi
-  #rm $TEMPTEXFILE
+  rm $TEMPTEXFILE
 done
 
 for i in *.fig; do
